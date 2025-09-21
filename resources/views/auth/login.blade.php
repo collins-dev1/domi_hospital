@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - MediCare Hospital</title>
+    <title>Login - Domi Clinic</title>
+    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
@@ -20,7 +21,7 @@
 
         .auth-container {
             background: #fff;
-            padding: 2rem;
+            padding: 3rem;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             width: 100%;
@@ -39,7 +40,7 @@
 
         .auth-header h2 {
             margin: 0.5rem 0;
-            color: #2c5282;
+            color: #06923E;
         }
 
         .form-group {
@@ -50,7 +51,7 @@
             display: block;
             margin-bottom: 0.3rem;
             font-weight: 600;
-            color: #2d3748;
+            color: #06923E;
         }
 
         .form-group input {
@@ -62,7 +63,7 @@
         }
 
         .form-group input:focus {
-            border-color: #2c5282;
+            border-color: #06923E;
             outline: none;
         }
 
@@ -71,7 +72,7 @@
             padding: 0.75rem;
             border: none;
             border-radius: 8px;
-            background: #2c5282;
+            background: #06923E;
             color: #fff;
             font-weight: 600;
             cursor: pointer;
@@ -102,7 +103,34 @@
 <body>
     <div class="auth-container">
         <div class="auth-header">
-            <i class="fas fa-hospital-user"></i>
+            <div class="logo">
+                <a href="{{ url('/') }}"
+                    style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                        height="70">
+                    <div class="logo-text">
+                        <span>DOMI CLINIC</span>
+                        <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
+                    </div>
+                    <style>
+                        .logo-text span {
+                            font-weight: bold;
+                            color: #06923E;
+                        }
+                        .logo-text p {
+                            margin: 0;
+                            color: #06923E;
+                        }
+
+                        .logo{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin-bottom: 1rem;
+                        }
+                    </style>
+                </a>
+            </div>
             <h2>Login</h2>
             <p>Please sign in to access your account</p>
         </div>

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Doctors - MediCare Hospital</title>
+    <title>Our Doctors - Domi Clinic</title>
+    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -15,7 +16,7 @@
         :root {
             --primary-color: #2c5282;
             --secondary-color: #3182ce;
-            --accent-color: #00d4aa;
+            --accent-color: #06923E;
             --text-dark: #2d3748;
             --text-light: #718096;
             --bg-light: #f7fafc;
@@ -694,27 +695,36 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+     <header class="header">
         <nav class="nav container">
             <div class="logo">
                 <a href="{{ url('/') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                    <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
+                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
                         height="70">
-                    <div>
+                    <div class="logo-text">
                         <span>DOMI CLINIC</span>
                         <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
                     </div>
+                    <style>
+                        .logo-text span {
+                            font-weight: bold;
+                            color: #06923E;
+                        }
+                        .logo-text p {
+                            margin: 0;
+                            color: #06923E;
+                        }
+                    </style>
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="{{url('/')}}">Home</a></li>
-                <li><a href="{{route('services')}}">Services</a></li>
-                <li><a href="{{route('about')}}">About</a></li>
-                <li><a href="{{route('doctors')}}" class="active">Doctors</a></li>
-                <li><a href="{{route('contact_us')}}">Contact</a></li>
-                <li><a href="{{route('login')}}" onclick="openModal('loginModal')">Login</a></li>
-                <li><a href="{{route('register')}}" class="btn btn-primary">Register</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('contact_us') }}">Contact</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}" class="btn" style="background-color: #06923E">Register</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -946,8 +956,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MediCare Hospital</h3>
-                    <p>Providing quality healthcare services with compassion and excellence. Your health and well-being are our top priorities.</p>
+                    <div class="logo">
+                        <a href="{{ url('/') }}"
+                            style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
+                            <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                                height="70">
+                            <div class="logo-text">
+                                <span>DOMI CLINIC</span>
+                                <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
+                            </div>
+                            <style>
+                                .logo-text span {
+                                    font-weight: bold;
+                                    color: #06923E;
+                                }
+
+                                .logo-text p {
+                                    margin: 0;
+                                    color: #06923E;
+                                }
+                            </style>
+                        </a>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence. Your health and well-being
+                        are our top priorities.</p>
                     <div style="margin-top: 1rem;">
                         <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
                         <i class="fab fa-twitter" style="margin-right: 1rem; font-size: 1.2rem;"></i>
@@ -957,30 +989,30 @@
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#" onclick="openModal('registerModal')">Patient Registration</a>
+                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ route('services') }}">Services</a>
+                    <a href="{{ route('about') }}">About Us</a>
+                    <a href="{{ route('contact_us') }}">Contact</a>
+                    <a href="{{ route('register') }}">Patient Registration</a>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="#">General Medicine</a>
-                    <a href="#">Emergency Care</a>
-                    <a href="#">Laboratory</a>
-                    <a href="#">Radiology</a>
-                    <a href="#">Surgery</a>
+                    <a href="{{route('services')}}">General Medicine</a>
+                    <a href="{{route('services')}}">Emergency Care</a>
+                    <a href="{{route('services')}}">Laboratory</a>
+                    <a href="{{route('services')}}">Radiology</a>
+                    <a href="{{route('services')}}">Surgery</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Healthcare Street, Medical City</p>
+                    <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p>
                     <p><i class="fas fa-phone"></i> +234 (0) 123 456 7890</p>
                     <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 MediCare Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
             </div>
         </div>
     </footer>
