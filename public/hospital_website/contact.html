@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MediCare Hospital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #3182ce;
+            --accent-color: #00d4aa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background: #00b894;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-info h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .info-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+            min-width: 50px;
+        }
+
+        .info-content h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-content p {
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Emergency Contact */
+        .emergency-section {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .emergency-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .emergency-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .emergency-item i {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .emergency-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-text p {
+            font-size: 1.2rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .map-container {
+            background: var(--bg-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        /* Departments Section */
+        .departments-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .department-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .department-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .department-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .department-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .department-contact {
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        /* Hours Section */
+        .hours-section {
+            padding: 3rem 0;
+            background: var(--white);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .hours-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            background: var(--bg-light);
+            transition: transform 0.3s ease;
+        }
+
+        .hours-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .hours-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .hours-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 1rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Loading state */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MediCare Hospital</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#" onclick="openModal('loginModal')">Login</a></li>
+                <li><a href="#" class="btn btn-primary" onclick="openModal('registerModal')">Register</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our healthcare team. We're here to help you with your medical needs and answer any questions you may have.</p>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-section">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="emergency-text">
+                        <h3>Emergency Hotline</h3>
+                        <p>911 / +234 (0) 911 000 000</p>
+                    </div>
+                </div>
+                <div class="emergency-item">
+                    <i class="fas fa-ambulance"></i>
+                    <div class="emergency-text">
+                        <h3>24/7 Emergency Services</h3>
+                        <p>Immediate Medical Attention</p>
+                    </div>
+                </div>
+                <div class="emergency-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="emergency-text">
+                        <h3>Always Available</h3>
+                        <p>Round-the-clock Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info fade-in">
+                    <h2>Get In Touch</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h3>Hospital Address</h3>
+                            <p>123 Healthcare Street<br>Medical City, MC 12345<br>Nigeria</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-content">
+                            <h3>Phone Numbers</h3>
+                            <p>Main Line: +234 (0) 123 456 7890<br>
+                               Emergency: 911<br>
+                               Appointments: +234 (0) 123 456 7891</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-content">
+                            <h3>Email Addresses</h3>
+                            <p>General: info@medicarehospital.com<br>
+                               Appointments: appointments@medicarehospital.com<br>
+                               Emergency: emergency@medicarehospital.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <div class="info-content">
+                            <h3>Website & Social</h3>
+                            <p>www.medicarehospital.com<br>
+                               Follow us on social media for updates<br>
+                               Patient Portal Available</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form fade-in">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="appointment">Appointment Request</option>
+                                <option value="medical">Medical Question</option>
+                                <option value="billing">Billing Inquiry</option>
+                                <option value="feedback">Feedback/Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Preferred Department</label>
+                            <select id="department" name="department">
+                                <option value="">Select department (optional)</option>
+                                <option value="general">General Medicine</option>
+                                <option value="cardiology">Cardiology</option>
+                                <option value="neurology">Neurology</option>
+                                <option value="pediatrics">Pediatrics</option>
+                                <option value="orthopedics">Orthopedics</option>
+                                <option value="emergency">Emergency Services</option>
+                                <option value="radiology">Radiology</option>
+                                <option value="laboratory">Laboratory</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Priority Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="low">Low - General inquiry</option>
+                                <option value="normal" selected>Normal - Standard response</option>
+                                <option value="high">High - Urgent matter</option>
+                                <option value="emergency">Emergency - Immediate attention</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">
+                                <span class="btn-text">Send Message</span>
+                                <span class="loading" style="display: none;"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital Hours -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hospital Hours</h2>
+                <p>Our operating hours for different services and departments</p>
+            </div>
+            <div class="hours-grid">
+                <div class="hours-card fade-in">
+                    <i class="fas fa-clock"></i>
+                    <h3>General Services</h3>
+                    <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM<br>
+                       <strong>Saturday:</strong> 9:00 AM - 4:00 PM<br>
+                       <strong>Sunday:</strong> 10:00 AM - 2:00 PM</p>
+                </div>
+                <div class="hours-card fade-in">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Emergency Services</h3>
+                    <p><strong>24/7 Availability</strong><br>
+                       Round-the-clock emergency care<br>
+                       Always ready to help</p>
+                </div>
+                <div class="hours-card fade-in">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Specialist Consultations</h3>
+                    <p><strong>By Appointment Only</strong><br>
+                       Monday - Saturday<br>
+                       Call to schedule</p>
+                </div>
+                <div class="hours-card fade-in">
+                    <i class="fas fa-flask"></i>
+                    <h3>Laboratory</h3>
+                    <p><strong>Monday - Saturday:</strong> 7:00 AM - 7:00 PM<br>
+                       <strong>Sunday:</strong> 8:00 AM - 4:00 PM<br>
+                       Urgent tests 24/7</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="departments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Department Contacts</h2>
+                <p>Direct contact information for our specialized medical departments</p>
+            </div>
+            <div class="departments-grid">
+                <div class="department-card fade-in">
+                    <i class="fas fa-heart"></i>
+                    <h3>Cardiology</h3>
+                    <p>Specialized heart care and cardiac procedures</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7892<br>
+                           <strong>Email:</strong> cardiology@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. Sarah Johnson</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neurology</h3>
+                    <p>Expert care for neurological conditions</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7893<br>
+                           <strong>Email:</strong> neurology@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. Michael Chen</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-baby"></i>
+                    <h3>Pediatrics</h3>
+                    <p>Comprehensive care for children and infants</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7894<br>
+                           <strong>Email:</strong> pediatrics@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. Emily Rodriguez</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-bone"></i>
+                    <h3>Orthopedics</h3>
+                    <p>Bone, joint, and musculoskeletal care</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7895<br>
+                           <strong>Email:</strong> orthopedics@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. David Thompson</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-x-ray"></i>
+                    <h3>Radiology</h3>
+                    <p>Advanced imaging and diagnostic services</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7896<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. Lisa Wang</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-flask"></i>
+                    <h3>Laboratory</h3>
+                    <p>Comprehensive laboratory testing services</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +234 (0) 123 456 7897<br>
+                           <strong>Email:</strong> lab@medicarehospital.com<br>
+                           <strong>Head:</strong> Dr. James Wilson</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>Located in the heart of Medical City with easy access and ample parking</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem; color: rgba(255,255,255,0.8);"></i>
+                        <h3>Interactive Map</h3>
+                        <p>123 Healthcare Street, Medical City, MC 12345</p>
+                        <p>Integrate with Google Maps, MapBox, or similar mapping service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare Hospital</h3>
+                    <p>Providing quality healthcare services with compassion and excellence. Your health and well-being are our top priorities.</p>
+                    <div style="margin-top: 1rem;">
+                        <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-twitter" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-instagram" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" onclick="openModal('registerModal')">Patient Registration</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#">General Medicine</a>
+                    <a href="#">Emergency Care</a>
+                    <a href="#">Laboratory</a>
+                    <a href="#">Radiology</a>
+                    <a href="#">Surgery</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Healthcare Street, Medical City</p>
+                    <p><i class="fas fa-phone"></i> +234 (0) 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+<script>
+        // Global variables
+        let currentUser = null;
+        const API_BASE_URL = '/api'; // Change this to your Laravel API base URL
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            initializeAnimations();
+            // Initialize statistics counter
+            initializeCounters();
+            // Set minimum date for appointments
+            setMinimumDate();
+            // Check if user is logged in
+            checkAuthStatus();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Animation Functions
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Counter Animation
+        function initializeCounters() {
+            const counters = [
+                { id: 'patients-count', target: 15000, suffix: '+' },
+                { id: 'doctors-count', target: 50, suffix: '+' },
+                { id: 'experience-count', target: 25, suffix: '+' },
+                { id: 'awards-count', target: 30, suffix: '+' }
+            ];
+
+            const statsSection = document.querySelector('.stats');
+            let hasAnimated = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        counters.forEach(counter => {
+                            animateCounter(counter.id, counter.target, counter.suffix);
+                        });
+                    }
+                });
+            });
+
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        }
+
+        function animateCounter(elementId, target, suffix = '') {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + suffix;
+            }, 40);
+        }
+
+        // Set minimum date for appointment booking
+        function setMinimumDate() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const appointmentDate = document.getElementById('appointmentDate');
+            if (appointmentDate) {
+                appointmentDate.min = tomorrow.toISOString().split('T')[0];
+            }
+        }
+
+        // Form Validation
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#e53e3e';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#e2e8f0';
+                }
+            });
+
+            // Password confirmation check for registration
+            if (formId === 'registrationForm') {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPassword').style.borderColor = '#e53e3e';
+                    showNotification('Passwords do not match!', 'error');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        // Login Form Handler
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('loginForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/auth/login', data);
+                
+                if (response.success) {
+                    currentUser = response.user;
+                    localStorage.setItem('authToken', response.token);
+                    localStorage.setItem('currentUser', JSON.stringify(response.user));
+                    
+                    showNotification('Login successful!', 'success');
+                    closeModal('loginModal');
+                    updateAuthUI();
+                } else {
+                    showNotification(response.message || 'Login failed!', 'error');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showNotification('Login failed. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Registration Form Handler
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('registrationForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/auth/register', data);
+                
+                if (response.success) {
+                    currentUser = response.user;
+                    localStorage.setItem('authToken', response.token);
+                    localStorage.setItem('currentUser', JSON.stringify(response.user));
+                    
+                    showNotification('Registration successful!', 'success');
+                    closeModal('registerModal');
+                    updateAuthUI();
+                    
+                    // Show patient card
+                    showPatientCard(response.user);
+                } else {
+                    showNotification(response.message || 'Registration failed!', 'error');
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                showNotification('Registration failed. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Appointment Form Handler
+        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('appointmentForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/appointments', data);
+                
+                if (response.success) {
+                    showNotification('Appointment booked successfully!', 'success');
+                    closeModal('appointmentModal');
+                    this.reset();
+                } else {
+                    showNotification(response.message || 'Failed to book appointment!', 'error');
+                }
+            } catch (error) {
+                console.error('Appointment booking error:', error);
+                showNotification('Failed to book appointment. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Show Patient Card
+        function showPatientCard(userData) {
+            // Generate patient ID
+            const patientId = 'MED' + Date.now().toString().slice(-6);
+            
+            // Populate card data
+            document.getElementById('cardPatientId').textContent = patientId;
+            document.getElementById('cardFullName').textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById('cardDOB').textContent = formatDate(userData.dateOfBirth);
+            document.getElementById('cardBloodGroup').textContent = userData.bloodGroup || 'Not specified';
+            document.getElementById('cardPhone').textContent = userData.phone;
+            document.getElementById('cardRegDate').textContent = formatDate(new Date().toISOString().split('T')[0]);
+            
+            // Show card modal
+            openModal('cardModal');
+        }
+
+        // Print Card Function
+        function printCard() {
+            window.print();
+        }
+
+        // Download Card as PDF (simplified version)
+        function downloadCard() {
+            // This would typically use a library like jsPDF
+            showNotification('PDF download feature will be implemented with jsPDF library', 'info');
+        }
+
+        // Utility Functions
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit'
+            });
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#e53e3e' : '#3182ce'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 3000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = message;
+
+            // Add to body
+            document.body.appendChild(notification);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOut 0.3s ease-in';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.remove();
+                        }
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Add CSS for notifications
+        const notificationStyles = document.createElement('style');
+        notificationStyles.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(notificationStyles);
+
+        // Simulate API calls (replace with actual Laravel API calls)
+        async function simulateApiCall(endpoint, data) {
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Mock responses
+            if (endpoint === '/auth/register') {
+                return {
+                    success: true,
+                    message: 'Registration successful',
+                    user: {
+                        id: Date.now(),
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        email: data.email,
+                        phone: data.phone,
+                        dateOfBirth: data.dateOfBirth,
+                        bloodGroup: data.bloodGroup,
+                        address: data.address,
+                        gender: data.gender
+                    },
+                    token: 'mock-jwt-token-' + Date.now()
+                };
+            }
+            
+            if (endpoint === '/auth/login') {
+                return {
+                    success: true,
+                    message: 'Login successful',
+                    user: {
+                        id: 1,
+                        firstName: 'John',
+                        lastName: 'Doe',
+                        email: data.loginEmail,
+                        phone: '+234 123 456 7890',
+                        dateOfBirth: '1990-01-01',
+                        bloodGroup: 'O+',
+                        address: '123 Main Street'
+                    },
+                    token: 'mock-jwt-token-login'
+                };
+            }
+            
+            if (endpoint === '/appointments') {
+                return {
+                    success: true,
+                    message: 'Appointment booked successfully',
+                    appointment: {
+                        id: Date.now(),
+                        ...data,
+                        status: 'confirmed'
+                    }
+                };
+            }
+            
+            return { success: false, message: 'Unknown endpoint' };
+        }
+
+        // Check authentication status
+        function checkAuthStatus() {
+            const token = localStorage.getItem('authToken');
+            const userStr = localStorage.getItem('currentUser');
+            
+            if (token && userStr) {
+                currentUser = JSON.parse(userStr);
+                updateAuthUI();
+            }
+        }
+
+        // Update authentication UI
+        function updateAuthUI() {
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (currentUser) {
+                // Replace login/register with user menu
+                const loginLink = navLinks.querySelector('a[onclick*="loginModal"]');
+                const registerBtn = navLinks.querySelector('a[onclick*="registerModal"]');
+                
+                if (loginLink) loginLink.style.display = 'none';
+                if (registerBtn) registerBtn.style.display = 'none';
+                
+                // Add user menu (simplified)
+                const userMenu = document.createElement('li');
+                userMenu.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span>Welcome, ${currentUser.firstName}!</span>
+                        <a href="#" onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1rem;">Logout</a>
+                    </div>
+                `;
+                navLinks.appendChild(userMenu);
+            }
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('currentUser');
+            currentUser = null;
+            location.reload();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form input focus effects
+        document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.style.borderColor = 'var(--primary-color)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+                if (!this.value) {
+                    this.style.borderColor = '#e2e8f0';
+                }
+            });
+        });
+
+        // Real-time form validation
+        document.getElementById('confirmPassword')?.addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (confirmPassword && password !== confirmPassword) {
+                this.style.borderColor = '#e53e3e';
+            } else {
+                this.style.borderColor = '#e2e8f0';
+            }
+        });
+
+        // Add loading states to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.type === 'submit') {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

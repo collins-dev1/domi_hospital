@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MediCare Hospital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #3182ce;
+            --accent-color: #00d4aa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            color: var(--accent-color);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Sections */
+        .about-intro {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Mission Vision Values */
+        .mission-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info .specialty {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .team-social a {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .team-social a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, var(--accent-color), #00b894);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .award-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: scale(1.05);
+        }
+
+        .award-card i {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .award-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background: #00b894;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 1rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .mission-grid,
+            .team-grid,
+            .features-grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>MediCare Hospital</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html#" onclick="openModal('loginModal')">Login</a></li>
+                <li><a href="index.html#" class="btn btn-primary" onclick="openModal('registerModal')">Register</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About MediCare Hospital</h1>
+            <p>Learn about our commitment to providing exceptional healthcare services with compassion, expertise, and state-of-the-art technology.</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Introduction -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h2>Leading Healthcare Excellence</h2>
+                    <p>For over 25 years, MediCare Hospital has been at the forefront of medical innovation and patient care. We are dedicated to providing comprehensive healthcare services that combine cutting-edge technology with compassionate human touch.</p>
+                    <p>Our team of highly qualified medical professionals, state-of-the-art facilities, and patient-centered approach make us the trusted choice for families across the region. We believe that quality healthcare should be accessible to everyone, and we work tirelessly to make that vision a reality.</p>
+                    <p>From routine check-ups to complex surgical procedures, we offer a full spectrum of medical services designed to meet the diverse health needs of our community.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hospital Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Foundation</h2>
+                <p>Built on strong values and guided by our mission to provide exceptional healthcare to every patient we serve.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card fade-in">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To provide comprehensive, compassionate, and high-quality healthcare services that improve the health and well-being of the communities we serve, while advancing medical knowledge through research and education.</p>
+                </div>
+                <div class="mission-card fade-in">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>To be the leading healthcare provider in the region, recognized for clinical excellence, innovation, and exceptional patient experience, while making quality healthcare accessible to all.</p>
+                </div>
+                <div class="mission-card fade-in">
+                    <i class="fas fa-heart"></i>
+                    <h3>Our Values</h3>
+                    <p>Compassion, Integrity, Excellence, Innovation, Respect, and Collaboration. These values guide every interaction and decision we make in our commitment to patient care and community service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Team -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Expert Medical Team</h2>
+                <p>Meet our dedicated healthcare professionals who bring years of experience and expertise to provide you with the best possible care.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sarah Johnson</h3>
+                        <div class="specialty">Chief of Cardiology</div>
+                        <p>Dr. Johnson has over 20 years of experience in cardiovascular medicine and has performed over 2,000 successful cardiac procedures.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Michael Chen</h3>
+                        <div class="specialty">Chief of Neurosurgery</div>
+                        <p>A renowned neurosurgeon specializing in complex brain and spine surgeries, with expertise in minimally invasive techniques.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <div class="specialty">Director of Emergency Medicine</div>
+                        <p>Board-certified emergency physician with expertise in trauma care and critical care medicine, leading our 24/7 emergency department.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. James Wilson</h3>
+                        <div class="specialty">Chief of Pediatrics</div>
+                        <p>Dedicated pediatrician with a special focus on child development and adolescent medicine, providing comprehensive care for young patients.</p>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose MediCare Hospital</h2>
+                <p>Discover what sets us apart and makes us the preferred choice for quality healthcare in the region.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Accredited Excellence</h3>
+                        <p>Fully accredited facility meeting international standards for quality and safety in healthcare delivery.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Advanced Technology</h3>
+                        <p>State-of-the-art medical equipment and cutting-edge technology for accurate diagnosis and effective treatment.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>24/7 Emergency Care</h3>
+                        <p>Round-the-clock emergency services with immediate response and critical care capabilities.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Compassionate Care</h3>
+                        <p>Patient-centered approach with personalized attention and support throughout your healthcare journey.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Affordable Healthcare</h3>
+                        <p>Competitive pricing and flexible payment options to make quality healthcare accessible to all.</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Insurance Accepted</h3>
+                        <p>Wide range of insurance plans accepted, with dedicated staff to help with claims and coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards and Recognitions -->
+    <section class="awards-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Awards & Recognition</h2>
+                <p>Our commitment to excellence has been recognized through various prestigious awards and certifications.</p>
+            </div>
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Hospital of the Year 2023</h3>
+                    <p>Healthcare Excellence Awards</p>
+                </div>
+                <div class="award-card fade-in">
+                    <i class="fas fa-medal"></i>
+                    <h3>Patient Safety Award</h3>
+                    <p>National Patient Safety Foundation</p>
+                </div>
+                <div class="award-card fade-in">
+                    <i class="fas fa-star"></i>
+                    <h3>5-Star Rating</h3>
+                    <p>Hospital Quality Rating System</p>
+                </div>
+                <div class="award-card fade-in">
+                    <i class="fas fa-award"></i>
+                    <h3>Top Employer 2023</h3>
+                    <p>Healthcare Industry Recognition</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Experience Excellence in Healthcare</h2>
+                <p>Join thousands of satisfied patients who have trusted us with their health. Register today and become part of the MediCare family.</p>
+                <a href="index.html#" class="btn btn-accent" onclick="openModal('registerModal')">Get Your Health Card Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediCare Hospital</h3>
+                    <p>Providing quality healthcare services with compassion and excellence. Your health and well-being are our top priorities.</p>
+                    <div style="margin-top: 1rem;">
+                        <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-twitter" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-instagram" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="index.html#" onclick="openModal('registerModal')">Patient Registration</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">General Medicine</a>
+                    <a href="services.html">Emergency Care</a>
+                    <a href="services.html">Laboratory</a>
+                    <a href="services.html">Radiology</a>
+                    <a href="services.html">Surgery</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Healthcare Street, Medical City</p>
+                    <p><i class="fas fa-phone"></i> +234 (0) 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Global variables
+        let currentUser = null;
+        const API_BASE_URL = '/api'; // Change this to your Laravel API base URL
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            initializeAnimations();
+            // Initialize statistics counter
+            initializeCounters();
+            // Set minimum date for appointments
+            setMinimumDate();
+            // Check if user is logged in
+            checkAuthStatus();
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Animation Functions
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Counter Animation
+        function initializeCounters() {
+            const counters = [
+                { id: 'patients-count', target: 15000, suffix: '+' },
+                { id: 'doctors-count', target: 50, suffix: '+' },
+                { id: 'experience-count', target: 25, suffix: '+' },
+                { id: 'awards-count', target: 30, suffix: '+' }
+            ];
+
+            const statsSection = document.querySelector('.stats');
+            let hasAnimated = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        counters.forEach(counter => {
+                            animateCounter(counter.id, counter.target, counter.suffix);
+                        });
+                    }
+                });
+            });
+
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        }
+
+        function animateCounter(elementId, target, suffix = '') {
+            const element = document.getElementById(elementId);
+            if (!element) return;
+
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + suffix;
+            }, 40);
+        }
+
+        // Set minimum date for appointment booking
+        function setMinimumDate() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            const appointmentDate = document.getElementById('appointmentDate');
+            if (appointmentDate) {
+                appointmentDate.min = tomorrow.toISOString().split('T')[0];
+            }
+        }
+
+        // Form Validation
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#e53e3e';
+                    isValid = false;
+                } else {
+                    input.style.borderColor = '#e2e8f0';
+                }
+            });
+
+            // Password confirmation check for registration
+            if (formId === 'registrationForm') {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (password !== confirmPassword) {
+                    document.getElementById('confirmPassword').style.borderColor = '#e53e3e';
+                    showNotification('Passwords do not match!', 'error');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        // Login Form Handler
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('loginForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/auth/login', data);
+                
+                if (response.success) {
+                    currentUser = response.user;
+                    localStorage.setItem('authToken', response.token);
+                    localStorage.setItem('currentUser', JSON.stringify(response.user));
+                    
+                    showNotification('Login successful!', 'success');
+                    closeModal('loginModal');
+                    updateAuthUI();
+                } else {
+                    showNotification(response.message || 'Login failed!', 'error');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showNotification('Login failed. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Registration Form Handler
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('registrationForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/auth/register', data);
+                
+                if (response.success) {
+                    currentUser = response.user;
+                    localStorage.setItem('authToken', response.token);
+                    localStorage.setItem('currentUser', JSON.stringify(response.user));
+                    
+                    showNotification('Registration successful!', 'success');
+                    closeModal('registerModal');
+                    updateAuthUI();
+                    
+                    // Show patient card
+                    showPatientCard(response.user);
+                } else {
+                    showNotification(response.message || 'Registration failed!', 'error');
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                showNotification('Registration failed. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Appointment Form Handler
+        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm('appointmentForm')) {
+                showNotification('Please fill all required fields!', 'error');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+
+                // Simulate API call (replace with actual Laravel API endpoint)
+                const response = await simulateApiCall('/appointments', data);
+                
+                if (response.success) {
+                    showNotification('Appointment booked successfully!', 'success');
+                    closeModal('appointmentModal');
+                    this.reset();
+                } else {
+                    showNotification(response.message || 'Failed to book appointment!', 'error');
+                }
+            } catch (error) {
+                console.error('Appointment booking error:', error);
+                showNotification('Failed to book appointment. Please try again.', 'error');
+            } finally {
+                // Hide loading state
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Show Patient Card
+        function showPatientCard(userData) {
+            // Generate patient ID
+            const patientId = 'MED' + Date.now().toString().slice(-6);
+            
+            // Populate card data
+            document.getElementById('cardPatientId').textContent = patientId;
+            document.getElementById('cardFullName').textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById('cardDOB').textContent = formatDate(userData.dateOfBirth);
+            document.getElementById('cardBloodGroup').textContent = userData.bloodGroup || 'Not specified';
+            document.getElementById('cardPhone').textContent = userData.phone;
+            document.getElementById('cardRegDate').textContent = formatDate(new Date().toISOString().split('T')[0]);
+            
+            // Show card modal
+            openModal('cardModal');
+        }
+
+        // Print Card Function
+        function printCard() {
+            window.print();
+        }
+
+        // Download Card as PDF (simplified version)
+        function downloadCard() {
+            // This would typically use a library like jsPDF
+            showNotification('PDF download feature will be implemented with jsPDF library', 'info');
+        }
+
+        // Utility Functions
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: '2-digit'
+            });
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#e53e3e' : '#3182ce'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 3000;
+                max-width: 400px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.textContent = message;
+
+            // Add to body
+            document.body.appendChild(notification);
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.style.animation = 'slideOut 0.3s ease-in';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.remove();
+                        }
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Add CSS for notifications
+        const notificationStyles = document.createElement('style');
+        notificationStyles.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(notificationStyles);
+
+        // Simulate API calls (replace with actual Laravel API calls)
+        async function simulateApiCall(endpoint, data) {
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Mock responses
+            if (endpoint === '/auth/register') {
+                return {
+                    success: true,
+                    message: 'Registration successful',
+                    user: {
+                        id: Date.now(),
+                        firstName: data.firstName,
+                        lastName: data.lastName,
+                        email: data.email,
+                        phone: data.phone,
+                        dateOfBirth: data.dateOfBirth,
+                        bloodGroup: data.bloodGroup,
+                        address: data.address,
+                        gender: data.gender
+                    },
+                    token: 'mock-jwt-token-' + Date.now()
+                };
+            }
+            
+            if (endpoint === '/auth/login') {
+                return {
+                    success: true,
+                    message: 'Login successful',
+                    user: {
+                        id: 1,
+                        firstName: 'John',
+                        lastName: 'Doe',
+                        email: data.loginEmail,
+                        phone: '+234 123 456 7890',
+                        dateOfBirth: '1990-01-01',
+                        bloodGroup: 'O+',
+                        address: '123 Main Street'
+                    },
+                    token: 'mock-jwt-token-login'
+                };
+            }
+            
+            if (endpoint === '/appointments') {
+                return {
+                    success: true,
+                    message: 'Appointment booked successfully',
+                    appointment: {
+                        id: Date.now(),
+                        ...data,
+                        status: 'confirmed'
+                    }
+                };
+            }
+            
+            return { success: false, message: 'Unknown endpoint' };
+        }
+
+        // Check authentication status
+        function checkAuthStatus() {
+            const token = localStorage.getItem('authToken');
+            const userStr = localStorage.getItem('currentUser');
+            
+            if (token && userStr) {
+                currentUser = JSON.parse(userStr);
+                updateAuthUI();
+            }
+        }
+
+        // Update authentication UI
+        function updateAuthUI() {
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (currentUser) {
+                // Replace login/register with user menu
+                const loginLink = navLinks.querySelector('a[onclick*="loginModal"]');
+                const registerBtn = navLinks.querySelector('a[onclick*="registerModal"]');
+                
+                if (loginLink) loginLink.style.display = 'none';
+                if (registerBtn) registerBtn.style.display = 'none';
+                
+                // Add user menu (simplified)
+                const userMenu = document.createElement('li');
+                userMenu.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span>Welcome, ${currentUser.firstName}!</span>
+                        <a href="#" onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1rem;">Logout</a>
+                    </div>
+                `;
+                navLinks.appendChild(userMenu);
+            }
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('currentUser');
+            currentUser = null;
+            location.reload();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form input focus effects
+        document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.style.borderColor = 'var(--primary-color)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+                if (!this.value) {
+                    this.style.borderColor = '#e2e8f0';
+                }
+            });
+        });
+
+        // Real-time form validation
+        document.getElementById('confirmPassword')?.addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (confirmPassword && password !== confirmPassword) {
+                this.style.borderColor = '#e53e3e';
+            } else {
+                this.style.borderColor = '#e2e8f0';
+            }
+        });
+
+        // Add loading states to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.type === 'submit') {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
