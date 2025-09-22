@@ -1304,9 +1304,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p>
-                    <p><i class="fas fa-phone"></i> +234 (0) 123 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank"><p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p></a>
+                    <a href="tel:+2347062491804" target="_blank"><p><i class="fas fa-phone"></i> +2347062491804</p></a>
+                    <a href="mailto:" target="_blank"><p><i class="fas fa-envelope"></i> info@medicarehospital.com</p></a>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>
             </div>
