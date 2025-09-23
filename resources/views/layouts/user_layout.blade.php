@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Dashboard - Domi Clinic</title>
-    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -305,6 +306,8 @@
             border-radius: 15px;
             box-shadow: var(--shadow);
             margin-bottom: 2rem;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch;
         }
 
         .section-header {
@@ -376,10 +379,9 @@
         /* Tables */
         .data-table {
             width: 100%;
-            max-width: 1000px;
             border-collapse: collapse;
             margin-top: 1rem;
-            overflow-x: auto;
+            min-width: 600px;
         }
 
         .data-table th,
@@ -609,7 +611,7 @@
                 min-width: 450px;
             }
 
-            .main-content{
+            .main-content {
                 width: 1200px;
             }
 
@@ -617,18 +619,20 @@
             .content-section {
                 max-width: 1000px;
                 width: fit-content;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
             }
 
             .data-table {
-                max-width: 900px;
+                min-width: 600px;
             }
 
             .dashboard-grid {
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .stats-grid {
-                grid-template-columns: repeat(4,1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
 
         }
@@ -638,6 +642,40 @@
             .dashboard {
                 grid-template-columns: 1fr;
             }
+
+            .data-table {
+                min-width: unset;
+                /* remove fixed width on small screens */
+                width: 100%;
+                /* let it shrink naturally */
+            }
+
+            .data-table thead {
+                display: none;
+            }
+
+            .data-table tr {
+                display: block;
+                margin-bottom: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                padding: 1rem;
+            }
+
+            .data-table td {
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .data-table td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: var(--primary-color);
+            }
+
 
             .sidebar {
                 position: static;
@@ -679,8 +717,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Hide elements by default */
@@ -691,7 +734,8 @@
         .content-panel.active {
             display: block;
         }
-         /* ======= PRELOADER STYLES ======= */
+
+        /* ======= PRELOADER STYLES ======= */
         .preloader {
             position: fixed;
             top: 0;
@@ -853,10 +897,21 @@
             position: absolute;
         }
 
-        .loading-message:nth-child(1) { animation-delay: 0s; }
-        .loading-message:nth-child(2) { animation-delay: 3s; }
-        .loading-message:nth-child(3) { animation-delay: 6s; }
-        .loading-message:nth-child(4) { animation-delay: 9s; }
+        .loading-message:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .loading-message:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .loading-message:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .loading-message:nth-child(4) {
+            animation-delay: 9s;
+        }
 
         .floating-icons {
             position: absolute;
@@ -915,24 +970,32 @@
 
         /* Preloader Animations */
         @keyframes logoFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-10px);
             }
         }
 
         @keyframes heartbeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             25% {
                 transform: scale(1.1);
             }
+
             50% {
                 transform: scale(1);
             }
+
             75% {
                 transform: scale(1.05);
             }
@@ -942,16 +1005,20 @@
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
             }
+
             50% {
                 opacity: 0.7;
                 transform: translate(-50%, -50%) scale(1.1);
@@ -959,9 +1026,12 @@
         }
 
         @keyframes textFade {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.9;
             }
+
             50% {
                 opacity: 0.6;
             }
@@ -972,10 +1042,12 @@
                 width: 0%;
                 transform: translateX(-100%);
             }
+
             50% {
                 width: 80%;
                 transform: translateX(0%);
             }
+
             100% {
                 width: 100%;
                 transform: translateX(20%);
@@ -983,43 +1055,56 @@
         }
 
         @keyframes messageRotate {
-            0%, 20% {
+
+            0%,
+            20% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            25%, 75% {
+
+            25%,
+            75% {
                 opacity: 1;
                 transform: translateY(0px);
             }
-            80%, 100% {
+
+            80%,
+            100% {
                 opacity: 0;
                 transform: translateY(-20px);
             }
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.1;
             }
+
             25% {
                 transform: translateY(-20px) rotate(90deg);
                 opacity: 0.2;
             }
+
             50% {
                 transform: translateY(-30px) rotate(180deg);
                 opacity: 0.15;
             }
+
             75% {
                 transform: translateY(-10px) rotate(270deg);
                 opacity: 0.1;
             }
         }
+
         /* ======= END PRELOADER STYLES ======= */
     </style>
 </head>
+
 <body>
-     <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader">
         <!-- Floating Medical Icons Background -->
         <div class="floating-icons">
             <i class="floating-icon fas fa-stethoscope"></i>
@@ -1036,9 +1121,9 @@
             <div class="logo-container">
                 <div class="logo">
                     <a href="{{ url('/') }}"
-                        style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
-                            height="70">
+                        style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none; justify-content: center;">
+                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="50px"
+                            height="50px">
                         <div class="logo-text">
                             <span style="color: #fff">DOMI CLINIC</span>
                             <p style="font-size:0.5rem; color:#fff">....Bringing health to your doorsteps</p>
@@ -1176,10 +1261,10 @@
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <a href="{{ url('/') }}"
+                <a href="{{ route('dashboards') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
-                        height="70">
+                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="50"
+                        height="50">
                     <div class="logo-text">
                         <span>DOMI CLINIC</span>
                         <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
@@ -1188,6 +1273,7 @@
                         .logo-text span {
                             font-weight: bold;
                             color: #06923E;
+                            font-size: 1rem;
                         }
 
                         .logo-text p {
@@ -1220,13 +1306,14 @@
                             <i class="fas fa-question-circle"></i> Help
                         </a>
                         <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" class="dropdown-item">
+                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                            class="dropdown-item">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1239,13 +1326,13 @@
         <aside class="sidebar">
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link active" onclick="showPanel('overview')">
+                    <a href="{{ route('dashboards') }}" class="sidebar-link active">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('appointments')">
+                    <a href="{{ route('appointments') }}" class="sidebar-link">
                         <i class="fas fa-calendar-check"></i>
                         <span>Appointments</span>
                     </a>
@@ -1254,24 +1341,6 @@
                     <a href="#" class="sidebar-link" onclick="showPanel('medical-records')">
                         <i class="fas fa-file-medical"></i>
                         <span>Medical Records</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('prescriptions')">
-                        <i class="fas fa-pills"></i>
-                        <span>Prescriptions</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('lab-results')">
-                        <i class="fas fa-vial"></i>
-                        <span>Lab Results</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('billing')">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Billing</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -1297,208 +1366,9 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Overview Panel -->
-            <div id="overview" class="content-panel active">
-                <div class="page-header">
-                    <h1 class="page-title">Welcome Back, John!</h1>
-                    <p class="page-subtitle">Here's your health summary and recent activities</p>
-                </div>
-
-                <!-- Quick Stats -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">3</div>
-                        <div class="stat-label">Upcoming Appointments</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">2</div>
-                        <div class="stat-label">Active Prescriptions</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">1</div>
-                        <div class="stat-label">Pending Lab Results</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">$245</div>
-                        <div class="stat-label">Outstanding Balance</div>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="dashboard-grid">
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <div class="card-icon" style="background: var(--accent-color);">
-                                <i class="fas fa-calendar-plus"></i>
-                            </div>
-                            <div class="card-title">
-                                <h3>Book Appointment</h3>
-                                <p>Schedule your next visit</p>
-                            </div>
-                        </div>
-                        <button class="btn btn-primary" onclick="bookNewAppointment()">
-                            <i class="fas fa-plus"></i> Book Now
-                        </button>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <div class="card-icon" style="background: var(--primary-color);">
-                                <i class="fas fa-file-medical-alt"></i>
-                            </div>
-                            <div class="card-title">
-                                <h3>View Records</h3>
-                                <p>Access your medical history</p>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline" onclick="showPanel('medical-records')">
-                            <i class="fas fa-eye"></i> View Records
-                        </button>
-                    </div>
-
-                    <div class="dashboard-card">
-                        <div class="card-header">
-                            <div class="card-icon" style="background: var(--warning-color);">
-                                <i class="fas fa-prescription-bottle-alt"></i>
-                            </div>
-                            <div class="card-title">
-                                <h3>Refill Prescription</h3>
-                                <p>Request prescription refills</p>
-                            </div>
-                        </div>
-                        <button class="btn btn-accent" onclick="requestRefill()">
-                            <i class="fas fa-redo"></i> Request Refill
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Recent Activities -->
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Recent Activities</h2>
-                        <button class="btn btn-outline btn-sm">View All</button>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Activity</th>
-                                <th>Doctor</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dec 15, 2024</td>
-                                <td>Cardiology Consultation</td>
-                                <td>Dr. Sarah Johnson</td>
-                                <td><span class="status-badge status-completed">Completed</span></td>
-                            </tr>
-                            <tr>
-                                <td>Dec 18, 2024</td>
-                                <td>Lab Test - Blood Work</td>
-                                <td>Lab Department</td>
-                                <td><span class="status-badge status-pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Dec 22, 2024</td>
-                                <td>Follow-up Appointment</td>
-                                <td>Dr. Sarah Johnson</td>
-                                <td><span class="status-badge status-confirmed">Confirmed</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Appointments Panel -->
-            <div id="appointments" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">My Appointments</h1>
-                    <p class="page-subtitle">Manage your scheduled appointments</p>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Upcoming Appointments</h2>
-                        <button class="btn btn-primary" onclick="bookNewAppointment()">
-                            <i class="fas fa-plus"></i> Book New
-                        </button>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Date & Time</th>
-                                <th>Doctor</th>
-                                <th>Department</th>
-                                <th>Type</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dec 22, 2024 - 10:00 AM</td>
-                                <td>Dr. Sarah Johnson</td>
-                                <td>Cardiology</td>
-                                <td>Follow-up</td>
-                                <td><span class="status-badge status-confirmed">Confirmed</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm">Reschedule</button>
-                                    <button class="btn btn-outline btn-sm" style="color: var(--error-color); border-color: var(--error-color);">Cancel</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Jan 5, 2025 - 2:30 PM</td>
-                                <td>Dr. Michael Chen</td>
-                                <td>Neurology</td>
-                                <td>Consultation</td>
-                                <td><span class="status-badge status-pending">Pending</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm">Reschedule</button>
-                                    <button class="btn btn-outline btn-sm" style="color: var(--error-color); border-color: var(--error-color);">Cancel</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Appointment History</h2>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Doctor</th>
-                                <th>Department</th>
-                                <th>Status</th>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dec 15, 2024</td>
-                                <td>Dr. Sarah Johnson</td>
-                                <td>Cardiology</td>
-                                <td><span class="status-badge status-completed">Completed</span></td>
-                                <td>Regular checkup - All normal</td>
-                            </tr>
-                            <tr>
-                                <td>Nov 20, 2024</td>
-                                <td>Dr. Emily Rodriguez</td>
-                                <td>General Medicine</td>
-                                <td><span class="status-badge status-completed">Completed</span></td>
-                                <td>Annual physical examination</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+            @yield('content')
             <!-- Health Card Panel -->
-            <div id="health-card" class="content-panel">
+            {{-- <div id="health-card" class="content-panel">
                 <div class="page-header">
                     <h1 class="page-title">My Health Card</h1>
                     <p class="page-subtitle">Your digital health identification card</p>
@@ -1568,10 +1438,10 @@
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Medical Records Panel -->
-            <div id="medical-records" class="content-panel">
+            {{-- <div id="medical-records" class="content-panel">
                 <div class="page-header">
                     <h1 class="page-title">Medical Records</h1>
                     <p class="page-subtitle">Your complete medical history and documents</p>
@@ -1628,267 +1498,10 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-
-            <!-- Prescriptions Panel -->
-            <div id="prescriptions" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">My Prescriptions</h1>
-                    <p class="page-subtitle">Manage your current and past prescriptions</p>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Active Prescriptions</h2>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Request Refill
-                        </button>
-                    </div>
-                    <div class="dashboard-grid">
-                        <div class="dashboard-card">
-                            <div class="card-header">
-                                <div class="card-icon" style="background: var(--success-color);">
-                                    <i class="fas fa-pills"></i>
-                                </div>
-                                <div class="card-title">
-                                    <h3>Lisinopril 10mg</h3>
-                                    <p>Prescribed by Dr. Sarah Johnson</p>
-                                </div>
-                            </div>
-                            <div style="margin-bottom: 1rem;">
-                                <p><strong>Dosage:</strong> Once daily</p>
-                                <p><strong>Refills:</strong> 2 remaining</p>
-                                <p><strong>Expires:</strong> March 15, 2025</p>
-                            </div>
-                            <button class="btn btn-accent btn-sm">Request Refill</button>
-                        </div>
-
-                        <div class="dashboard-card">
-                            <div class="card-header">
-                                <div class="card-icon" style="background: var(--warning-color);">
-                                    <i class="fas fa-pills"></i>
-                                </div>
-                                <div class="card-title">
-                                    <h3>Metformin 500mg</h3>
-                                    <p>Prescribed by Dr. Emily Rodriguez</p>
-                                </div>
-                            </div>
-                            <div style="margin-bottom: 1rem;">
-                                <p><strong>Dosage:</strong> Twice daily with meals</p>
-                                <p><strong>Refills:</strong> 0 remaining</p>
-                                <p><strong>Expires:</strong> January 30, 2025</p>
-                            </div>
-                            <button class="btn btn-primary btn-sm">Renew Prescription</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lab Results Panel -->
-            <div id="lab-results" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">Lab Results</h1>
-                    <p class="page-subtitle">View your laboratory test results and trends</p>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Recent Results</h2>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Test Date</th>
-                                <th>Test Name</th>
-                                <th>Result</th>
-                                <th>Reference Range</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dec 18, 2024</td>
-                                <td>Complete Blood Count</td>
-                                <td>Normal</td>
-                                <td>Within range</td>
-                                <td><span class="status-badge status-pending">Pending Review</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i> View Details</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dec 10, 2024</td>
-                                <td>Lipid Panel</td>
-                                <td>Cholesterol: 180 mg/dL</td>
-                                <td>< 200 mg/dL</td>
-                                <td><span class="status-badge status-completed">Normal</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i> View Details</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Nov 25, 2024</td>
-                                <td>Blood Glucose</td>
-                                <td>95 mg/dL</td>
-                                <td>70-100 mg/dL</td>
-                                <td><span class="status-badge status-completed">Normal</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i> View Details</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Billing Panel -->
-            <div id="billing" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">Billing & Payments</h1>
-                    <p class="page-subtitle">Manage your medical bills and payment history</p>
-                </div>
-
-                <div class="stats-grid" style="margin-bottom: 2rem;">
-                    <div class="stat-card">
-                        <div class="stat-value" style="color: var(--error-color);">$245</div>
-                        <div class="stat-label">Outstanding Balance</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" style="color: var(--success-color);">$1,250</div>
-                        <div class="stat-label">Total Paid This Year</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">2</div>
-                        <div class="stat-label">Pending Claims</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">$150</div>
-                        <div class="stat-label">Insurance Coverage</div>
-                    </div>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Recent Bills</h2>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-credit-card"></i> Make Payment
-                        </button>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Bill Date</th>
-                                <th>Service</th>
-                                <th>Amount</th>
-                                <th>Insurance</th>
-                                <th>Balance</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Dec 15, 2024</td>
-                                <td>Cardiology Consultation</td>
-                                <td>$200</td>
-                                <td>$150</td>
-                                <td>$50</td>
-                                <td><span class="status-badge status-pending">Pending</span></td>
-                                <td>
-                                    <button class="btn btn-accent btn-sm">Pay Now</button>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i> View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dec 10, 2024</td>
-                                <td>Laboratory Tests</td>
-                                <td>$150</td>
-                                <td>$120</td>
-                                <td>$30</td>
-                                <td><span class="status-badge status-completed">Paid</span></td>
-                                <td>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-eye"></i> View</button>
-                                    <button class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Receipt</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Messages Panel -->
-            <div id="messages" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">Messages</h1>
-                    <p class="page-subtitle">Communicate with your healthcare providers</p>
-                </div>
-
-                <div class="content-section">
-                    <div class="section-header">
-                        <h2 class="section-title">Inbox</h2>
-                        <button class="btn btn-primary">
-                            <i class="fas fa-plus"></i> New Message
-                        </button>
-                    </div>
-
-                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Conversations</h4>
-                            <div class="dashboard-card" style="margin-bottom: 1rem; cursor: pointer;">
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <div class="user-avatar" style="background: var(--accent-color);">
-                                        <i class="fas fa-user-md"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Dr. Sarah Johnson</h4>
-                                        <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">Follow-up on your recent visit...</p>
-                                        <small style="color: var(--text-light);">2 hours ago</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="dashboard-card" style="cursor: pointer;">
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <div class="user-avatar" style="background: var(--primary-color);">
-                                        <i class="fas fa-hospital"></i>
-                                    </div>
-                                    <div>
-                                        <h4>Billing Department</h4>
-                                        <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">Payment confirmation for...</p>
-                                        <small style="color: var(--text-light);">1 day ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--primary-color);">Dr. Sarah Johnson</h4>
-                            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 10px; height: 300px; overflow-y: auto;">
-                                <div style="background: var(--white); padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
-                                    <p style="margin: 0;"><strong>Dr. Sarah Johnson:</strong> Hello John, I wanted to follow up on your recent cardiac consultation. Your results look great!</p>
-                                    <small style="color: var(--text-light);">Today, 2:30 PM</small>
-                                </div>
-
-                                <div style="background: var(--primary-color); color: var(--white); padding: 1rem; border-radius: 10px; margin-left: 2rem;">
-                                    <p style="margin: 0;"><strong>You:</strong> Thank you Doctor! I'm feeling much better. Should I continue with the current medication?</p>
-                                    <small style="opacity: 0.8;">Today, 3:15 PM</small>
-                                </div>
-                            </div>
-
-                            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-                                <input type="text" placeholder="Type your message..." style="flex: 1; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 25px;">
-                                <button class="btn btn-accent" style="border-radius: 50%; width: 50px; height: 50px; padding: 0;">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
 
             <!-- Profile Settings Panel -->
-            <div id="profile" class="content-panel">
+            {{-- <div id="profile" class="content-panel">
                 <div class="page-header">
                     <h1 class="page-title">Profile Settings</h1>
                     <p class="page-subtitle">Manage your personal information and preferences</p>
@@ -1996,68 +1609,15 @@
 
                     <button class="btn btn-primary" style="margin-top: 2rem;">Save Preferences</button>
                 </div>
-            </div>
+            </div> --}}
         </main>
     </div>
 
     <script>
         // Dashboard functionality
-        function showPanel(panelId) {
-            // Hide all panels
-            const panels = document.querySelectorAll('.content-panel');
-            panels.forEach(panel => {
-                panel.classList.remove('active');
-            });
-
-            // Remove active class from all sidebar links
-            const links = document.querySelectorAll('.sidebar-link');
-            links.forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Show selected panel
-            const targetPanel = document.getElementById(panelId);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-            }
-
-            // Add active class to clicked link
-            const activeLink = document.querySelector(`[onclick="showPanel('${panelId}')"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        }
-
-        // Utility functions
-        function bookNewAppointment() {
-            showNotification('Appointment booking feature coming soon!', 'info');
-        }
-
-        function requestRefill() {
-            showNotification('Prescription refill requested successfully!', 'success');
-        }
 
         function printHealthCard() {
             window.print();
-        }
-
-        function downloadHealthCard() {
-            showNotification('Health card download feature will be implemented', 'info');
-        }
-
-        function shareHealthCard() {
-            showNotification('Health card sharing feature coming soon!', 'info');
-        }
-
-        function logout() {
-            if (confirm('Are you sure you want to logout?')) {
-                // Clear user data
-                localStorage.removeItem('authToken');
-                localStorage.removeItem('currentUser');
-
-                // Redirect to login page
-                window.location.href = 'index.html';
-            }
         }
 
         // Notification system
@@ -2130,4 +1690,5 @@
         });
     </script>
 </body>
+
 </html>

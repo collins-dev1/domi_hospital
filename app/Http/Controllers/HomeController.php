@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.user_layout');
+        return view('user.dashboard');
     }
 }
