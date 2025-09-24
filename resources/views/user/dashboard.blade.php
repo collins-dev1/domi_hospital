@@ -3,7 +3,9 @@
 @section('content')
     <div id="overview" class="content-panel active">
         <div class="page-header">
-            <h1 class="page-title">Welcome Back, obinna!</h1>
+            @auth
+            <h1 class="page-title">Welcome Back, {{auth()->user()->name}}!</h1>
+            @endauth
             <p class="page-subtitle">Here's your health summary and recent activities</p>
         </div>
 

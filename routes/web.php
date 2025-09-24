@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\UserMiddleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,7 +33,19 @@ Route::get('admin', function(){
 
 Auth::routes();
 
-Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboards');
+Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
 
+// User Middleware Group
+Route::middleware([UserMiddleware::class])->group(function(){
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
+});
+
+// Admin Middleware Group
+Route::middleware([AdminMiddleware::class])->group(function(){
+// Admin Routes
+Route::get('patients', [AdminController::class, 'patients'])->name('patients');
+Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');
+Route::get('unban/{id}', [AdminController::class, 'unban'])->name('unban');
+Route::get('delete_patient/{id}', [AdminController::class, 'delete_patient'])->name('delete_patient');
+});

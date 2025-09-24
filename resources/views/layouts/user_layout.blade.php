@@ -1284,15 +1284,14 @@
                 </a>
             </div>
             <div class="user-menu">
-                <div class="notification-icon">
-                    <i class="fas fa-bell" style="font-size: 1.2rem; color: var(--text-light); cursor: pointer;"></i>
-                </div>
                 <div class="dropdown">
                     <div class="user-info">
                         <div class="user-avatar">
                             <i class="fas fa-user"></i>
                         </div>
-                        <span id="userName">John Doe</span>
+                        @auth
+                        <span id="userName">{{auth()->user()->name}}</span>
+                        @endauth
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-content">

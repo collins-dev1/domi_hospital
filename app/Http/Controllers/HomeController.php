@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('user.dashboard');
+
+    public function redirect(){
+        $userType = Auth::user()->usertype;
+         $ban_status = Auth::user()->banned_status;
+        if($userType == 0 && $ban_status == 0){
+            return view('user.dashboard');
+        }
+        elseif($userType == 1 && $ban_status == 0){
+            return view('admin.dashboard');
+        }
+        else{
+            return view('auth.login');
+        }
     }
 }
