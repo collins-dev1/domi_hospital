@@ -994,7 +994,7 @@
                 <div class="logo">
                     <a href="{{ url('/') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                        <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                             height="70">
                         <div class="logo-text">
                             <span style="color: #fff">DOMI CLINIC</span>
@@ -1135,7 +1135,7 @@
             <div class="logo">
                 <a href="{{ url('/') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                    <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                         height="70">
                     <div class="logo-text">
                         <span>DOMI CLINIC</span>
@@ -1205,7 +1205,7 @@
                     <i class="fas fa-calendar-check"></i>
                     <h3>Book Appointment</h3>
                     <p>Schedule your appointment with our specialists at your convenient time.</p>
-                    <a href="#" class="btn btn-primary" onclick="openModal('appointmentModal')">Book Now</a>
+                    <a href="#" class="btn btn-primary">Book Now</a>
                 </div>
                 <div class="quick-card fade-in">
                     <i class="fas fa-ambulance"></i>
@@ -1296,7 +1296,7 @@
                     <div class="logo">
                         <a href="{{ url('/') }}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                            <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                                 height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>
@@ -1355,201 +1355,7 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Patient Login</h3>
-                <button class="close" onclick="closeModal('loginModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="loginEmail">Email or Patient ID</label>
-                        <input type="text" id="loginEmail" name="loginEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Password</label>
-                        <input type="password" id="loginPassword" name="loginPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <span class="btn-text">Login</span>
-                            <span class="loading" style="display: none;"></span>
-                        </button>
-                    </div>
-                    <p style="text-align: center; margin-top: 1rem;">
-                        Don't have an account? <a href="#"
-                            onclick="closeModal('loginModal'); openModal('registerModal');"
-                            style="color: var(--primary-color);">Register here</a>
-                    </p>
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <!-- Registration Modal -->
-    <div class="modal" id="registerModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Patient Registration</h3>
-                <button class="close" onclick="closeModal('registerModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="registrationForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dateOfBirth">Date of Birth *</label>
-                            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="gender">Gender *</label>
-                            <select id="gender" name="gender" required>
-                                <option value="">Select Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="bloodGroup">Blood Group</label>
-                            <select id="bloodGroup" name="bloodGroup">
-                                <option value="">Select Blood Group</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address *</label>
-                        <textarea id="address" name="address" rows="3" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="emergencyContact">Emergency Contact Name</label>
-                        <input type="text" id="emergencyContact" name="emergencyContact">
-                    </div>
-                    <div class="form-group">
-                        <label for="emergencyPhone">Emergency Contact Phone</label>
-                        <input type="tel" id="emergencyPhone" name="emergencyPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="medicalHistory">Medical History / Allergies</label>
-                        <textarea id="medicalHistory" name="medicalHistory" rows="3"
-                            placeholder="Please mention any known allergies or medical conditions"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password *</label>
-                        <input type="password" id="password" name="password" required minlength="6">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password *</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-accent" style="width: 100%;">
-                            <span class="btn-text">Register & Get Health Card</span>
-                            <span class="loading" style="display: none;"></span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Appointment Modal -->
-    <div class="modal" id="appointmentModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Book Appointment</h3>
-                <button class="close" onclick="closeModal('appointmentModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="appointmentForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="patientName">Patient Name *</label>
-                            <input type="text" id="patientName" name="patientName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="patientPhone">Phone Number *</label>
-                            <input type="tel" id="patientPhone" name="patientPhone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="department">Department *</label>
-                        <select id="department" name="department" required>
-                            <option value="">Select Department</option>
-                            <option value="general">General Medicine</option>
-                            <option value="cardiology">Cardiology</option>
-                            <option value="neurology">Neurology</option>
-                            <option value="pediatrics">Pediatrics</option>
-                            <option value="orthopedics">Orthopedics</option>
-                            <option value="dermatology">Dermatology</option>
-                            <option value="gynecology">Gynecology</option>
-                            <option value="ophthalmology">Ophthalmology</option>
-                        </select>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="appointmentDate">Preferred Date *</label>
-                            <input type="date" id="appointmentDate" name="appointmentDate" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="appointmentTime">Preferred Time *</label>
-                            <select id="appointmentTime" name="appointmentTime" required>
-                                <option value="">Select Time</option>
-                                <option value="09:00">09:00 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="12:00">12:00 PM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="17:00">05:00 PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="reason">Reason for Visit</label>
-                        <textarea id="reason" name="reason" rows="3"
-                            placeholder="Brief description of your symptoms or reason for visit"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <span class="btn-text">Book Appointment</span>
-                            <span class="loading" style="display: none;"></span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <!-- Patient Card Modal -->
     <div class="modal" id="cardModal">

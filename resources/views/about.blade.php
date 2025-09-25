@@ -964,7 +964,7 @@
                 <div class="logo">
                     <a href="{{ url('/') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                        <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                             height="70">
                         <div class="logo-text">
                             <span style="color: #fff">DOMI CLINIC</span>
@@ -1105,7 +1105,7 @@
             <div class="logo">
                 <a href="{{ url('/') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                    <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                         height="70">
                     <div class="logo-text">
                         <span>DOMI CLINIC</span>
@@ -1384,7 +1384,7 @@
                     <div class="logo">
                         <a href="{{ url('/') }}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                            <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                                 height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>

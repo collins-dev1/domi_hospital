@@ -1122,7 +1122,7 @@
                 <div class="logo">
                     <a href="{{ url('/') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none; justify-content: center;">
-                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="50px"
+                        <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50px"
                             height="50px">
                         <div class="logo-text">
                             <span style="color: #fff">DOMI CLINIC</span>
@@ -1263,7 +1263,7 @@
             <div class="logo">
                 <a href="{{ route('dashboards') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                    <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="50"
+                    <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50"
                         height="50">
                     <div class="logo-text">
                         <span>DOMI CLINIC</span>

@@ -431,7 +431,7 @@
                 <div class="logo">
                     <a href="{{ url('/') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                        <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                        <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                             height="70">
                         <div class="logo-text">
                             <span style="color: #fff">DOMI CLINIC</span>
@@ -579,7 +579,7 @@
                     <div class="logo">
                         <a href=""
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none; margin-top:-1rem;">
-                            <img src="{{ asset('hospital_website/img/domi.png') }}" alt="" width="70"
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                                 height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>
@@ -732,12 +732,23 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-9" aria-controls="submenu-9"><i
+                                    data-target="#submenu-1" aria-controls="submenu-9"><i
                                         class="fa fa-fw fa-user-circle"></i>Users</a>
-                                <div id="submenu-9" class="collapse submenu" style="">
+                                <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('patients')}}">Manage Users</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-2" aria-controls="submenu-9"><i class="fa fa-fw fa-book"></i>Appointment</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('patients')}}">Management Appointment</a>
                                         </li>
                                     </ul>
                                 </div>

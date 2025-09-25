@@ -39,6 +39,7 @@ Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect
 Route::middleware([UserMiddleware::class])->group(function(){
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
+Route::post('add_appointment', [UserController::class, 'add_appointment'])->name('add_appointment');
 });
 
 // Admin Middleware Group
@@ -48,4 +49,5 @@ Route::get('patients', [AdminController::class, 'patients'])->name('patients');
 Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');
 Route::get('unban/{id}', [AdminController::class, 'unban'])->name('unban');
 Route::get('delete_patient/{id}', [AdminController::class, 'delete_patient'])->name('delete_patient');
+Route::get('manage_appointments', [AdminController::class, 'manage_appointments'])->name('manage_appointments');
 });
