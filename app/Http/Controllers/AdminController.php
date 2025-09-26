@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
+use App\Models\health_card;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -94,6 +95,24 @@ class AdminController extends Controller
         Alert::html(
             '<h3 style="color:black;">Appointment Cancelled Successfully!</h3>',
             '<p style="color:black;">You have successfully cancelled this appointment.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // View Health Cards
+    public function health_cards(){
+        $cards = health_card::with('user')->get();
+        return view('admin.health_cards', compact('cards'));
+    }
+
+    // Delete Health Card
+    public function delete_card($id){
+        $card = health_card::find($id);
+        $card->delete();
+        Alert::html(
+            '<h3 style="color:black;">Health Card Deleted Successfully!</h3>',
+            '<p style="color:black;">You have successfully deleted this health card from the system.</p>',
             'success'
         )->persistent();
         return redirect()->back();

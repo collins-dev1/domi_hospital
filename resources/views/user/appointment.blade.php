@@ -23,6 +23,7 @@
                         <th>Doctor</th>
                         <th>Message</th>
                         <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,14 @@
                                 @else
                                     <span class="status-badge status-completed">Pending</span>
                                 @endif
+                            </td>
+                            <td>
+                                <a href="{{route('delete_appointment', $appointment->id)}}" onclick="return confirm('Are you sure you want to Delete this Appointment???')">
+                                    <button class="btn" style="background-color: rgb(193, 25, 25); color:#fff">Delete</button>
+                                </a>
+                                <a href="{{route('edit_appointment', $appointment->id)}}" onclick="return confirm('Are you sure you want to Edit this Appointment???')">
+                                    <button class="btn" style="background-color: rgb(16, 85, 16); color:#fff;">Edit</button>
+                                </a>
                             </td>
                     </tr>
                     @endforeach

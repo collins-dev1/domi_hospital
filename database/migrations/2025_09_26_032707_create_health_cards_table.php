@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('appointments', function (Blueprint $table) {
+        Schema::create('health_cards', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->date('appointment_date');
-            $table->time('appointment_time');
-            $table->string('doctor_name');
-            $table->string('message')->nullable();
+            $table->string('blood_group');
+            $table->string('genotype');
+            $table->string('allergies');
+            $table->string('existing_conditions');
+            $table->string('past_medications');
             $table->string('status')->default('0');
             $table->timestamps();
 
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('appointments');
+        Schema::dropIfExists('health_cards');
     }
 };

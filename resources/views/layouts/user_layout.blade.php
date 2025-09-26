@@ -1301,9 +1301,6 @@
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-cog"></i> Settings
                         </a>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-question-circle"></i> Help
-                        </a>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
@@ -1337,27 +1334,9 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('medical-records')">
-                        <i class="fas fa-file-medical"></i>
-                        <span>Medical Records</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('health-card')">
+                    <a href="{{route('health_card')}}" class="sidebar-link">
                         <i class="fas fa-id-card"></i>
                         <span>Health Card</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('messages')">
-                        <i class="fas fa-envelope"></i>
-                        <span>Messages</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="#" class="sidebar-link" onclick="showPanel('profile')">
-                        <i class="fas fa-user-cog"></i>
-                        <span>Profile Settings</span>
                     </a>
                 </li>
             </ul>
@@ -1367,77 +1346,7 @@
         <main class="main-content">
             @yield('content')
             <!-- Health Card Panel -->
-            {{-- <div id="health-card" class="content-panel">
-                <div class="page-header">
-                    <h1 class="page-title">My Health Card</h1>
-                    <p class="page-subtitle">Your digital health identification card</p>
-                </div>
 
-                <div class="content-section">
-                    <div class="health-card">
-                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                            <div>
-                                <h3 style="margin: 0; font-size: 1.5rem;">Domi Clinic</h3>
-                                <p style="margin: 0; opacity: 0.8;">Digital Health Card</p>
-                            </div>
-                            <div>
-                                <i class="fas fa-heartbeat" style="font-size: 3rem;"></i>
-                            </div>
-                        </div>
-
-                        <div class="card-info-grid">
-                            <div>
-                                <div class="info-item">
-                                    <div class="info-label">Patient ID</div>
-                                    <div class="info-value">MED001234</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Full Name</div>
-                                    <div class="info-value">John Doe</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Date of Birth</div>
-                                    <div class="info-value">January 15, 1990</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Blood Group</div>
-                                    <div class="info-value">O+</div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="info-item">
-                                    <div class="info-label">Phone Number</div>
-                                    <div class="info-value">+234 123 456 7890</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Emergency Contact</div>
-                                    <div class="info-value">Jane Doe - +234 123 456 7891</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Registration Date</div>
-                                    <div class="info-value">March 10, 2024</div>
-                                </div>
-                                <div class="info-item">
-                                    <div class="info-label">Member Since</div>
-                                    <div class="info-value">9 months</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <button class="btn btn-primary" onclick="printHealthCard()" style="margin-right: 1rem;">
-                            <i class="fas fa-print"></i> Print Card
-                        </button>
-                        <button class="btn btn-accent" onclick="downloadHealthCard()">
-                            <i class="fas fa-download"></i> Download PDF
-                        </button>
-                        <button class="btn btn-outline" onclick="shareHealthCard()">
-                            <i class="fas fa-share"></i> Share
-                        </button>
-                    </div>
-                </div>
-            </div> --}}
 
             <!-- Medical Records Panel -->
             {{-- <div id="medical-records" class="content-panel">

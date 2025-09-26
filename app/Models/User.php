@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\appointment;
+use App\Models\health_card;
 
 class User extends Authenticatable
 {
@@ -54,6 +55,10 @@ class User extends Authenticatable
     public function appointments()
 {
     return $this->hasMany(appointment::class);
+}
+
+public function health_card(){
+    return $this->hasOne(health_card::class);
 }
 
 }
