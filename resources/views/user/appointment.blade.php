@@ -1,6 +1,7 @@
 @extends('layouts.user_layout')
 
 @section('content')
+@include('sweetalert::alert')
     <div id="overview" class="content-panel active">
         <div class="page-header">
             <h1 class="page-title">My Appointments</h1>
@@ -9,7 +10,7 @@
 
         <div class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Upcoming Appointments</h2>
+                <h2 class="section-title">Appointment History</h2>
                 <button class="btn btn-primary" onclick="openModal('appointmentModal')">
                     <i class="fas fa-plus"></i> Book New
                 </button>
@@ -18,70 +19,30 @@
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>Activity</th>
+                        <th>Time</th>
                         <th>Doctor</th>
+                        <th>Message</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($appointments as $appointment)
                     <tr>
-                        <td>Dec 15, 2024</td>
-                        <td>Cardiology Consultation</td>
-                        <td>Dr. Sarah Johnson</td>
-                        <td><span class="status-badge status-completed">Completed</span></td>
+                        <td>{{$appointment->appointment_date}}</td>
+                        <td>{{$appointment->appointment_time}}</td>
+                        <td>{{$appointment->doctor_name}}</td>
+                        <td>{{$appointment->message}}</td>
+                            <td>
+                                @if ($appointment->status == '1')
+                                    <span class="status-badge status-confirmed">Approved</span>
+                                @elseif ($appointment->status == '2')
+                                    <span class="status-badge status-pending">Cancelled</span>
+                                @else
+                                    <span class="status-badge status-completed">Pending</span>
+                                @endif
+                            </td>
                     </tr>
-                    <tr>
-                        <td>Dec 18, 2024</td>
-                        <td>Lab Test - Blood Work</td>
-                        <td>Lab Department</td>
-                        <td><span class="status-badge status-pending">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>Dec 22, 2024</td>
-                        <td>Follow-up Appointment</td>
-                        <td>Dr. Sarah Johnson</td>
-                        <td><span class="status-badge status-confirmed">Confirmed</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Appointment History</h2>
-            </div>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Activity</th>
-                        <th>Doctor</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Dec 15, 2024</td>
-                        <td>Cardiology Consultation</td>
-                        <td>Dr. Sarah Johnson</td>
-                        <td><span class="status-badge status-completed">Completed</span></td>
-                        <td><span class="status-badge status-completed">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Dec 18, 2024</td>
-                        <td>Lab Test - Blood Work</td>
-                        <td>Lab Department</td>
-                        <td><span class="status-badge status-pending">Pending</span></td>
-                        <td><span class="status-badge status-completed">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>Dec 22, 2024</td>
-                        <td>Follow-up Appointment</td>
-                        <td>Dr. Sarah Johnson</td>
-                        <td><span class="status-badge status-confirmed">Confirmed</span></td>
-                        <td><span class="status-badge status-completed">Completed</span></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -96,18 +57,6 @@
             <div class="modal-body">
                 <form id="appointmentForm" action="{{ route('add_appointment') }}" method="POST">
                     @csrf
-                    <div class="form-group">
-                        <label for="patientName">Patient Name *</label>
-                        <input type="text" id="patientName" name="patient_name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="patientPhone">Phone Number *</label>
-                        <input type="tel" id="patientPhone" name="patient_number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="patientName">Patient Email *</label>
-                        <input type="email" id="patientName" name="patient_email" required>
-                    </div>
                     <div class="form-group">
                         <label for="department">Doctor *</label>
                         <select id="department" name="doctor_name" required>

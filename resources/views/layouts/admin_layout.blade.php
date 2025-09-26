@@ -748,7 +748,7 @@
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('patients')}}">Management Appointment</a>
+                                            <a class="nav-link" href="{{route('manage_appointments')}}">Management Appointment</a>
                                         </li>
                                     </ul>
                                 </div>

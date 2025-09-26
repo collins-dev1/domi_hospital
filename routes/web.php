@@ -50,4 +50,7 @@ Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');
 Route::get('unban/{id}', [AdminController::class, 'unban'])->name('unban');
 Route::get('delete_patient/{id}', [AdminController::class, 'delete_patient'])->name('delete_patient');
 Route::get('manage_appointments', [AdminController::class, 'manage_appointments'])->name('manage_appointments');
+Route::get('delete_appointment/{id}', [AdminController::class, 'delete_appointment'])->name('delete_appointment');
+Route::get('approve_appointment/{id}', [AdminController::class, 'approve_appointment'])->name('approve_appointment');
+Route::get('cancel_appointment/{id}', [AdminController::class, 'cancel_appointment'])->name('cancel_appointment');
 });

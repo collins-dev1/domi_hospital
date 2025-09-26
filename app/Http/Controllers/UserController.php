@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
     //
     public function appointments(){
-        return view('user.appointment');
+        $appointments = appointment::with('user')->get();
+        return view('user.appointment', compact('appointments'));
     }
 
     public function add_appointment(Request $request){
         $appointement = new appointment();
-        $appointement->patient_name = $request->patient_name;
-        $appointement->patient_number = $request->patient_number;
-        $appointement->patient_email = $request->patient_email;
+        $appointement->user_id = Auth::id();
         $appointement->appointment_date = $request->appointment_date;
         $appointement->appointment_time = $request->appointment_time;
         $appointement->doctor_name = $request->doctor_name;

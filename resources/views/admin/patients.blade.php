@@ -1,6 +1,7 @@
 @extends('layouts.admin_layout')
 
 @section('content')
+@include('sweetalert::alert')
 <div>
     <h1>All Patients</h1>
     <p>Manage all the patients who registered</p>

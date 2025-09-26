@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\appointment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,5 +53,49 @@ class AdminController extends Controller
             'success'
         )->persistent();
         return redirect()->back();
-}
+    }
+
+    // Manage Appointments
+    public function manage_appointments(){
+        $appointments = appointment::with('user')->get();
+        return view('admin.appointments', compact('appointments'));
+    }
+
+    // Delete Appointment
+    public function delete_appointment($id){
+        $appointment = appointment::find($id);
+        $appointment->delete();
+        Alert::html(
+            '<h3 style="color:black;">Appointment Deleted Successfully!</h3>',
+            '<p style="color:black;">You have successfully deleted this appointment from the system.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Approve Appointment
+    public function approve_appointment($id){
+        $appointment = appointment::find($id);
+        $appointment->status = "1";
+        $appointment->save();
+        Alert::html(
+            '<h3 style="color:black;">Appointment Approved Successfully!</h3>',
+            '<p style="color:black;">You have successfully approved this appointment.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Cancel Appointment
+    public function cancel_appointment($id){
+        $appointment = appointment::find($id);
+        $appointment->status = "2";
+        $appointment->save();
+        Alert::html(
+            '<h3 style="color:black;">Appointment Cancelled Successfully!</h3>',
+            '<p style="color:black;">You have successfully cancelled this appointment.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
 }
