@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\appointment;
+use App\Models\health_card;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -22,17 +23,26 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-
-    public function redirect(){
+    public function redirect()
+    {
         $userType = Auth::user()->usertype;
-         $ban_status = Auth::user()->banned_status;
-        if($userType == 0 && $ban_status == 0){
-            return view('user.dashboard');
-        }
-        elseif($userType == 1 && $ban_status == 0){
+        $ban_status = Auth::user()->banned_status;
+        if ($userType == 0 && $ban_status == 0) {
+            $user = Auth::user();
+
+            if ($user->usertype == 1) { // Admin
+                $appointments = appointment::with('user')->get();
+            } else {
+                $appointments = appointment::where('user_id', $user->id)->with('user')->get();
+            }
+            $countappointments = appointment::where('user_id', $user->id)->with('user')->count();
+            // get the current user's card (if any)
+            $card = health_card::where('user_id', Auth::id())->first();
+
+            return view('user.dashboard', compact('appointments', 'countappointments', 'card'));
+        } elseif ($userType == 1 && $ban_status == 0) {
             return view('admin.dashboard');
-        }
-        else{
+        } else {
             return view('auth.login');
         }
     }

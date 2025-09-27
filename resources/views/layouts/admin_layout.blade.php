@@ -759,7 +759,7 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('health_cards')}}">Management Health Cards</a>
+                                            <a class="nav-link" href="{{route('health_cards')}}">Managing Health Cards</a>
                                         </li>
                                     </ul>
                                 </div>

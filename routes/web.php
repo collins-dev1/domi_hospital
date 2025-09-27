@@ -63,4 +63,5 @@ Route::get('approve_appointment/{id}', [AdminController::class, 'approve_appoint
 Route::get('cancel_appointment/{id}', [AdminController::class, 'cancel_appointment'])->name('cancel_appointment');
 Route::get('health_cards', [AdminController::class, 'health_cards'])->name('health_cards');
 Route::get('delete_card/{id}', [AdminController::class, 'delete_card'])->name('delete_card');
+Route::get('approve_card/{id}', [AdminController::class, 'approve_card'])->name('approve_card');
 });

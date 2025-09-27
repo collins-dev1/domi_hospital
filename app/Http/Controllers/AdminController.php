@@ -117,4 +117,17 @@ class AdminController extends Controller
         )->persistent();
         return redirect()->back();
     }
+
+    // Approve Card
+    public function approve_card($id){
+        $card = health_card::find($id);
+        $card->status = "1";
+        $card->save();
+        Alert::html(
+            '<h3 style="color:black;">Health Card Approved Successfully!</h3>',
+            '<p style="color:black;">You have successfully approved this health card.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
 }

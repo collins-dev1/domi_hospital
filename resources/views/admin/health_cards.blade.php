@@ -45,9 +45,16 @@
                                 @endif
                             </td>
                             <td style="display: flex; gap: 10px;">
-                               <a href="">
-                                <button class="btn" style="background-color: rgb(16, 85, 16); color:#fff;">Approve</button>
-                               </a>
+                               @if ($card->status == '0')
+                                <a href="{{route('approve_card', $card->id)}}" onclick="return confirm('Are you sure you want to approve this card?');">
+                                    <button class="btn" style="background-color: rgb(25, 193, 25); color:#fff">Approve</button>
+                                </a>
+                                @else
+                                <a href="{{route('delete_card', $card->id)}}" style="display: none;" onclick="return confirm('Are you sure you want to delete this card?');">
+                                    <button class="btn" style="background-color: rgb(193, 25, 25); color:#fff">Delete</button>
+                                </a>
+
+                               @endif
                                 <a href="{{route('delete_card', $card->id)}}" onclick="return confirm('Are you sure you want to delete this card?');">
                                     <button class="btn" style="background-color: rgb(193, 25, 25); color:#fff">Delete</button>
                                 </a>

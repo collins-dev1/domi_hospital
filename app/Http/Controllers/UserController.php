@@ -12,11 +12,18 @@ class UserController extends Controller
 {
     //
     public function appointments()
-    {
-        $appointments = appointment::with('user')->get();
+{
+    $user = Auth::user();
 
-        return view('user.appointment', compact('appointments'));
+    if ($user->usertype == 1) { // Admin
+        $appointments = appointment::with('user')->get();
+    } else {
+        $appointments = appointment::where('user_id', $user->id)->with('user')->get();
     }
+
+    return view('user.appointment', compact('appointments'));
+}
+
 
     public function add_appointment(Request $request)
     {
@@ -36,18 +43,27 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function health_card()
-    {
-        $user = Auth::user()->load('health_card');
 
-        // If you also want ALL cards (admin style)
+
+public function health_card()
+{
+    $user = Auth::user();
+
+    if ($user->usertype === '1') {
+        // Admin can see all cards
         $cards = health_card::with('user')->get();
-
-        // get the current user's card (if any)
-    $card = health_card::where('user_id', Auth::id())->first();
-
-        return view('user.health_card', compact('cards', 'user', 'card'));
+    } else {
+        // Normal user sees only their card
+        $cards = health_card::where('user_id', $user->id)->get();
     }
+
+    $card = $cards->first();
+
+    return view('user.health_card', compact('user', 'card', 'cards'));
+}
+
+
+
 
     public function create_health_card(Request $request)
     {
@@ -68,7 +84,8 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function delete_appointment($id){
+    public function delete_appointment($id)
+    {
         $appointement = appointment::find($id);
         $appointement->delete();
         Alert::html(
@@ -76,15 +93,19 @@ class UserController extends Controller
             '<p style="color:black;">You have successfully deleted this appointment from the system.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-    public function edit_appointment($id){
+    public function edit_appointment($id)
+    {
         $appointement = appointment::find($id);
+
         return view('user.edit_appointment', compact('appointement'));
     }
 
-    public function update_appointment(Request $request, $id){
+    public function update_appointment(Request $request, $id)
+    {
         $appointement = appointment::find($id);
         $appointement->appointment_date = $request->appointment_date;
         $appointement->appointment_time = $request->appointment_time;
@@ -97,15 +118,18 @@ class UserController extends Controller
             'success'
         )->persistent();
 
-        return redirect()->route('dashboards');
+        return redirect()->route('appointments');
     }
 
-    public function edit_card($id){
+    public function edit_card($id)
+    {
         $card = health_card::find($id);
+
         return view('user.edit_card', compact('card'));
     }
 
-    public function update_card(Request $request, $id){
+    public function update_card(Request $request, $id)
+    {
         $card = health_card::find($id);
         $card->blood_group = $request->blood_group;
         $card->genotype = $request->genotype;
@@ -119,10 +143,11 @@ class UserController extends Controller
             'success'
         )->persistent();
 
-        return redirect()->route('dashboards');
+        return redirect()->route('health_card');
     }
 
-    public function delete_cards($id){
+    public function delete_cards($id)
+    {
         $card = health_card::find($id);
         $card->delete();
         Alert::html(
@@ -130,6 +155,7 @@ class UserController extends Controller
             '<p style="color:black;">You have successfully deleted this health card from the system.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 }

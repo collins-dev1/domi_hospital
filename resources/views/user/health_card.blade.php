@@ -65,174 +65,79 @@
                 </tbody>
             </table>
         </div>
-        {{-- @if (!$card || $card->status == 0)
-            <div class="alert alert-info" role="alert" style="margin-top: 2rem;">
-                Your health card is currently pending approval. Please wait for an administrator to review and approve
-                your card.
-            </div>
-        @elseif (!$card || $card->status == 1)
-            <div class="content-section">
-                <div class="health-card">
-                    <div class="card-header"
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                        <div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50"
-                                    height="50">
-                                <div>
-                                    <h3 style="margin: 0; font-size: 1.3rem;">Domi Clinic</h3>
-                                    <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
-                                </div>
-                            </div>
-                            <p style="margin: 0; opacity: 0.8;">Digital Health Card</p>
-                        </div>
-                        <div>
-                            <i class="fas fa-heartbeat" style="font-size: 3rem;"></i>
-                        </div>
-                    </div>
-                    <div class="card-info-grid">
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Patient ID</div>
-                                <div class="info-value">MED00 {{ Auth::user()->id }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Full Name</div>
-                                <div class="info-value">{{ Auth::user()->name }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Email Address</div>
-                                <div class="info-value">{{ Auth::user()->email }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Date of Birth</div>
-                                <div class="info-value">{{ Auth::user()->dob }}</div>
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Blood Group</div>
-                                <div class="info-value">{{ $user->health_card->blood_group ?? 'Null' }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Geneotype</div>
-                                <div class="info-value">{{ $user->health_card->genotype ?? 'Null' }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Phone Number</div>
-                                <div class="info-value">{{ Auth()->user()->phone }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Registration Date</div>
-                                <div class="info-value">{{ $user->health_card->created_at ?? 'Null' }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn btn-primary" onclick="printHealthCard()" style="margin-right: 1rem;">
-                        <i class="fas fa-print"></i> Print Card
-                    </button>
-                    <button class="btn btn-accent" onclick="downloadHealthCard()">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-outline" onclick="shareHealthCard()">
-                        <i class="fas fa-share"></i> Share
-                    </button>
-                </div>
-            </div>
-        @else
-            <h5>You have no health card yet. Please click on the "Get Health Card" button to create one.</h5>
-        @endif --}}
         @if (!$card)
-            {{-- No card at all --}}
-            <h5>You have no health card yet. Please click on the "Get Health Card" button to create one.</h5>
-        @elseif ($card->status == 0)
-            {{-- Card exists but pending --}}
-            <div class="alert alert-info" role="alert" style="margin-top: 2rem;">
-                Your health card is currently pending approval. Please wait for an administrator to review and approve your
-                card.
-            </div>
-        @elseif ($card->status == 1)
-            {{-- Approved card --}}
-            <div class="content-section">
-                <div class="health-card">
-                    <div class="card-header"
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    {{-- No card at all --}}
+    <h5>You have no health card yet. Please click on the "Get Health Card" button to create one.</h5>
+@elseif ($card->status == 0)
+    {{-- Card exists but pending --}}
+    <div class="alert alert-info" role="alert" style="margin-top: 2rem;">
+        Your health card is currently pending approval. Please wait for an administrator to review and approve your card.
+    </div>
+@elseif ($card->status == 1)
+    {{-- Approved card --}}
+    <div class="content-section">
+        <div class="health-card">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50" height="50">
                         <div>
-                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50"
-                                    height="50">
-                                <div>
-                                    <h3 style="margin: 0; font-size: 1.3rem;">Domi Clinic</h3>
-                                    <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
-                                </div>
-                            </div>
-                            <p style="margin: 0; opacity: 0.8;">Digital Health Card</p>
-                        </div>
-                        <div>
-                            <i class="fas fa-heartbeat" style="font-size: 3rem;"></i>
+                            <h3 style="margin: 0; font-size: 1.3rem;">Domi Clinic</h3>
+                            <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
                         </div>
                     </div>
-                    <div class="card-info-grid">
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Patient ID</div>
-                                <div class="info-value">MED00 {{ Auth::user()->id }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Full Name</div>
-                                <div class="info-value">{{ Auth::user()->name }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Email Address</div>
-                                <div class="info-value">{{ Auth::user()->email }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Date of Birth</div>
-                                <div class="info-value">{{ Auth::user()->dob }}</div>
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Blood Group</div>
-                                <div class="info-value">{{ $user->health_card->blood_group ?? 'Null' }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Geneotype</div>
-                                <div class="info-value">{{ $user->health_card->genotype ?? 'Null' }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Phone Number</div>
-                                <div class="info-value">{{ Auth()->user()->phone }}</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Registration Date</div>
-                                <div class="info-value">{{ $user->health_card->created_at ?? 'Null' }}</div>
-                            </div>
-                        </div>
-                    </div>
+                    <p style="margin: 0; opacity: 0.8;">Digital Health Card</p>
                 </div>
-
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn btn-primary" onclick="printHealthCard()" style="margin-right: 1rem;">
-                        <i class="fas fa-print"></i> Print Card
-                    </button>
-                    <button class="btn btn-accent" onclick="downloadHealthCard()">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                    <button class="btn btn-outline" onclick="shareHealthCard()">
-                        <i class="fas fa-share"></i> Share
-                    </button>
+                <div>
+                    <i class="fas fa-heartbeat" style="font-size: 3rem;"></i>
                 </div>
             </div>
-        @else
-            {{-- Optional: other statuses like cancelled --}}
-            <h5>Your health card request has been cancelled. Please contact support.</h5>
-        @endif
+
+            <div class="card-info-grid">
+                <div>
+                    <div class="info-item">
+                        <div class="info-label">Patient ID</div>
+                        <div class="info-value">MED00 {{ $user->id }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Full Name</div>
+                        <div class="info-value">{{ $user->name }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email Address</div>
+                        <div class="info-value">{{ $user->email }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Date of Birth</div>
+                        <div class="info-value">{{ $user->dob }}</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="info-item">
+                        <div class="info-label">Blood Group</div>
+                        <div class="info-value">{{ $card->blood_group }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Genotype</div>
+                        <div class="info-value">{{ $card->genotype }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Phone Number</div>
+                        <div class="info-value">{{ $user->phone }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Registration Date</div>
+                        <div class="info-value">{{ $card->created_at->format('d M Y') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@else
+    {{-- Optional: other statuses like cancelled --}}
+    <h5>Your health card request has been cancelled. Please contact support.</h5>
+@endif
+
 
     </div>
 
