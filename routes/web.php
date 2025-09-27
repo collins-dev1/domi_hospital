@@ -64,4 +64,7 @@ Route::get('cancel_appointment/{id}', [AdminController::class, 'cancel_appointme
 Route::get('health_cards', [AdminController::class, 'health_cards'])->name('health_cards');
 Route::get('delete_card/{id}', [AdminController::class, 'delete_card'])->name('delete_card');
 Route::get('approve_card/{id}', [AdminController::class, 'approve_card'])->name('approve_card');
+Route::get('add_doctor', [AdminController::class, 'add_doctor'])->name('add_doctor');
+Route::post('create_doctor', [AdminController::class, 'create_doctor'])->name('create_doctor');
+Route::get('manage_doctors', [AdminController::class, 'manage_doctors'])->name('manage_doctors');
 });

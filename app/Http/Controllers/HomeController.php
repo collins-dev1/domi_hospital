@@ -39,7 +39,17 @@ class HomeController extends Controller
             // get the current user's card (if any)
             $card = health_card::where('user_id', Auth::id())->first();
 
-            return view('user.dashboard', compact('appointments', 'countappointments', 'card'));
+            if ($user->usertype === '1') {
+                // Admin can see all cards
+                $cards = health_card::with('user')->get();
+            } else {
+                // Normal user sees only their card
+                $cards = health_card::where('user_id', $user->id)->get();
+            }
+
+            $card = $cards->first();
+
+            return view('user.dashboard', compact('appointments', 'countappointments', 'card', 'user'));
         } elseif ($userType == 1 && $ban_status == 0) {
             return view('admin.dashboard');
         } else {
