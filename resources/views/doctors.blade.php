@@ -1230,7 +1230,7 @@
             <div class="stats-grid">
                 <div class="stat-card fade-in">
                     <i class="fas fa-user-md"></i>
-                    <h3 id="total-doctors">50</h3>
+                    <h3 id="total-doctors">{{$countdoctor}}</h3>
                     <p>Expert Doctors</p>
                 </div>
                 <div class="stat-card fade-in">
@@ -1243,17 +1243,12 @@
                     <h3>12</h3>
                     <p>Specialized Departments</p>
                 </div>
-                <div class="stat-card fade-in">
-                    <i class="fas fa-star"></i>
-                    <h3>4.9</h3>
-                    <p>Average Rating</p>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Doctors -->
-    <section class="featured-section">
+    {{-- <section class="featured-section">
         <div class="container">
             <div class="section-header">
                 <h2>Department Heads</h2>
@@ -1266,173 +1261,46 @@
                     </div>
                     <h3>Dr. Sarah Johnson</h3>
                     <p class="doctor-specialty">Chief of Cardiology</p>
-                    <div class="doctor-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="rating-text">5.0 (89 reviews)</span>
-                    </div>
                     <p>Leading cardiac surgeon with 20+ years of experience in complex heart procedures.</p>
-                </div>
-                <div class="featured-card fade-in">
-                    <div class="featured-avatar">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Dr. Michael Chen</h3>
-                    <p class="doctor-specialty">Head of Neurology</p>
-                    <div class="doctor-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="rating-text">4.9 (156 reviews)</span>
-                    </div>
-                    <p>Renowned neurologist specializing in stroke treatment and neurosurgical procedures.</p>
-                </div>
-                <div class="featured-card fade-in">
-                    <div class="featured-avatar">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Dr. Emily Rodriguez</h3>
-                    <p class="doctor-specialty">Chief Pediatrician</p>
-                    <div class="doctor-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="rating-text">5.0 (203 reviews)</span>
-                    </div>
-                    <p>Experienced pediatrician dedicated to providing comprehensive care for children.</p>
-                </div>
-                <div class="featured-card fade-in">
-                    <div class="featured-avatar">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <h3>Dr. David Thompson</h3>
-                    <p class="doctor-specialty">Orthopedic Surgeon</p>
-                    <div class="doctor-rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="rating-text">4.8 (134 reviews)</span>
-                    </div>
-                    <p>Expert in joint replacement and sports medicine with advanced surgical techniques.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- All Doctors Section -->
     <section class="doctors-section">
         <div class="container">
             <div class="section-header">
-                <h2>All Our Doctors</h2>
+                <h2>Department Heads and all Our Doctors</h2>
                 <p>Browse our complete team of medical professionals</p>
             </div>
             <div class="doctors-grid" id="doctorsGrid">
                 <!-- Doctor Card 1 -->
+                @foreach ($doctors as $doctor)
                 <div class="doctor-card fade-in" data-specialty="cardiology">
                     <div class="doctor-image">
                         <i class="fas fa-user-md"></i>
                         <div class="availability-badge">Available</div>
                     </div>
                     <div class="doctor-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <div class="doctor-specialty">Cardiologist</div>
+                        <h3>Dr. {{$doctor->name}}</h3>
+                        <div class="doctor-specialty">{{$doctor->position}}</div>
                         <div class="doctor-credentials">
                             <div class="credential-item">
                                 <i class="fas fa-graduation-cap"></i>
-                                <span>MD, Harvard Medical School</span>
-                            </div>
-                            <div class="credential-item">
-                                <i class="fas fa-certificate"></i>
-                                <span>Board Certified Cardiologist</span>
+                                <span>{{$doctor->university}}</span>
                             </div>
                             <div class="credential-item">
                                 <i class="fas fa-clock"></i>
-                                <span>20+ Years Experience</span>
+                                <span>{{$doctor->years_of_experience}}+ Years Experience</span>
                             </div>
                         </div>
-                        <div class="doctor-languages">
-                            <span class="language-tag">English</span>
-                            <span class="language-tag">Spanish</span>
-                            <span class="language-tag">French</span>
-                        </div>
-                        <div class="doctor-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">5.0 (89 reviews)</span>
-                        </div>
-                        <div class="doctor-actions">
-                            <button class="btn btn-primary" onclick="openDoctorProfile('dr-sarah-johnson')">View Profile</button>
-                            <button class="btn btn-accent" onclick="bookAppointment('dr-sarah-johnson')">Book Appointment</button>
-                        </div>
+                        {{-- <div class="doctor-actions">
+                            <button class="btn btn-accent">Book Appointment</button>
+                        </div> --}}
                     </div>
                 </div>
-
-                <!-- Doctor Card 2 -->
-                <div class="doctor-card fade-in" data-specialty="neurology">
-                    <div class="doctor-image">
-                        <i class="fas fa-user-md"></i>
-                        <div class="availability-badge">Available</div>
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Michael Chen</h3>
-                        <div class="doctor-specialty">Neurologist</div>
-                        <div class="doctor-credentials">
-                            <div class="credential-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>MD, Johns Hopkins University</span>
-                            </div>
-                            <div class="credential-item">
-                                <i class="fas fa-certificate"></i>
-                                <span>Board Certified Neurologist</span>
-                            </div>
-                            <div class="credential-item">
-                                <i class="fas fa-clock"></i>
-                                <span>15+ Years Experience</span>
-                            </div>
-                        </div>
-                        <div class="doctor-languages">
-                            <span class="language-tag">English</span>
-                            <span class="language-tag">Mandarin</span>
-                            <span class="language-tag">Korean</span>
-                        </div>
-                        <div class="doctor-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.9 (156 reviews)</span>
-                        </div>
-                       <div class="doctor-actions">
-                            <button class="btn btn-primary" onclick="openDoctorProfile('dr-sarah-johnson')">View Profile</button>
-                            <button class="btn btn-accent" onclick="bookAppointment('dr-sarah-johnson')">Book Appointment</button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -1203,66 +1203,19 @@
                 <p>Meet our dedicated healthcare professionals who bring years of experience and expertise to provide you with the best possible care.</p>
             </div>
             <div class="team-grid">
+                @foreach ($doctors as $doctor)
                 <div class="team-card fade-in">
                     <div class="team-image">
-                        <i class="fas fa-user-md"></i>
+                        <img src="{{ asset('uploads/doctors/' . $doctor->image) }}" alt="" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <div class="team-info">
-                        <h3>Dr. Sarah Johnson</h3>
-                        <div class="specialty">Chief of Cardiology</div>
-                        <p>Dr. Johnson has over 20 years of experience in cardiovascular medicine and has performed over 2,000 successful cardiac procedures.</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
+                        <h3>Dr. {{$doctor->name}}</h3>
+                        <div class="specialty">{{$doctor->position}}</div>
+                        <p>{{$doctor->description}}</p>
+
                     </div>
                 </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Michael Chen</h3>
-                        <div class="specialty">Chief of Neurosurgery</div>
-                        <p>A renowned neurosurgeon specializing in complex brain and spine surgeries, with expertise in minimally invasive techniques.</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Emily Rodriguez</h3>
-                        <div class="specialty">Director of Emergency Medicine</div>
-                        <p>Board-certified emergency physician with expertise in trauma care and critical care medicine, leading our 24/7 emergency department.</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card fade-in">
-                    <div class="team-image">
-                        <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. James Wilson</h3>
-                        <div class="specialty">Chief of Pediatrics</div>
-                        <p>Dedicated pediatrician with a special focus on child development and adolescent medicine, providing comprehensive care for young patients.</p>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -1343,7 +1296,7 @@
             <div class="awards-grid">
                 <div class="award-card fade-in">
                     <i class="fas fa-trophy"></i>
-                    <h3>Hospital of the Year 2023</h3>
+                    <h3>Hospital of the Year 2025</h3>
                     <p>Healthcare Excellence Awards</p>
                 </div>
                 <div class="award-card fade-in">
@@ -1352,13 +1305,8 @@
                     <p>National Patient Safety Foundation</p>
                 </div>
                 <div class="award-card fade-in">
-                    <i class="fas fa-star"></i>
-                    <h3>5-Star Rating</h3>
-                    <p>Hospital Quality Rating System</p>
-                </div>
-                <div class="award-card fade-in">
                     <i class="fas fa-award"></i>
-                    <h3>Top Employer 2023</h3>
+                    <h3>Top Employer 2025</h3>
                     <p>Healthcare Industry Recognition</p>
                 </div>
             </div>
@@ -1423,11 +1371,16 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('services')}}">General Medicine</a>
-                    <a href="{{route('services')}}">Emergency Care</a>
-                    <a href="{{route('services')}}">Laboratory</a>
-                    <a href="{{route('services')}}">Radiology</a>
-                    <a href="{{route('services')}}">Surgery</a>
+                    <a href="{{route('services')}}">Pediatric</a>
+                    <a href="{{route('services')}}">Geriatrics</a>
+                    <a href="{{route('services')}}">Eye Clinic</a>
+                    <a href="{{route('services')}}">Lab and Ultrasound</a>
+                    <a href="{{route('services')}}">Blood Banking and Donation</a>
+                    <a href="{{route('services')}}">Immunization and Antenatal Clinic</a>
+                    <a href="{{route('services')}}">Free Hiv and Pregnancy Test</a>
+                    <a href="{{route('services')}}">24 Hours Emergency Clinic</a>
+                    <a href="{{route('services')}}">Drug dispensary</a>
+                    <a href="{{route('services')}}">Consultations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>

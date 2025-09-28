@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
+use App\Models\doctor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +13,8 @@ Route::get('/', function () {
 });
 
 Route::get('/about_us', function(){
-    return view('about');
+    $doctors = doctor::all();
+    return view('about', compact('doctors'));
 })->name('about');
 
 Route::get('/contact_us', function(){
@@ -24,7 +26,9 @@ Route::get('/services', function(){
 })->name('services');
 
 Route::get('doctors', function(){
-    return view('doctors');
+    $doctors = doctor::all();
+    $countdoctor = doctor::count();
+    return view('doctors', compact('doctors', 'countdoctor'));
 })->name('doctors');
 
 Route::get('admin', function(){
@@ -67,4 +71,7 @@ Route::get('approve_card/{id}', [AdminController::class, 'approve_card'])->name(
 Route::get('add_doctor', [AdminController::class, 'add_doctor'])->name('add_doctor');
 Route::post('create_doctor', [AdminController::class, 'create_doctor'])->name('create_doctor');
 Route::get('manage_doctors', [AdminController::class, 'manage_doctors'])->name('manage_doctors');
+Route::get('edit_doctors/{id}', [AdminController::class, 'edit_doctors'])->name('edit_doctors');
+Route::post('update_doctor/{id}', [AdminController::class, 'update_doctor'])->name('update_doctor');
+Route::get('delete_doctor/{id}', [AdminController::class, 'delete_doctor'])->name('delete_doctor');
 });

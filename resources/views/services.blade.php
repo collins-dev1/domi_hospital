@@ -1037,50 +1037,16 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-header">
-                        <i class="fas fa-stethoscope"></i>
-                        <h3>General Medicine</h3>
+                        <i class="fas fa-child"></i>
+                        <h3>Pediatrics</h3>
                     </div>
                     <div class="service-content">
-                        <p>Comprehensive primary healthcare services for patients of all ages, including preventive care, diagnosis, and treatment of common medical conditions.</p>
+                        <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and adolescents — from birth up to around 18 years old (sometimes 21).</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Routine Physical Examinations</li>
-                            <li><i class="fas fa-check"></i> Chronic Disease Management</li>
-                            <li><i class="fas fa-check"></i> Preventive Health Screenings</li>
-                            <li><i class="fas fa-check"></i> Vaccination Programs</li>
-                        </ul>
-                        <a href="#general-medicine" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-heartbeat"></i>
-                        <h3>Cardiology</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Advanced cardiac care including diagnosis, treatment, and management of heart conditions with cutting-edge technology and expert cardiologists.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Cardiac Catheterization</li>
-                            <li><i class="fas fa-check"></i> Echocardiography</li>
-                            <li><i class="fas fa-check"></i> Heart Surgery</li>
-                            <li><i class="fas fa-check"></i> Pacemaker Implantation</li>
-                        </ul>
-                        <a href="#cardiology" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>Neurology</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Specialized neurological care for disorders of the brain, spinal cord, and nervous system with advanced diagnostic and treatment capabilities.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Stroke Treatment</li>
-                            <li><i class="fas fa-check"></i> Epilepsy Management</li>
-                            <li><i class="fas fa-check"></i> Brain Surgery</li>
-                            <li><i class="fas fa-check"></i> Movement Disorders</li>
+                            <li><i class="fas fa-check"></i> Services offered (immunization, child development, etc.)</li>
+                            <li><i class="fas fa-check"></i> Pediatricians available (with pictures & qualifications)</li>
+                            <li><i class="fas fa-check"></i> Age group covered</li>
+                            <li><i class="fas fa-check"></i> Emergency pediatric care availability</li>
                         </ul>
                         <a href="#neurology" class="btn btn-primary">Learn More</a>
                     </div>
@@ -1088,16 +1054,52 @@
 
                 <div class="service-card fade-in">
                     <div class="service-header">
-                        <i class="fas fa-baby"></i>
-                        <h3>Pediatrics</h3>
+                        <i class="fas fa-blind"></i>
+                        <h3>Geriatrics</h3>
                     </div>
                     <div class="service-content">
-                        <p>Comprehensive healthcare services for infants, children, and adolescents with specialized pediatric care and child-friendly environment.</p>
+                        <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually 60 or 65 years and above.
+Doctors who specialize in this field are called Geriatricians.</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Well-Child Visits</li>
-                            <li><i class="fas fa-check"></i> Immunizations</li>
-                            <li><i class="fas fa-check"></i> Developmental Assessments</li>
-                            <li><i class="fas fa-check"></i> Pediatric Emergency Care</li>
+                            <li><i class="fas fa-check"></i> Specialized elderly care programs.</li>
+                            <li><i class="fas fa-check"></i> Services offered (chronic disease management, fall prevention, memory care).</li>
+                            <li><i class="fas fa-check"></i> Friendly, compassionate approach to enhance dignity and independence.</li>
+                            <li><i class="fas fa-check"></i> Availability of special geriatric doctors/nurses.</li>
+                        </ul>
+                        <a href="#neurology" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                       <i class="fas fa-eye"></i>
+                        <h3>Eye Clinic</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides care for the eyes and vision.
+It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
+                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and surgeries.</li>
+                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
+                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
+                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
+                        </ul>
+                        <a href="#neurology" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-vials"></i>
+                        <h3>Lab</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples to help diagnose, monitor, and prevent diseases.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Helps doctors confirm diagnosis.</li>
+                            <li><i class="fas fa-check"></i> Tracks progress of treatments.</li>
+                            <li><i class="fas fa-check"></i> Supports preventive care (screenings).</li>
                         </ul>
                         <a href="#pediatrics" class="btn btn-primary">Learn More</a>
                     </div>
@@ -1105,16 +1107,33 @@
 
                 <div class="service-card fade-in">
                     <div class="service-header">
-                        <i class="fas fa-x-ray"></i>
-                        <h3>Radiology</h3>
+                        <i class="fas fa-vials"></i>
+                        <h3>Ultrasound</h3>
                     </div>
                     <div class="service-content">
-                        <p>Advanced imaging services with state-of-the-art equipment for accurate diagnosis and treatment planning across all medical specialties.</p>
+                        <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and tissues inside the body — no radiation involved.</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Digital X-rays</li>
-                            <li><i class="fas fa-check"></i> CT Scans</li>
-                            <li><i class="fas fa-check"></i> MRI Imaging</li>
-                            <li><i class="fas fa-check"></i> Ultrasound</li>
+                            <li><i class="fas fa-check"></i> Safe & painless imaging.</li>
+                            <li><i class="fas fa-check"></i> Detects abnormal growths, blockages, organ diseases.</li>
+                            <li><i class="fas fa-check"></i> Monitors pregnancy without radiation risk.</li>
+                            <li><i class="fas fa-check"></i> Helps guide surgeries and procedures.</li>
+                        </ul>
+                        <a href="#pediatrics" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-tint"></i>
+                        <h3>Blood Banking and Donation</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We provide a safe and reliable source of blood for patients who require transfusions during surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood disorders.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> <b>Blood Banking</b><br>
+Our facility stores and carefully screens donated blood to ensure it is safe, compatible, and readily available when needed.</li>
+                            <li><i class="fas fa-check"></i> <b>Blood Donation</b><br>
+We encourage voluntary blood donation as an act of compassion. Donors help provide life-saving support to patients in critical need. All donations are handled with the highest standards of safety, hygiene, and professionalism.</li>
                         </ul>
                         <a href="#radiology" class="btn btn-primary">Learn More</a>
                     </div>
@@ -1122,16 +1141,110 @@
 
                 <div class="service-card fade-in">
                     <div class="service-header">
-                        <i class="fas fa-flask"></i>
-                        <h3>Laboratory Services</h3>
+                        <i class="fas fa-syringe"></i>
+                        <h3>Immunization</h3>
                     </div>
                     <div class="service-content">
-                        <p>Comprehensive laboratory testing with advanced equipment and rapid turnaround times for accurate diagnosis and monitoring.</p>
+                        <p>Our Immunization Unit provides essential vaccines to protect children and adults from preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Blood Tests</li>
-                            <li><i class="fas fa-check"></i> Microbiology</li>
-                            <li><i class="fas fa-check"></i> Pathology</li>
-                            <li><i class="fas fa-check"></i> Genetic Testing</li>
+                            <li><i class="fas fa-check"></i> Ensures safe, timely, and effective vaccination schedules.</li>
+                            <li><i class="fas fa-check"></i> Promotes community health by reducing outbreaks of infectious diseases.</li>
+                            <li><i class="fas fa-check"></i> Provides education on the importance of vaccines for lifelong protection.</li>
+                        </ul>
+                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-baby"></i>
+                        <h3>Antenatal Clinic</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies throughout pregnancy.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of both mother and child.</li>
+                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe practices during pregnancy.</li>
+                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
+                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
+                        </ul>
+                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-vial"></i>
+                        <h3>Free Hiv and Pregnancy Test</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to support the health and well-being of our community.</p>
+                        <ul class="service-features">
+                            <li>HIV Testing</li>
+                            <li><i class="fas fa-check"></i> Quick, safe, and confidential screening.</li>
+                            <li><i class="fas fa-check"></i> Early detection ensures timely treatment and better quality of life.</li>
+                            <li><i class="fas fa-check"></i> Counseling and support services are provided alongside testing.</li>
+                            <li><i class="fas fa-check"></i> Helps prevent the spread of HIV within the community.</li>
+                        </ul>
+                        <ul class="service-features">
+                            <li>Pregnancy Testing</li>
+                            <li><i class="fas fa-check"></i> Accurate and private pregnancy test services.</li>
+                            <li><i class="fas fa-check"></i> Early confirmation allows expectant mothers to begin antenatal care promptly.</li>
+                            <li><i class="fas fa-check"></i> Professional guidance and support for safe motherhood.</li>
+                        </ul>
+                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-ambulance"></i>
+                        <h3>24 Hours Emergency Clinic</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need it — day or night.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Immediate medical attention for accidents, injuries, and critical health conditions.</li>
+                            <li><i class="fas fa-check"></i> Skilled doctors, nurses, and paramedics available around the clock.</li>
+                            <li><i class="fas fa-check"></i> Advanced emergency equipment to stabilize patients quickly.</li>
+                            <li><i class="fas fa-check"></i> Rapid referrals to specialized departments for further treatment.</li>
+                            <li><i class="fas fa-check"></i> Ambulance services for fast and safe transportation.</li>
+                        </ul>
+                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-pills"></i>
+                        <h3>Drug dispensary</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications as prescribed by our doctors.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and specialized medicines.</li>
+                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and usage.</li>
+                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug interactions.</li>
+                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to everyone.</li>
+                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are authentic and approved.</li>
+                        </ul>
+                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Consultations</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>Our Consultation services provide patients with direct access to highly qualified doctors and specialists who are committed to delivering personalized healthcare solutions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> General consultations for common illnesses and health concerns.</li>
+                            <li><i class="fas fa-check"></i> Specialist consultations with experts in fields like pediatrics, geriatrics, cardiology, gynecology, and more.</li>
+                            <li><i class="fas fa-check"></i> Preventive care advice to help you maintain long-term health.</li>
+                            <li><i class="fas fa-check"></i> Second opinions for patients seeking clarity before making critical healthcare decisions.</li>
+                            <li><i class="fas fa-check"></i> Confidential and compassionate service that respects patient privacy.<li>
                         </ul>
                         <a href="#laboratory" class="btn btn-primary">Learn More</a>
                     </div>
@@ -1195,9 +1308,9 @@
             <div class="emergency-content">
                 <h2><i class="fas fa-ambulance"></i> 24/7 Emergency Services</h2>
                 <p>Our emergency department is fully equipped and staffed around the clock to handle all types of medical emergencies. From minor injuries to life-threatening conditions, our team is ready to provide immediate care.</p>
-                <div class="emergency-number">911</div>
+                <div class="emergency-number">+2347062491804</div>
                 <p>Call immediately for emergency situations</p>
-                <a href="tel:911" class="btn btn-emergency">
+                <a href="tel:+2347062491804" class="btn btn-emergency">
                     <i class="fas fa-phone"></i> Call Emergency
                 </a>
             </div>
@@ -1210,7 +1323,7 @@
             <div class="appointment-content">
                 <h2>Schedule Your Appointment</h2>
                 <p>Book an appointment with our specialists today. We offer flexible scheduling and accept most insurance plans to make healthcare accessible for everyone.</p>
-                <a href="index.html#" class="btn btn-accent" onclick="openModal('appointmentModal')">
+                <a href="{{route('login')}}" class="btn btn-accent">
                     <i class="fas fa-calendar-check"></i> Book Appointment
                 </a>
             </div>
@@ -1296,11 +1409,16 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('services')}}">General Medicine</a>
-                    <a href="{{route('services')}}">Emergency Care</a>
-                    <a href="{{route('services')}}">Laboratory</a>
-                    <a href="{{route('services')}}">Radiology</a>
-                    <a href="{{route('services')}}">Surgery</a>
+                    <a href="{{route('services')}}">Pediatric</a>
+                    <a href="{{route('services')}}">Geriatrics</a>
+                    <a href="{{route('services')}}">Eye Clinic</a>
+                    <a href="{{route('services')}}">Lab and Ultrasound</a>
+                    <a href="{{route('services')}}">Blood Banking and Donation</a>
+                    <a href="{{route('services')}}">Immunization and Antenatal Clinic</a>
+                    <a href="{{route('services')}}">Free Hiv and Pregnancy Test</a>
+                    <a href="{{route('services')}}">24 Hours Emergency Clinic</a>
+                    <a href="{{route('services')}}">Drug dispensary</a>
+                    <a href="{{route('services')}}">Consultations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>

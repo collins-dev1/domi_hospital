@@ -194,4 +194,49 @@ class AdminController extends Controller
         return view('admin.manage_doctors', compact('doctors'));
     }
 
+    // Edit Doctors
+    public function edit_doctors($id){
+        $doctor = doctor::find($id);
+        return view('admin.edit_doctors', compact('doctor'));
+    }
+
+    // Update Doctors
+    public function update_doctor(Request $request, $id){
+        $doctor = doctor::find($id);
+        $doctor->name = $request->name;
+        $doctor->phone = $request->phone;
+        $doctor->email = $request->email;
+        $doctor->position = $request->position;
+        $doctor->university = $request->university;
+        $doctor->years_of_experience = $request->years_of_experience;
+        $doctor->description = $request->description;
+
+        // Check if file is uploaded
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads/doctors'), $filename); // Save in public/uploads/patients
+            $doctor->image = $filename; // Save filename in DB
+        }
+        $doctor->save();
+        Alert::html(
+            '<h3 style="color:black;">Doctor Edited Successfully!</h3>',
+            '<p style="color:black;">You have successfully edited a new doctor to the system.</p>',
+            'success'
+        )->persistent();
+        return redirect()->route('manage_doctors');
+    }
+
+    // Delete Doctor
+    public function delete_doctor($id){
+        $doctor = doctor::find($id);
+        $doctor->delete();
+        Alert::html(
+            '<h3 style="color:black;">Doctor Deleted Successfully!</h3>',
+            '<p style="color:black;">You have successfully deleted a new doctor to the system.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
 }

@@ -37,10 +37,10 @@
                     <td>{{$doctor->university}}</td>
                     <td>{{$doctor->description}}</td>
                     <td style="display: flex; gap: 10px;">
-                        <a href="" onclick="return confirm('Are you sure you want to Edit this Doctor???')">
+                        <a href="{{route('edit_doctors', $doctor->id)}}" onclick="return confirm('Are you sure you want to Edit this Doctor???')">
                             <button class="btn btn-success" style="border-radius: 10px;">Edit</button>
                         </a>
-                        <a href="" onclick="return confirm('Are you sure you want to Delete this Doctor???')">
+                        <a href="{{route('delete_doctor', $doctor->id)}}" onclick="return confirm('Are you sure you want to Delete this Doctor???')">
                             <button class="btn btn-danger" style="border-radius: 10px;">Delete</button>
                         </a>
                     </td>
