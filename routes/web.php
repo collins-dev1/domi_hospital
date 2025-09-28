@@ -31,9 +31,25 @@ Route::get('doctors', function(){
     return view('doctors', compact('doctors', 'countdoctor'));
 })->name('doctors');
 
-Route::get('admin', function(){
-    return view('layouts.admin_layout');
-})->name('admin');
+Route::get('/pediatrics', function(){
+    return view('services.pediatrics');
+})->name('pediatrics');
+
+Route::get('/geriatrics', function(){
+    return view('services.geriatrics');
+})->name('geriatrics');
+
+Route::get('/eye_clinic', function(){
+    return view('services.eye_clinic');
+})->name('eye_clinic');
+
+Route::get('/lab', function(){
+    return view('services.lab');
+})->name('lab');
+
+Route::get('/ultrasound', function(){
+    return view('services.ultrasound');
+})->name('ultrasound');
 
 Auth::routes();
 

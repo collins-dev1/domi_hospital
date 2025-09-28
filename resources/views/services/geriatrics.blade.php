@@ -1061,287 +1061,148 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Medical Services</h1>
-            <p>Comprehensive healthcare services delivered by experienced medical professionals with state-of-the-art
-                equipment and technology.</p>
+            <h1>Geriatrics</h1>
+            <p>Geriatrics is the branch of medicine dedicated to the care of older adults, focusing on promoting healthy
+                aging, preventing diseases, and managing medical, mental, and social conditions that commonly affect the
+                elderly.</p>
             <div class="breadcrumb">
                 <a href="{{ url('/') }}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Services</span>
+                <span>Geriatrics</span>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Detailed Service Sections -->
+    <section class="service-detail" id="general-medicine">
         <div class="container">
-            <div class="section-header">
-                <h2>Complete Healthcare Solutions</h2>
-                <p>From routine check-ups to specialized treatments, we offer a comprehensive range of medical services
-                    to meet all your healthcare needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-child"></i>
-                        <h3>Pediatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
-                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Services offered (immunization, child development, etc.)
-                            </li>
-                            <li><i class="fas fa-check"></i> Pediatricians available (with pictures & qualifications)
-                            </li>
-                            <li><i class="fas fa-check"></i> Age group covered</li>
-                            <li><i class="fas fa-check"></i> Emergency pediatric care availability</li>
-                        </ul>
-                        <a href="{{ route('pediatrics') }}" class="btn btn-primary">Learn More</a>
-                    </div>
+            <div class="service-detail-content">
+                <div class="service-detail-text fade-in">
+                    <h3>Geriatrics</h3>
+                    <p>Geriatrics is a specialized branch of medicine that focuses on the health, well-being, and
+                        medical care of older adults, typically aged 60 and above. It addresses the unique physical,
+                        emotional, and social needs of the elderly, aiming to improve quality of life, promote
+                        independence, and support healthy aging.</p>
+                    <p>As people age, they face challenges such as multiple chronic diseases, mobility issues, memory
+                        decline, and higher risks of complications. Geriatrics provides comprehensive and compassionate
+                        care, ensuring that elderly individuals maintain dignity, independence, and comfort in their
+                        later years.</p>
+                    <a href="{{ route('login') }}" class="btn btn-accent">Book
+                        Appointment</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-blind"></i>
-                        <h3>Geriatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
-                            60 or 65 years and above.
-                            Doctors who specialize in this field are called Geriatricians.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Specialized elderly care programs.</li>
-                            <li><i class="fas fa-check"></i> Services offered (chronic disease management, fall
-                                prevention, memory care).</li>
-                            <li><i class="fas fa-check"></i> Friendly, compassionate approach to enhance dignity and
-                                independence.</li>
-                            <li><i class="fas fa-check"></i> Availability of special geriatric doctors/nurses.</li>
-                        </ul>
-                        <a href="{{route('geriatrics')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Eye Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
-                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and
-                                surgeries.</li>
-                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
-                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
-                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
-                        </ul>
-                        <a href="{{route('eye_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Lab</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
-                            to help diagnose, monitor, and prevent diseases.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Helps doctors confirm diagnosis.</li>
-                            <li><i class="fas fa-check"></i> Tracks progress of treatments.</li>
-                            <li><i class="fas fa-check"></i> Supports preventive care (screenings).</li>
-                        </ul>
-                        <a href="{{route('lab')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Ultrasound</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
-                            tissues inside the body — no radiation involved.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Safe & painless imaging.</li>
-                            <li><i class="fas fa-check"></i> Detects abnormal growths, blockages, organ diseases.</li>
-                            <li><i class="fas fa-check"></i> Monitors pregnancy without radiation risk.</li>
-                            <li><i class="fas fa-check"></i> Helps guide surgeries and procedures.</li>
-                        </ul>
-                        <a href="{{route('ultrasound')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-tint"></i>
-                        <h3>Blood Banking and Donation</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
-                            provide a safe and reliable source of blood for patients who require transfusions during
-                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
-                            disorders.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <b>Blood Banking</b><br>
-                                Our facility stores and carefully screens donated blood to ensure it is safe,
-                                compatible, and readily available when needed.</li>
-                            <li><i class="fas fa-check"></i> <b>Blood Donation</b><br>
-                                We encourage voluntary blood donation as an act of compassion. Donors help provide
-                                life-saving support to patients in critical need. All donations are handled with the
-                                highest standards of safety, hygiene, and professionalism.</li>
-                        </ul>
-                        <a href="#radiology" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-syringe"></i>
-                        <h3>Immunization</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Immunization Unit provides essential vaccines to protect children and adults from
-                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Ensures safe, timely, and effective vaccination schedules.
-                            </li>
-                            <li><i class="fas fa-check"></i> Promotes community health by reducing outbreaks of
-                                infectious diseases.</li>
-                            <li><i class="fas fa-check"></i> Provides education on the importance of vaccines for
-                                lifelong protection.</li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-baby"></i>
-                        <h3>Antenatal Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of
-                                both mother and child.</li>
-                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe
-                                practices during pregnancy.</li>
-                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
-                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vial"></i>
-                        <h3>Free Hiv and Pregnancy Test</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
-                            support the health and well-being of our community.</p>
-                        <ul class="service-features">
-                            <li>HIV Testing</li>
-                            <li><i class="fas fa-check"></i> Quick, safe, and confidential screening.</li>
-                            <li><i class="fas fa-check"></i> Early detection ensures timely treatment and better
-                                quality of life.</li>
-                            <li><i class="fas fa-check"></i> Counseling and support services are provided alongside
-                                testing.</li>
-                            <li><i class="fas fa-check"></i> Helps prevent the spread of HIV within the community.</li>
-                        </ul>
-                        <ul class="service-features">
-                            <li>Pregnancy Testing</li>
-                            <li><i class="fas fa-check"></i> Accurate and private pregnancy test services.</li>
-                            <li><i class="fas fa-check"></i> Early confirmation allows expectant mothers to begin
-                                antenatal care promptly.</li>
-                            <li><i class="fas fa-check"></i> Professional guidance and support for safe motherhood.
-                            </li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-ambulance"></i>
-                        <h3>24 Hours Emergency Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
-                            it — day or night.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Immediate medical attention for accidents, injuries, and
-                                critical health conditions.</li>
-                            <li><i class="fas fa-check"></i> Skilled doctors, nurses, and paramedics available around
-                                the clock.</li>
-                            <li><i class="fas fa-check"></i> Advanced emergency equipment to stabilize patients
-                                quickly.</li>
-                            <li><i class="fas fa-check"></i> Rapid referrals to specialized departments for further
-                                treatment.</li>
-                            <li><i class="fas fa-check"></i> Ambulance services for fast and safe transportation.</li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-pills"></i>
-                        <h3>Drug dispensary</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and
-                                specialized medicines.</li>
-                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and
-                                usage.</li>
-                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug
-                                interactions.</li>
-                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to
-                                everyone.</li>
-                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are
-                                authentic and approved.</li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Consultations</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Consultation services provide patients with direct access to highly qualified doctors and
-                            specialists who are committed to delivering personalized healthcare solutions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> General consultations for common illnesses and health
-                                concerns.</li>
-                            <li><i class="fas fa-check"></i> Specialist consultations with experts in fields like
-                                pediatrics, geriatrics, cardiology, gynecology, and more.</li>
-                            <li><i class="fas fa-check"></i> Preventive care advice to help you maintain long-term
-                                health.</li>
-                            <li><i class="fas fa-check"></i> Second opinions for patients seeking clarity before making
-                                critical healthcare decisions.</li>
-                            <li><i class="fas fa-check"></i> Confidential and compassionate service that respects
-                                patient privacy.
-                            <li>
-                        </ul>
-                        <a href="#laboratory" class="btn btn-primary">Learn More</a>
-                    </div>
+                <div class="service-detail-image fade-in">
+                    <img src="https://i.pinimg.com/736x/92/0f/40/920f40a326d0f9ae56e3de21babb21b6.jpg"
+                        alt="General Medicine">
                 </div>
             </div>
+        </div>
+    </section>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            text-align: start;
+        }
+
+        h3 {
+            text-align: start;
+        }
+    </style>
+    <section>
+        <div class="section-header">
+            <h2>Key Areas of Geriatric Care</h2>
+        </div>
+
+        <div class="service-header">
+            <div>
+                <h3>Chronic Disease Management</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Conditions like diabetes, hypertension, arthritis,
+                            osteoporosis, and heart disease are carefully managed.</li>
+
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3>Cognitive Health</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Special attention to dementia, Alzheimer’s disease, and memory-related conditions.<li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Mobility & Fall Prevention</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Focus on physiotherapy, safe movement, and preventing fractures or accidents.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Medication Management</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Ensuring safe use of multiple prescriptions and avoiding harmful drug interactions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Emotional & Mental Health</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Addressing depression, anxiety, and loneliness that can affect elderly individuals.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Palliative & End-of-Life Care</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Providing comfort and dignity during advanced stages of illness.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Nutritional Guidance</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Specialized diets to maintain strength, immunity, and overall health.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Benefits of Geriatric Care</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Promotes healthy aging and longer life expectancy.</li>
+                        <li><i class="fas fa-check"></i> Enhances independence and quality of life.</li>
+                        <li><i class="fas fa-check"></i> Provides family support in caregiving.</li>
+                        <li><i class="fas fa-check"></i> Offers personalized healthcare tailored to each patient’s unique needs.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Who Provides Geriatric Care?</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Geriatricians (doctors specialized in elderly care)</li>
+                        <li><i class="fas fa-check"></i> Nurses and Caregivers trained in geriatric support</li>
+                        <li><i class="fas fa-check"></i> Physiotherapists, Nutritionists, and Psychologists for holistic well-being</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
