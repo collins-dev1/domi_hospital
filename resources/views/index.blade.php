@@ -1161,7 +1161,8 @@
                 <li><a href="{{ route('contact_us') }}">Contact</a></li>
                 <li><a href="{{ route('doctors') }}">Doctors</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}" class="btn" style="background-color: #06923E; color:#fff;">Register</a>
+                <li><a href="{{ route('register') }}" class="btn"
+                        style="background-color: #06923E; color:#fff;">Register</a>
                 </li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -1179,7 +1180,7 @@
                     <p>Experience world-class healthcare services with compassionate care. Register today and get your
                         digital health card for seamless medical services.</p>
                     <div class="hero-buttons">
-                        <a href="{{route('login')}}" class="btn btn-accent">Get Health
+                        <a href="{{ route('login') }}" class="btn btn-accent">Get Health
                             Card</a>
                         <a href="{{ route('services') }}" class="btn btn-outline" style="color: #fff">Our Services</a>
                     </div>
@@ -1199,24 +1200,29 @@
                     <i class="fas fa-user-plus"></i>
                     <h3>Patient Registration</h3>
                     <p>Quick and easy patient registration with instant digital health card generation.</p>
-                    <a href="{{route('register')}}" class="btn btn-primary">Register Now</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary">Register Now</a>
                 </div>
                 <div class="quick-card fade-in">
                     <i class="fas fa-calendar-check"></i>
                     <h3>Book Appointment</h3>
                     <p>Schedule your appointment with our specialists at your convenient time.</p>
-                    <a href="#" class="btn btn-primary">Book Now</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary">Book Now</a>
                 </div>
                 <div class="quick-card fade-in">
                     <i class="fas fa-ambulance"></i>
                     <h3>Emergency Care</h3>
                     <p>24/7 emergency services with immediate medical attention and care.</p>
-                    <a href="tel:+234911" class="btn btn-primary">Call 911</a>
+                    <a href="tel:+2347062491804" class="btn btn-primary">Call +2347062491804</a>
                 </div>
             </div>
         </div>
     </section>
-
+    <style>
+        .services-grid a {
+            text-decoration: none;
+            color: #4a5568;
+        }
+    </style>
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
@@ -1226,40 +1232,107 @@
                     state-of-the-art equipment.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card fade-in">
-                    <i class="fas fa-stethoscope"></i>
-                    <h3>General Medicine</h3>
-                    <p>Complete medical care for adults including preventive care, diagnosis, and treatment of various
-                        medical conditions.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Cardiology</h3>
-                    <p>Specialized heart care including diagnostic tests, treatments, and surgical procedures for
-                        cardiac conditions.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurology</h3>
-                    <p>Expert neurological care for disorders of the brain, spinal cord, and nervous system.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <i class="fas fa-baby"></i>
-                    <h3>Pediatrics</h3>
-                    <p>Comprehensive healthcare services for infants, children, and adolescents with specialized
-                        pediatric care.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <i class="fas fa-x-ray"></i>
-                    <h3>Radiology</h3>
-                    <p>Advanced imaging services including X-rays, CT scans, MRI, and ultrasound for accurate diagnosis.
-                    </p>
-                </div>
-                <div class="service-card fade-in">
-                    <i class="fas fa-flask"></i>
-                    <h3>Laboratory</h3>
-                    <p>Complete laboratory services with accurate and timely test results for diagnostic purposes.</p>
-                </div>
+                <a href="{{ route('pediatrics') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-child"></i>
+                        <h3>Pediatrics</h3>
+                        <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
+                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
+                    </div>
+                </a>
+                <a href="{{ route('geriatrics') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-blind"></i>
+                        <h3>Geriatrics</h3>
+                        <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
+                            60 or 65 years and above.
+                            Doctors who specialize in this field are called Geriatricians.</p>
+                    </div>
+                </a>
+                <a href="{{ route('eye_clinic') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-eye"></i>
+                        <h3>Eye Clinic</h3>
+                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
+                            care for the eyes and vision.
+                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
+                    </div>
+                </a>
+                <a href="{{ route('lab') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-vials"></i>
+                        <h3>Laboratory Services</h3>
+                        <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
+                            to help diagnose, monitor, and prevent diseases.</p>
+                    </div>
+                </a>
+                <a href="{{ route('ultrasound') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-vials"></i>
+                        <h3>Ultrasound</h3>
+                        <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
+                            tissues inside the body — no radiation involved.
+                        </p>
+                    </div>
+                </a>
+                <a href="{{ route('blood_banking') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-tint"></i>
+                        <h3>Blood Banking and Donation</h3>
+                        <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
+                            provide a safe and reliable source of blood for patients who require transfusions during
+                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
+                            disorders.</p>
+                    </div>
+                </a>
+                <a href="{{ route('immunization') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-syringe"></i>
+                        <h3>Immunization</h3>
+                        <p>Our Immunization Unit provides essential vaccines to protect children and adults from
+                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
+                    </div>
+                </a>
+                <a href="{{ route('antenatal_clinic') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-baby"></i>
+                        <h3>Antenatal Clinic</h3>
+                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
+                            throughout pregnancy.</p>
+                    </div>
+                </a>
+                <a href="{{ route('free_hiv_and_pregnancy_test') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-vial"></i>
+                        <h3>Free Hiv and Pregnancy Test</h3>
+                        <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
+                            support the health and well-being of our community.</p>
+                    </div>
+                </a>
+                <a href="{{ route('24_hours_emergency_clinic') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-ambulance"></i>
+                        <h3>24 Hours Emergency Clinic</h3>
+                        <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
+                            it — day or night.</p>
+                    </div>
+                </a>
+                <a href="{{ route('drug_dispensary') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-pills"></i>
+                        <h3>Drug dispensary</h3>
+                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
+                            as prescribed by our doctors.</p>
+                    </div>
+                </a>
+                <a href="{{ route('consultations') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Consultations</h3>
+                        <p>Our Consultation services provide patients with direct access to highly qualified doctors and
+                            specialists who are committed to delivering personalized healthcare solutions.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1296,8 +1369,8 @@
                     <div class="logo">
                         <a href="{{ url('/') }}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
-                                height="70">
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt=""
+                                width="70" height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>
                                 <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
@@ -1343,9 +1416,16 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank"><p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p></a>
-                    <a href="tel:+2347062491804" target="_blank"><p><i class="fas fa-phone"></i> +2347062491804</p></a>
-                    <a href="mailto:" target="_blank"><p><i class="fas fa-envelope"></i> info@medicarehospital.com</p></a>
+                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
+                        <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop,
+                            Oyi 435115, Anambra</p>
+                    </a>
+                    <a href="tel:+2347062491804" target="_blank">
+                        <p><i class="fas fa-phone"></i> +2347062491804</p>
+                    </a>
+                    <a href="mailto:" target="_blank">
+                        <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    </a>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>
             </div>

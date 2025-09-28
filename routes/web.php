@@ -51,6 +51,34 @@ Route::get('/ultrasound', function(){
     return view('services.ultrasound');
 })->name('ultrasound');
 
+Route::get('/blood_banking', function(){
+    return view('services.blood_banking');
+})->name('blood_banking');
+
+Route::get('/immunization', function(){
+    return view('services.immunization');
+})->name('immunization');
+
+Route::get('/antenatal_clinic', function(){
+    return view('services.antenatal_clinic');
+})->name('antenatal_clinic');
+
+Route::get('/free_hiv_and_pregnancy_test', function(){
+    return view('services.free_hiv_and_pregnancy_test');
+})->name('free_hiv_and_pregnancy_test');
+
+Route::get('/24_hours_emergency_clinic', function(){
+    return view('services.24_hours_emergency_clinic');
+})->name('24_hours_emergency_clinic');
+
+Route::get('/drug_dispensary', function(){
+    return view('services.drug_dispensary');
+})->name('drug_dispensary');
+
+Route::get('/consultations', function(){
+    return view('services.consultations');
+})->name('consultations');
+
 Auth::routes();
 
 Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');

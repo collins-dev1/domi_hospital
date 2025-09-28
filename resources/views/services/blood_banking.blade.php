@@ -1061,287 +1061,163 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Medical Services</h1>
-            <p>Comprehensive healthcare services delivered by experienced medical professionals with state-of-the-art
-                equipment and technology.</p>
+            <h1>Blood Banking and Donation</h1>
+            <p>Our Blood Banking and Donation service ensures a safe and reliable supply of blood for patients in need.
+                We provide secure blood collection, storage, and transfusion services while encouraging voluntary
+                donations to save lives.</p>
             <div class="breadcrumb">
                 <a href="{{ url('/') }}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Services</span>
+                <span>Blood Banking and Donation</span>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Detailed Service Sections -->
+    <section class="service-detail" id="general-medicine">
         <div class="container">
-            <div class="section-header">
-                <h2>Complete Healthcare Solutions</h2>
-                <p>From routine check-ups to specialized treatments, we offer a comprehensive range of medical services
-                    to meet all your healthcare needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-child"></i>
-                        <h3>Pediatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
-                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Services offered (immunization, child development, etc.)
-                            </li>
-                            <li><i class="fas fa-check"></i> Pediatricians available (with pictures & qualifications)
-                            </li>
-                            <li><i class="fas fa-check"></i> Age group covered</li>
-                            <li><i class="fas fa-check"></i> Emergency pediatric care availability</li>
-                        </ul>
-                        <a href="{{ route('pediatrics') }}" class="btn btn-primary">Learn More</a>
-                    </div>
+            <div class="service-detail-content">
+                <div class="service-detail-text fade-in">
+                    <h3>Blood Banking and Donation</h3>
+                    <p>Blood banking and donation are essential services that ensure hospitals and clinics have a safe
+                        and sufficient supply of blood and blood products for patients in need. Whether it is for
+                        emergency surgery, accident victims, patients with chronic conditions, or mothers during
+                        childbirth, donated blood often makes the difference between life and death.</p>
+                    <p>Blood Banking and Donation form the backbone of emergency and routine healthcare. By choosing to
+                        donate blood, you become a lifesaver and a vital part of a system that sustains countless
+                        patients daily.</p>
+                    <a href="{{ route('login') }}" class="btn btn-accent">Book
+                        Appointment</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-blind"></i>
-                        <h3>Geriatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
-                            60 or 65 years and above.
-                            Doctors who specialize in this field are called Geriatricians.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Specialized elderly care programs.</li>
-                            <li><i class="fas fa-check"></i> Services offered (chronic disease management, fall
-                                prevention, memory care).</li>
-                            <li><i class="fas fa-check"></i> Friendly, compassionate approach to enhance dignity and
-                                independence.</li>
-                            <li><i class="fas fa-check"></i> Availability of special geriatric doctors/nurses.</li>
-                        </ul>
-                        <a href="{{route('geriatrics')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Eye Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
-                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and
-                                surgeries.</li>
-                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
-                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
-                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
-                        </ul>
-                        <a href="{{route('eye_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Laboratory Services</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
-                            to help diagnose, monitor, and prevent diseases.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Helps doctors confirm diagnosis.</li>
-                            <li><i class="fas fa-check"></i> Tracks progress of treatments.</li>
-                            <li><i class="fas fa-check"></i> Supports preventive care (screenings).</li>
-                        </ul>
-                        <a href="{{route('lab')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Ultrasound</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
-                            tissues inside the body — no radiation involved.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Safe & painless imaging.</li>
-                            <li><i class="fas fa-check"></i> Detects abnormal growths, blockages, organ diseases.</li>
-                            <li><i class="fas fa-check"></i> Monitors pregnancy without radiation risk.</li>
-                            <li><i class="fas fa-check"></i> Helps guide surgeries and procedures.</li>
-                        </ul>
-                        <a href="{{route('ultrasound')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-tint"></i>
-                        <h3>Blood Banking and Donation</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
-                            provide a safe and reliable source of blood for patients who require transfusions during
-                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
-                            disorders.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <b>Blood Banking</b><br>
-                                Our facility stores and carefully screens donated blood to ensure it is safe,
-                                compatible, and readily available when needed.</li>
-                            <li><i class="fas fa-check"></i> <b>Blood Donation</b><br>
-                                We encourage voluntary blood donation as an act of compassion. Donors help provide
-                                life-saving support to patients in critical need. All donations are handled with the
-                                highest standards of safety, hygiene, and professionalism.</li>
-                        </ul>
-                        <a href="{{route('blood_banking')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-syringe"></i>
-                        <h3>Immunization</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Immunization Unit provides essential vaccines to protect children and adults from
-                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Ensures safe, timely, and effective vaccination schedules.
-                            </li>
-                            <li><i class="fas fa-check"></i> Promotes community health by reducing outbreaks of
-                                infectious diseases.</li>
-                            <li><i class="fas fa-check"></i> Provides education on the importance of vaccines for
-                                lifelong protection.</li>
-                        </ul>
-                        <a href="{{route('immunization')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-baby"></i>
-                        <h3>Antenatal Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of
-                                both mother and child.</li>
-                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe
-                                practices during pregnancy.</li>
-                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
-                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
-                        </ul>
-                        <a href="{{route('antenatal_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vial"></i>
-                        <h3>Free Hiv and Pregnancy Test</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
-                            support the health and well-being of our community.</p>
-                        <ul class="service-features">
-                            <li>HIV Testing</li>
-                            <li><i class="fas fa-check"></i> Quick, safe, and confidential screening.</li>
-                            <li><i class="fas fa-check"></i> Early detection ensures timely treatment and better
-                                quality of life.</li>
-                            <li><i class="fas fa-check"></i> Counseling and support services are provided alongside
-                                testing.</li>
-                            <li><i class="fas fa-check"></i> Helps prevent the spread of HIV within the community.</li>
-                        </ul>
-                        <ul class="service-features">
-                            <li>Pregnancy Testing</li>
-                            <li><i class="fas fa-check"></i> Accurate and private pregnancy test services.</li>
-                            <li><i class="fas fa-check"></i> Early confirmation allows expectant mothers to begin
-                                antenatal care promptly.</li>
-                            <li><i class="fas fa-check"></i> Professional guidance and support for safe motherhood.
-                            </li>
-                        </ul>
-                        <a href="{{route('free_hiv_and_pregnancy_test')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-ambulance"></i>
-                        <h3>24 Hours Emergency Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
-                            it — day or night.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Immediate medical attention for accidents, injuries, and
-                                critical health conditions.</li>
-                            <li><i class="fas fa-check"></i> Skilled doctors, nurses, and paramedics available around
-                                the clock.</li>
-                            <li><i class="fas fa-check"></i> Advanced emergency equipment to stabilize patients
-                                quickly.</li>
-                            <li><i class="fas fa-check"></i> Rapid referrals to specialized departments for further
-                                treatment.</li>
-                            <li><i class="fas fa-check"></i> Ambulance services for fast and safe transportation.</li>
-                        </ul>
-                        <a href="{{route('24_hours_emergency_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-pills"></i>
-                        <h3>Drug dispensary</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and
-                                specialized medicines.</li>
-                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and
-                                usage.</li>
-                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug
-                                interactions.</li>
-                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to
-                                everyone.</li>
-                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are
-                                authentic and approved.</li>
-                        </ul>
-                        <a href="{{route('drug_dispensary')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Consultations</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Consultation services provide patients with direct access to highly qualified doctors and
-                            specialists who are committed to delivering personalized healthcare solutions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> General consultations for common illnesses and health
-                                concerns.</li>
-                            <li><i class="fas fa-check"></i> Specialist consultations with experts in fields like
-                                pediatrics, geriatrics, cardiology, gynecology, and more.</li>
-                            <li><i class="fas fa-check"></i> Preventive care advice to help you maintain long-term
-                                health.</li>
-                            <li><i class="fas fa-check"></i> Second opinions for patients seeking clarity before making
-                                critical healthcare decisions.</li>
-                            <li><i class="fas fa-check"></i> Confidential and compassionate service that respects
-                                patient privacy.
-                            <li>
-                        </ul>
-                        <a href="{{route('consultations')}}" class="btn btn-primary">Learn More</a>
-                    </div>
+                <div class="service-detail-image fade-in">
+                    <img src="https://i.pinimg.com/736x/69/f6/c6/69f6c6abd053ff2ec366fb05905248e1.jpg"
+                        alt="General Medicine">
                 </div>
             </div>
+        </div>
+    </section>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            text-align: start;
+        }
+
+        h3 {
+            text-align: start;
+        }
+    </style>
+    <section>
+        <div class="section-header">
+            <h2>Key Areas of Blood Banking and Donation</h2>
+        </div>
+
+        <div class="service-header">
+            <div>
+                <h3>What is Blood Banking?</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Red Blood Cells (RBCs): Treat anemia and blood loss.</li>
+                        <li><i class="fas fa-check"></i> Plasma: Helps in clotting and treating patients with liver
+                            conditions or burns.</li>
+                        <li><i class="fas fa-check"></i> Platelets: Vital for patients with cancer, leukemia, or
+                            clotting disorders.</li>
+                        <li><i class="fas fa-check"></i> Cryoprecipitate: Used in treating bleeding disorders.</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3>Importance of Blood Donation</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Accident and trauma victims
+                        <li>
+                        <li><i class="fas fa-check"></i> Patients undergoing major surgeries
+                        <li>
+                        <li><i class="fas fa-check"></i> Cancer patients needing transfusions during treatment
+                        <li>
+                        <li><i class="fas fa-check"></i> Pregnant women experiencing complications during delivery
+                        <li>
+
+                        <li><i class="fas fa-check"></i> Children with severe anemia or genetic conditions (like sickle
+                            cell disease)
+                        <li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Types of Blood Donation</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Whole Blood Donation – The most common form, where all
+                            components are collected together.
+                        <li>
+                        <li><i class="fas fa-check"></i> Apheresis Donation – Specific components like plasma or
+                            platelets are collected, while the rest is returned to the donor.
+                        <li>
+                        <li><i class="fas fa-check"></i> Directed Donation – Blood donated for a specific patient,
+                            usually a family member.
+                        <li>
+
+                        <li><i class="fas fa-check"></i> Autologous Donation – Blood donated by a patient for their own
+                            use in planned surgery.
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Who Can Donate?</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Generally healthy adults (age and weight requirements vary by region).
+                        <li>
+                        <li><i class="fas fa-check"></i> Free from infections or chronic illnesses that affect safety.
+                        <li>
+                        <li><i class="fas fa-check"></i> Must meet hemoglobin and blood pressure requirements.
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Benefits of Donating Blood</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Saves lives and supports community health.
+                        <li>
+                        <li><i class="fas fa-check"></i> Provides donors with a free mini health checkup (blood pressure, hemoglobin, etc.).
+                        <li>
+                        <li><i class="fas fa-check"></i> Encourages healthy blood circulation and renewal.
+                        <li>
+                            <li><i class="fas fa-check"></i> A sense of contribution and humanitarian service.
+                        <li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Our Blood Banking and Donation Services</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Safe and hygienic blood collection procedures.
+                        <li>
+                        <li><i class="fas fa-check"></i> Strict screening and testing of all donated blood.
+                        <li>
+                        <li><i class="fas fa-check"></i> 24/7 availability of blood for emergencies.
+                        <li>
+                            <li><i class="fas fa-check"></i> Awareness programs to encourage voluntary donation.
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 

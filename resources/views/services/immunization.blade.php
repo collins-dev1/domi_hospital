@@ -1061,287 +1061,167 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Medical Services</h1>
-            <p>Comprehensive healthcare services delivered by experienced medical professionals with state-of-the-art
-                equipment and technology.</p>
+            <h1>Immunization</h1>
+            <p>Protect yourself and your loved ones from preventable diseases with our safe and effective vaccination
+                services. Immunization strengthens the body’s defense system and helps build lifelong protection against
+                infections.</p>
             <div class="breadcrumb">
                 <a href="{{ url('/') }}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Services</span>
+                <span>Immunization</span>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
+    <!-- Detailed Service Sections -->
+    <section class="service-detail" id="general-medicine">
         <div class="container">
-            <div class="section-header">
-                <h2>Complete Healthcare Solutions</h2>
-                <p>From routine check-ups to specialized treatments, we offer a comprehensive range of medical services
-                    to meet all your healthcare needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-child"></i>
-                        <h3>Pediatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
-                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Services offered (immunization, child development, etc.)
-                            </li>
-                            <li><i class="fas fa-check"></i> Pediatricians available (with pictures & qualifications)
-                            </li>
-                            <li><i class="fas fa-check"></i> Age group covered</li>
-                            <li><i class="fas fa-check"></i> Emergency pediatric care availability</li>
-                        </ul>
-                        <a href="{{ route('pediatrics') }}" class="btn btn-primary">Learn More</a>
-                    </div>
+            <div class="service-detail-content">
+                <div class="service-detail-text fade-in">
+                    <h3>Immunization</h3>
+                    <p>Immunization, also known as vaccination, is one of the most effective ways to protect individuals
+                        and communities from infectious diseases. By stimulating the body’s natural defense system (the
+                        immune system), vaccines prepare the body to recognize and fight harmful pathogens such as
+                        bacteria and viruses before they can cause illness.</p>
+                    <p>Immunization is a life-saving preventive healthcare service. By staying up to date with
+                        vaccinations, you protect yourself, your family, and the entire community from preventable
+                        diseases.</p>
+                    <a href="{{ route('login') }}" class="btn btn-accent">Book
+                        Appointment</a>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-blind"></i>
-                        <h3>Geriatrics</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
-                            60 or 65 years and above.
-                            Doctors who specialize in this field are called Geriatricians.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Specialized elderly care programs.</li>
-                            <li><i class="fas fa-check"></i> Services offered (chronic disease management, fall
-                                prevention, memory care).</li>
-                            <li><i class="fas fa-check"></i> Friendly, compassionate approach to enhance dignity and
-                                independence.</li>
-                            <li><i class="fas fa-check"></i> Availability of special geriatric doctors/nurses.</li>
-                        </ul>
-                        <a href="{{route('geriatrics')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Eye Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
-                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and
-                                surgeries.</li>
-                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
-                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
-                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
-                        </ul>
-                        <a href="{{route('eye_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Laboratory Services</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
-                            to help diagnose, monitor, and prevent diseases.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Helps doctors confirm diagnosis.</li>
-                            <li><i class="fas fa-check"></i> Tracks progress of treatments.</li>
-                            <li><i class="fas fa-check"></i> Supports preventive care (screenings).</li>
-                        </ul>
-                        <a href="{{route('lab')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vials"></i>
-                        <h3>Ultrasound</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
-                            tissues inside the body — no radiation involved.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Safe & painless imaging.</li>
-                            <li><i class="fas fa-check"></i> Detects abnormal growths, blockages, organ diseases.</li>
-                            <li><i class="fas fa-check"></i> Monitors pregnancy without radiation risk.</li>
-                            <li><i class="fas fa-check"></i> Helps guide surgeries and procedures.</li>
-                        </ul>
-                        <a href="{{route('ultrasound')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-tint"></i>
-                        <h3>Blood Banking and Donation</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
-                            provide a safe and reliable source of blood for patients who require transfusions during
-                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
-                            disorders.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> <b>Blood Banking</b><br>
-                                Our facility stores and carefully screens donated blood to ensure it is safe,
-                                compatible, and readily available when needed.</li>
-                            <li><i class="fas fa-check"></i> <b>Blood Donation</b><br>
-                                We encourage voluntary blood donation as an act of compassion. Donors help provide
-                                life-saving support to patients in critical need. All donations are handled with the
-                                highest standards of safety, hygiene, and professionalism.</li>
-                        </ul>
-                        <a href="{{route('blood_banking')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-syringe"></i>
-                        <h3>Immunization</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Immunization Unit provides essential vaccines to protect children and adults from
-                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Ensures safe, timely, and effective vaccination schedules.
-                            </li>
-                            <li><i class="fas fa-check"></i> Promotes community health by reducing outbreaks of
-                                infectious diseases.</li>
-                            <li><i class="fas fa-check"></i> Provides education on the importance of vaccines for
-                                lifelong protection.</li>
-                        </ul>
-                        <a href="{{route('immunization')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-baby"></i>
-                        <h3>Antenatal Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of
-                                both mother and child.</li>
-                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe
-                                practices during pregnancy.</li>
-                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
-                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
-                        </ul>
-                        <a href="{{route('antenatal_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-vial"></i>
-                        <h3>Free Hiv and Pregnancy Test</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
-                            support the health and well-being of our community.</p>
-                        <ul class="service-features">
-                            <li>HIV Testing</li>
-                            <li><i class="fas fa-check"></i> Quick, safe, and confidential screening.</li>
-                            <li><i class="fas fa-check"></i> Early detection ensures timely treatment and better
-                                quality of life.</li>
-                            <li><i class="fas fa-check"></i> Counseling and support services are provided alongside
-                                testing.</li>
-                            <li><i class="fas fa-check"></i> Helps prevent the spread of HIV within the community.</li>
-                        </ul>
-                        <ul class="service-features">
-                            <li>Pregnancy Testing</li>
-                            <li><i class="fas fa-check"></i> Accurate and private pregnancy test services.</li>
-                            <li><i class="fas fa-check"></i> Early confirmation allows expectant mothers to begin
-                                antenatal care promptly.</li>
-                            <li><i class="fas fa-check"></i> Professional guidance and support for safe motherhood.
-                            </li>
-                        </ul>
-                        <a href="{{route('free_hiv_and_pregnancy_test')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-ambulance"></i>
-                        <h3>24 Hours Emergency Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
-                            it — day or night.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Immediate medical attention for accidents, injuries, and
-                                critical health conditions.</li>
-                            <li><i class="fas fa-check"></i> Skilled doctors, nurses, and paramedics available around
-                                the clock.</li>
-                            <li><i class="fas fa-check"></i> Advanced emergency equipment to stabilize patients
-                                quickly.</li>
-                            <li><i class="fas fa-check"></i> Rapid referrals to specialized departments for further
-                                treatment.</li>
-                            <li><i class="fas fa-check"></i> Ambulance services for fast and safe transportation.</li>
-                        </ul>
-                        <a href="{{route('24_hours_emergency_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-pills"></i>
-                        <h3>Drug dispensary</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and
-                                specialized medicines.</li>
-                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and
-                                usage.</li>
-                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug
-                                interactions.</li>
-                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to
-                                everyone.</li>
-                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are
-                                authentic and approved.</li>
-                        </ul>
-                        <a href="{{route('drug_dispensary')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Consultations</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Consultation services provide patients with direct access to highly qualified doctors and
-                            specialists who are committed to delivering personalized healthcare solutions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> General consultations for common illnesses and health
-                                concerns.</li>
-                            <li><i class="fas fa-check"></i> Specialist consultations with experts in fields like
-                                pediatrics, geriatrics, cardiology, gynecology, and more.</li>
-                            <li><i class="fas fa-check"></i> Preventive care advice to help you maintain long-term
-                                health.</li>
-                            <li><i class="fas fa-check"></i> Second opinions for patients seeking clarity before making
-                                critical healthcare decisions.</li>
-                            <li><i class="fas fa-check"></i> Confidential and compassionate service that respects
-                                patient privacy.
-                            <li>
-                        </ul>
-                        <a href="{{route('consultations')}}" class="btn btn-primary">Learn More</a>
-                    </div>
+                <div class="service-detail-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1584452964155-ef139340f0db?q=80&w=1197&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="General Medicine">
                 </div>
             </div>
+        </div>
+    </section>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            text-align: start;
+        }
+
+        h3 {
+            text-align: start;
+        }
+    </style>
+    <section>
+        <div class="section-header">
+            <h2>Key Areas of Immunization</h2>
+        </div>
+
+        <div class="service-header">
+            <div>
+                <h3>Importance of Immunization</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Prevents deadly diseases such as measles, polio, tetanus,
+                            tuberculosis, hepatitis, and influenza.</li>
+                        <li><i class="fas fa-check"></i> Protects children and adults from severe infections that can
+                            lead to complications, disability, or even death.</li>
+                        <li><i class="fas fa-check"></i> Builds herd immunity, reducing the spread of contagious
+                            diseases and protecting those who cannot be vaccinated (e.g., newborns, immunocompromised
+                            individuals).</li>
+                        <li><i class="fas fa-check"></i> Cost-effective healthcare measure, preventing illness and
+                            reducing hospitalizations.</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3>Types of Vaccines</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Childhood Vaccines – Given to infants and young children to
+                            protect against diseases early in life (e.g., BCG, Polio, DPT, Hepatitis B, MMR).
+                        <li>
+                        <li><i class="fas fa-check"></i> Adolescent Vaccines – Such as HPV vaccine for protection
+                            against cervical cancer.
+                        <li>
+                        <li><i class="fas fa-check"></i> Adult Vaccines – Including boosters for tetanus, seasonal flu
+                            shots, and other travel-related vaccines.
+                        <li>
+                        <li><i class="fas fa-check"></i> Special Immunizations – For high-risk groups, including
+                            pregnant women (e.g., tetanus toxoid) and healthcare workers.
+                        <li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>How Immunization Works</h3>
+                <div>
+                    <ul>
+                        <li>Vaccines introduce a harmless part of the disease-causing organism (antigen) into the body.
+                            The immune system responds by producing antibodies and memory cells. If the vaccinated
+                            person later encounters the real infection, the body recognizes and fights it off quickly,
+                            preventing illness.
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Common Immunizations Provided in Clinics</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> BCG (Tuberculosis)
+                        <li>
+                        <li><i class="fas fa-check"></i> Oral Polio Vaccine (OPV)
+                        <li>
+                        <li><i class="fas fa-check"></i> Pentavalent Vaccine (Diphtheria, Pertussis, Tetanus, Hepatitis
+                            B, Hib)
+                        <li>
+                        <li><i class="fas fa-check"></i> Measles/Mumps/Rubella (MMR)
+                        <li>
+                        <li><i class="fas fa-check"></i> Hepatitis B Vaccine
+                        <li>
+                        <li><i class="fas fa-check"></i> Yellow Fever Vaccine
+                        <li>
+                        <li><i class="fas fa-check"></i> Human Papillomavirus (HPV) Vaccine
+                        <li>
+                        <li><i class="fas fa-check"></i> Seasonal Influenza Vaccine
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Safety of Vaccines</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Vaccines are thoroughly tested and monitored for safety before approval.
+                        <li>
+                        <li><i class="fas fa-check"></i> Mild side effects such as soreness at the injection site or low-grade fever are normal.
+                        <li>
+                        <li><i class="fas fa-check"></i> Severe reactions are extremely rare, and the benefits far outweigh the risks.
+                        <li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3>Role of Immunization Clinics</h3>
+                <div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Safe and up-to-date vaccination schedules.
+                        <li>
+                        <li><i class="fas fa-check"></i> Counseling for parents, individuals, and caregivers.
+                        <li>
+                        <li><i class="fas fa-check"></i> Record-keeping to track vaccination history.
+                        <li>
+                        <li><i class="fas fa-check"></i> Special immunization programs for pregnant women and at-risk populations.
+                        <li>
+
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
