@@ -1346,7 +1346,7 @@
                     <p>Patients Served</p>
                 </div>
                 <div class="stat-item">
-                    <h3 id="doctors-count">0</h3>
+                    <h3 id="doctors-count">{{$countdoctor}}</h3>
                     <p>Expert Doctors</p>
                 </div>
                 <div class="stat-item">
@@ -1408,11 +1408,17 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{ route('services') }}">General Medicine</a>
-                    <a href="{{ route('services') }}">Emergency Care</a>
-                    <a href="{{ route('services') }}">Laboratory</a>
-                    <a href="{{ route('services') }}">Radiology</a>
-                    <a href="{{ route('services') }}">Surgery</a>
+                    <a href="{{ route('pediatrics') }}">Pediatric</a>
+                    <a href="{{ route('geriatrics') }}">Geriatrics</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
+                    <a href="{{ route('lab') }}">Laboratory Services</a>
+                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
+                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
+                    <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
+                    <a href="{{ route('consultations') }}">Consultations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
@@ -1430,7 +1436,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>
@@ -1576,7 +1582,7 @@
                 },
                 {
                     id: 'doctors-count',
-                    target: 50,
+                    target: {{$countdoctor}},
                     suffix: '+'
                 },
                 {

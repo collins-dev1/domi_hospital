@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    $countdoctor = doctor::count();
+    return view('index', compact('countdoctor'));
 });
 
 Route::get('/about_us', function(){
@@ -80,6 +81,7 @@ Route::get('/consultations', function(){
 })->name('consultations');
 
 Auth::routes();
+Route::post('create_info', [AdminController::class, 'create_info'])->name('create_info');
 
 Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
 
@@ -118,4 +120,6 @@ Route::get('manage_doctors', [AdminController::class, 'manage_doctors'])->name('
 Route::get('edit_doctors/{id}', [AdminController::class, 'edit_doctors'])->name('edit_doctors');
 Route::post('update_doctor/{id}', [AdminController::class, 'update_doctor'])->name('update_doctor');
 Route::get('delete_doctor/{id}', [AdminController::class, 'delete_doctor'])->name('delete_doctor');
+Route::get('contact_information', [AdminController::class, 'contact_information'])->name('contact_information');
+Route::get('delete_info/{id}', [AdminController::class, 'delete_info'])->name('delete_info');
 });

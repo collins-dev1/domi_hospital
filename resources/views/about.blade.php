@@ -1332,8 +1332,8 @@
                     <div class="logo">
                         <a href="{{ url('/') }}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
-                                height="70">
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt=""
+                                width="70" height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>
                                 <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
@@ -1371,27 +1371,35 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('services')}}">Pediatric</a>
-                    <a href="{{route('services')}}">Geriatrics</a>
-                    <a href="{{route('services')}}">Eye Clinic</a>
-                    <a href="{{route('services')}}">Lab and Ultrasound</a>
-                    <a href="{{route('services')}}">Blood Banking and Donation</a>
-                    <a href="{{route('services')}}">Immunization and Antenatal Clinic</a>
-                    <a href="{{route('services')}}">Free Hiv and Pregnancy Test</a>
-                    <a href="{{route('services')}}">24 Hours Emergency Clinic</a>
-                    <a href="{{route('services')}}">Drug dispensary</a>
-                    <a href="{{route('services')}}">Consultations</a>
+                    <a href="{{ route('pediatrics') }}">Pediatric</a>
+                    <a href="{{ route('geriatrics') }}">Geriatrics</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
+                    <a href="{{ route('lab') }}">Laboratory Services</a>
+                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
+                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
+                    <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
+                    <a href="{{ route('consultations') }}">Consultations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank"><p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p></a>
-                    <a href="tel:+2347062491804" target="_blank"><p><i class="fas fa-phone"></i> +2347062491804</p></a>
-                    <a href="mailto:" target="_blank"><p><i class="fas fa-envelope"></i> info@medicarehospital.com</p></a>
+                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
+                        <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop,
+                            Oyi 435115, Anambra</p>
+                    </a>
+                    <a href="tel:+2347062491804" target="_blank">
+                        <p><i class="fas fa-phone"></i> +2347062491804</p>
+                    </a>
+                    <a href="mailto:" target="_blank">
+                        <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    </a>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>

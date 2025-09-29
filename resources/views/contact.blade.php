@@ -1129,9 +1129,9 @@
                         <i class="fas fa-phone"></i>
                         <div class="info-content">
                             <h3>Phone Numbers</h3>
-                            <p>Main Line: +234 (0) 123 456 7890<br>
-                               Emergency: 911<br>
-                               Appointments: +234 (0) 123 456 7891</p>
+                            <p>Main Line: +2347062491804<br>
+                               Emergency: +2347062491804<br>
+                               Appointments: +2347062491804</p>
                         </div>
                     </div>
 
@@ -1159,15 +1159,16 @@
                 <!-- Contact Form -->
                 <div class="contact-form fade-in">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" method="POST" action="{{route('create_info')}}">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
+                                <input type="text" id="firstName" name="first_name" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
+                                <input type="text" id="lastName" name="last_name" required>
                             </div>
                         </div>
 
@@ -1178,7 +1179,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone_no" required>
                             </div>
                         </div>
 
@@ -1186,27 +1187,32 @@
                             <label for="subject">Subject *</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="appointment">Appointment Request</option>
-                                <option value="medical">Medical Question</option>
-                                <option value="billing">Billing Inquiry</option>
-                                <option value="feedback">Feedback/Complaint</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Appointment Request">Appointment Request</option>
+                                <option value="Medical Question">Medical Question</option>
+                                <option value="Billing Inquiry">Billing Inquiry</option>
+                                <option value="Feedback/Complaint">Feedback/Complaint</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="department">Preferred Department</label>
+                            <label for="department">Preferred Department *</label>
                             <select id="department" name="department">
                                 <option value="">Select department (optional)</option>
-                                <option value="general">General Medicine</option>
-                                <option value="cardiology">Cardiology</option>
-                                <option value="neurology">Neurology</option>
-                                <option value="pediatrics">Pediatrics</option>
-                                <option value="orthopedics">Orthopedics</option>
-                                <option value="emergency">Emergency Services</option>
-                                <option value="radiology">Radiology</option>
-                                <option value="laboratory">Laboratory</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Geriatrics">Geriatrics</option>
+                                <option value="Eye Clinic">Eye Clinic</option>
+                                <option value="Laboratory Services">Laboratory Services</option>
+                                <option value="Ultrasound">Ultrasound</option>
+                                <option value="Blood Banking and Donation">Blood Banking and Donation</option>
+                                <option value="Immunization">Immunization</option>
+                                <option value="Antenatal Clinic">Antenatal Clinic</option>
+                                <option value="Free Hiv and Pregnancy Test">Free Hiv and Pregnancy Test</option>
+                                <option value="24 Hours Emergency Clinic">24 Hours Emergency Clinic</option>
+                                <option value="Drug dispensary">Drug dispensary</option>
+                                <option value="Consultations">Consultations</option>
                             </select>
                         </div>
 
@@ -1216,12 +1222,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="urgency">Priority Level</label>
-                            <select id="urgency" name="urgency">
-                                <option value="low">Low - General inquiry</option>
-                                <option value="normal" selected>Normal - Standard response</option>
-                                <option value="high">High - Urgent matter</option>
-                                <option value="emergency">Emergency - Immediate attention</option>
+                            <label for="urgency">Priority Level *</label>
+                            <select id="urgency" name="level">
+                                <option value="Low - General inquiry">Low - General inquiry</option>
+                                <option value="Normal - Standard response">Normal - Standard response</option>
+                                <option value="High - Urgent matter">High - Urgent matter</option>
+                                <option value="Emergency - Immediate attention">Emergency - Immediate attention</option>
                             </select>
                         </div>
 
@@ -1235,6 +1241,7 @@
                 </div>
             </div>
         </div>
+        @include('sweetalert::alert')
     </section>
 
     <!-- Hospital Hours -->
@@ -1286,63 +1293,128 @@
             </div>
             <div class="departments-grid">
                 <div class="department-card fade-in">
-                    <i class="fas fa-heart"></i>
-                    <h3>Cardiology</h3>
-                    <p>Specialized heart care and cardiac procedures</p>
+                    <i class="fas fa-child"></i>
+                    <h3>Pediatrics</h3>
+                    <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
+                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7892<br>
-                           <strong>Email:</strong> cardiology@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. Sarah Johnson</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                            <strong>Email:</strong> neurology@medicarehospital.com</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
-                    <i class="fas fa-brain"></i>
-                    <h3>Neurology</h3>
-                    <p>Expert care for neurological conditions</p>
+                    <i class="fas fa-blind"></i>
+                    <h3>Geriatrics</h3>
+                    <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
+                            60 or 65 years and above.
+                            Doctors who specialize in this field are called Geriatricians.</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7893<br>
-                           <strong>Email:</strong> neurology@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. Michael Chen</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> neurology@medicarehospital.com</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-eye"></i>
+                    <h3>Eye Clinic</h3>
+                    <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
+                            care for the eyes and vision.
+                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> pediatrics@medicarehospital.com</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-vials"></i>
+                    <h3>Laboratory Services</h3>
+                    <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
+                            to help diagnose, monitor, and prevent diseases</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> orthopedics@medicarehospital.com</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-vials"></i>
+                    <h3>Ultrasound</h3>
+                    <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
+                            tissues inside the body — no radiation involved.</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-tint"></i>
+                    <h3>Blood Banking and Donation</h3>
+                    <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
+                            provide a safe and reliable source of blood for patients who require transfusions during
+                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
+                            disorders.</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                    </div>
+                </div>
+                <div class="department-card fade-in">
+                    <i class="fas fa-syringe"></i>
+                    <h3>Immunization</h3>
+                    <p>Our Immunization Unit provides essential vaccines to protect children and adults from
+                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-baby"></i>
-                    <h3>Pediatrics</h3>
-                    <p>Comprehensive care for children and infants</p>
+                    <h3>Antenatal Clinic</h3>
+                    <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
+                            throughout pregnancy.</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7894<br>
-                           <strong>Email:</strong> pediatrics@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. Emily Rodriguez</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
-                    <i class="fas fa-bone"></i>
-                    <h3>Orthopedics</h3>
-                    <p>Bone, joint, and musculoskeletal care</p>
+                    <i class="fas fa-vial"></i>
+                    <h3>Free Hiv and Pregnancy Test</h3>
+                    <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
+                            support the health and well-being of our community.</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7895<br>
-                           <strong>Email:</strong> orthopedics@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. David Thompson</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                    </div>
+                </div>
+
+                <div class="department-card fade-in">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>24 Hours Emergency Clinic</h3>
+                    <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
+                            it — day or night.</p>
+                    <div class="department-contact">
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
-                    <i class="fas fa-x-ray"></i>
-                    <h3>Radiology</h3>
-                    <p>Advanced imaging and diagnostic services</p>
+                    <i class="fas fa-pills"></i>
+                    <h3>Drug dispensary</h3>
+                    <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
+                            as prescribed by our doctors.</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7896<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. Lisa Wang</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
-                    <i class="fas fa-flask"></i>
-                    <h3>Laboratory</h3>
-                    <p>Comprehensive laboratory testing services</p>
+                    <i class="fas fa-user-md"></i>
+                    <h3>Consultations</h3>
+                    <p>Our Consultation services provide patients with direct access to highly qualified doctors and
+                            specialists who are committed to delivering personalized healthcare solutions.</p>
                     <div class="department-contact">
-                        <p><strong>Phone:</strong> +234 (0) 123 456 7897<br>
-                           <strong>Email:</strong> lab@medicarehospital.com<br>
-                           <strong>Head:</strong> Dr. James Wilson</p>
+                        <p><strong>Phone:</strong> +2347062491804<br>
+                           <strong>Email:</strong> radiology@medicarehospital.com</p>
                     </div>
                 </div>
             </div>
@@ -1370,8 +1442,8 @@
                     <div class="logo">
                         <a href="{{ url('/') }}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
-                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
-                                height="70">
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt=""
+                                width="70" height="70">
                             <div class="logo-text">
                                 <span>DOMI CLINIC</span>
                                 <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
@@ -1409,22 +1481,35 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('services')}}">General Medicine</a>
-                    <a href="{{route('services')}}">Emergency Care</a>
-                    <a href="{{route('services')}}">Laboratory</a>
-                    <a href="{{route('services')}}">Radiology</a>
-                    <a href="{{route('services')}}">Surgery</a>
+                    <a href="{{ route('pediatrics') }}">Pediatric</a>
+                    <a href="{{ route('geriatrics') }}">Geriatrics</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
+                    <a href="{{ route('lab') }}">Laboratory Services</a>
+                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
+                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
+                    <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
+                    <a href="{{ route('consultations') }}">Consultations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank"><p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p></a>
-                    <a href="tel:+2347062491804" target="_blank"><p><i class="fas fa-phone"></i> +2347062491804</p></a>
-                    <a href="mailto:" target="_blank"><p><i class="fas fa-envelope"></i> info@medicarehospital.com</p></a>
+                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
+                        <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop,
+                            Oyi 435115, Anambra</p>
+                    </a>
+                    <a href="tel:+2347062491804" target="_blank">
+                        <p><i class="fas fa-phone"></i> +2347062491804</p>
+                    </a>
+                    <a href="mailto:" target="_blank">
+                        <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    </a>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>

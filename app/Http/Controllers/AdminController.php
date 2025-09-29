@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
+use App\Models\contact_info;
 use App\Models\doctor;
 use App\Models\health_card;
 use App\Models\User;
@@ -234,6 +235,44 @@ class AdminController extends Controller
         Alert::html(
             '<h3 style="color:black;">Doctor Deleted Successfully!</h3>',
             '<p style="color:black;">You have successfully deleted a new doctor to the system.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Contact Information
+    public function contact_information(){
+        $infos = contact_info::all();
+        return view('admin.contactus_info', compact('infos'));
+    }
+
+    // create information
+    public function create_info(Request $request){
+        $info = new contact_info();
+        $info->first_name = $request->first_name;
+        $info->last_name = $request->last_name;
+        $info->email = $request->email;
+        $info->phone_no = $request->phone_no;
+        $info->subject = $request->subject;
+        $info->department = $request->department;
+        $info->message = $request->message;
+        $info->level = $request->level;
+        $info->save();
+        Alert::html(
+            '<h3 style="color:black;">Information Sent Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully sent your information to the adminstrator wait for their response.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Delete information
+    public function delete_info($id){
+        $info = contact_info::find($id);
+        $info->delete();
+        Alert::html(
+            '<h3 style="color:black;">Information Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully deleted this information.</p>',
             'success'
         )->persistent();
         return redirect()->back();
