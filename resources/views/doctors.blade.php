@@ -1235,12 +1235,12 @@
                 </div>
                 <div class="stat-card fade-in">
                     <i class="fas fa-award"></i>
-                    <h3>25+</h3>
+                    <h3>{{$years->years}}+</h3>
                     <p>Years Combined Experience</p>
                 </div>
                 <div class="stat-card fade-in">
                     <i class="fas fa-hospital"></i>
-                    <h3>12</h3>
+                    <h3>{{$department->department}}</h3>
                     <p>Specialized Departments</p>
                 </div>
             </div>
@@ -1279,7 +1279,13 @@
                 @foreach ($doctors as $doctor)
                 <div class="doctor-card fade-in" data-specialty="cardiology">
                     <div class="doctor-image">
+                        @if ($doctor->image == null)
                         <i class="fas fa-user-md"></i>
+                        @else
+                        <div style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                            <img src="{{ asset('uploads/doctors/' . $doctor->image) }}" alt="" style="width: 100%; height:100%; object-fit:cover; border-radius: 50%;">
+                        </div>
+                        @endif
                         <div class="availability-badge">Available</div>
                     </div>
                     <div class="doctor-info">

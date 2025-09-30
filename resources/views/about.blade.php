@@ -1206,7 +1206,11 @@
                 @foreach ($doctors as $doctor)
                 <div class="team-card fade-in">
                     <div class="team-image">
+                        @if ($doctor->image == null)
+                        <i class="fas fa-user-md"></i>
+                        @else
                         <img src="{{ asset('uploads/doctors/' . $doctor->image) }}" alt="" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                        @endif
                     </div>
                     <div class="team-info">
                         <h3>Dr. {{$doctor->name}}</h3>

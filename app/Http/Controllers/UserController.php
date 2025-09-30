@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
+use App\Models\doctor;
 use App\Models\health_card;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +22,9 @@ class UserController extends Controller
         $appointments = appointment::where('user_id', $user->id)->with('user')->get();
     }
 
-    return view('user.appointment', compact('appointments'));
+    $doctors = doctor::all();
+
+    return view('user.appointment', compact('appointments', 'doctors'));
 }
 
 
@@ -84,7 +87,7 @@ public function health_card()
         return redirect()->back();
     }
 
-    public function delete_appointment($id)
+    public function delete_appointments($id)
     {
         $appointement = appointment::find($id);
         $appointement->delete();

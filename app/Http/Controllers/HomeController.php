@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
+use App\Models\award;
+use App\Models\contact_info;
+use App\Models\departments;
+use App\Models\doctor;
 use App\Models\health_card;
+use App\Models\patient_served;
+use App\Models\User;
+use App\Models\years_of_experience;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -51,7 +58,22 @@ class HomeController extends Controller
 
             return view('user.dashboard', compact('appointments', 'countappointments', 'card', 'user'));
         } elseif ($userType == 1 && $ban_status == 0) {
-            return view('admin.dashboard');
+            $users = User::count();
+            $countappointment = appointment::count();
+            $pendingappointment = appointment::where('status', '0')->count();
+            $approvedappointment = appointment::where('status', '1')->count();
+            $cancelappointment = appointment::where('status', '2')->count();
+            $healthcard = health_card::count();
+            $pendingcard = health_card::where('status', '0')->count();
+            $approvedcard = health_card::where('status', '1')->count();
+            $alldoctor = doctor::count();
+            $contactinfo = contact_info::count();
+            $years = years_of_experience::first();
+            $award = award::first();
+            $served = patient_served::first();
+            $department = departments::first();
+
+            return view('admin.dashboard', compact('users', 'countappointment', 'pendingappointment', 'approvedappointment', 'cancelappointment', 'healthcard', 'pendingcard', 'approvedcard', 'alldoctor', 'contactinfo', 'years', 'award', 'served', 'department'));
         } else {
             return view('auth.login');
         }

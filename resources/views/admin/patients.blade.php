@@ -16,7 +16,7 @@
                     <th scope="col">Gender</th>
                     <th scope="col">Marital Status</th>
                     <th scope="col">Date of Birth</th>
-                    <th scope="col">Banned Status</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>

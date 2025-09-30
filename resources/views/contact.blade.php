@@ -1121,7 +1121,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="info-content">
                             <h3>Hospital Address</h3>
-                            <p>123 Healthcare Street<br>Medical City, MC 12345<br>Nigeria</p>
+                            <p>1 Obika Street, 3-3 Nkwelle Ezunaka,<br>By Uju Bus-Stop,
+                            Oyi 435115, Anambra<br>Nigeria</p>
                         </div>
                     </div>
 

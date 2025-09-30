@@ -601,17 +601,17 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Toggle navigation" style="background-color:#2d3748;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <div id="custom-search" class="top-search-bar">
                                 <input class="form-control" type="text" placeholder="Search..">
                             </div>
-                        </li>
-                        <li class="nav-item dropdown notification">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown notification">
                             <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                     class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
@@ -675,7 +675,7 @@
                                     <div class="list-footer"> <a href="#">View all notifications</a></div>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
@@ -715,7 +715,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light mt-3">
-                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="{{route('dashboards')}}">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -785,6 +785,27 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('contact_information')}}">Manage Contact Us Information</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                    data-target="#submenu-6" aria-controls="submenu-9"><i class="fas fa-notes-medical"></i>Hospital Highlights</a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('years')}}">Update and Manage Hospital Years of Experience</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('award')}}">Update and Manage Hospital Award</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('department')}}">Update and Manage Specialized Department</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('served')}}">Update and Manage Patient Served</a>
                                         </li>
                                     </ul>
                                 </div>

@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\appointment;
+use App\Models\award;
 use App\Models\contact_info;
+use App\Models\departments;
 use App\Models\doctor;
 use App\Models\health_card;
+use App\Models\patient_served;
 use App\Models\User;
+use App\Models\years_of_experience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -277,5 +281,123 @@ class AdminController extends Controller
         )->persistent();
         return redirect()->back();
     }
+
+    // Hospital Years of Experience
+    public function years(){
+        $years = years_of_experience::first();
+        return view('admin.years_of_experience', compact('years'));
+    }
+
+    public function create_years(Request $request){
+        $years = years_of_experience::firstOrNew();
+        $years->years = $request->years;
+        $years->save();
+        Alert::html(
+            '<h3 style="color:black;">Years of Experience Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Updated your Hospital Years of Expereince.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    public function delete_years($id){
+        $years = years_of_experience::find($id);
+        $years->delete();
+        Alert::html(
+            '<h3 style="color:black;">Years of Experience Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Deleted your Hospital Years of Expereince.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Hospital Award
+    public function award(){
+        $award = award::first();
+        return view('admin.award', compact('award'));
+    }
+
+    public function create_award(Request $request){
+        $award = award::firstOrNew();
+        $award->award = $request->award;
+        $award->save();
+        Alert::html(
+            '<h3 style="color:black;">Award Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Updated your Hospital Award.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    public function delete_award($id){
+        $award = award::find($id);
+        $award->delete();
+        Alert::html(
+            '<h3 style="color:black;">Award Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Deleted your Hospital Award.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    // Department
+    public function department(){
+        $department = departments::first();
+        return view('admin.department', compact('department'));
+    }
+
+    public function create_department(Request $request){
+        $department = departments::firstOrNew();
+        $department->department = $request->department;
+        $department->save();
+        Alert::html(
+            '<h3 style="color:black;">Specialized Departments Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Updated your Specialized Departments.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    public function delete_department($id){
+        $department = departments::find($id);
+        $department->delete();
+        Alert::html(
+            '<h3 style="color:black;">Department Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Deleted your Hospital department.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+     // served
+    public function served(){
+        $served = patient_served::first();
+        return view('admin.served', compact('served'));
+    }
+
+    public function create_served(Request $request){
+        $served = patient_served::firstOrNew();
+        $served->served = $request->served;
+        $served->save();
+        Alert::html(
+            '<h3 style="color:black;">Patients Served Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Updated your Patients Served.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+    public function delete_served($id){
+        $served = patient_served::find($id);
+        $served->delete();
+        Alert::html(
+            '<h3 style="color:black;">Patients Served Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully Deleted your Hospital Patients Served.</p>',
+            'success'
+        )->persistent();
+        return redirect()->back();
+    }
+
+
 
 }

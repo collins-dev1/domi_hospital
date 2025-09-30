@@ -43,7 +43,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('delete_appointment', $appointment->id)}}" onclick="return confirm('Are you sure you want to Delete this Appointment???')">
+                                <a href="{{route('delete_appointments', $appointment->id)}}" onclick="return confirm('Are you sure you want to Delete this Appointment???')">
                                     <button class="btn" style="background-color: rgb(193, 25, 25); color:#fff">Delete</button>
                                 </a>
                                 <a href="{{route('edit_appointment', $appointment->id)}}" onclick="return confirm('Are you sure you want to Edit this Appointment???')">
@@ -69,15 +69,10 @@
                     <div class="form-group">
                         <label for="department">Doctor *</label>
                         <select id="department" name="doctor_name" required>
-                            <option value="">-- Select Department --</option>
-                            <option value="general">General Medicine</option>
-                            <option value="cardiology">Cardiology</option>
-                            <option value="neurology">Neurology</option>
-                            <option value="pediatrics">Pediatrics</option>
-                            <option value="orthopedics">Orthopedics</option>
-                            <option value="dermatology">Dermatology</option>
-                            <option value="gynecology">Gynecology</option>
-                            <option value="ophthalmology">Ophthalmology</option>
+                            <option>-- Select Doctor --</option>
+                            @foreach ($doctors as $doctor)
+                            <option>{{$doctor->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-row">

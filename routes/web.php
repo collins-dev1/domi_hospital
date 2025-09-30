@@ -4,13 +4,20 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\UserMiddleware;
+use App\Models\award;
+use App\Models\departments;
 use App\Models\doctor;
+use App\Models\patient_served;
+use App\Models\years_of_experience;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $countdoctor = doctor::count();
-    return view('index', compact('countdoctor'));
+    $years = years_of_experience::first();
+    $award = award::first();
+    $served = patient_served::first();
+    return view('index', compact('countdoctor', 'years', 'award', 'served'));
 });
 
 Route::get('/about_us', function(){
@@ -29,7 +36,9 @@ Route::get('/services', function(){
 Route::get('doctors', function(){
     $doctors = doctor::all();
     $countdoctor = doctor::count();
-    return view('doctors', compact('doctors', 'countdoctor'));
+    $years = years_of_experience::first();
+    $department = departments::first();
+    return view('doctors', compact('doctors', 'countdoctor', 'years', 'department'));
 })->name('doctors');
 
 Route::get('/pediatrics', function(){
@@ -90,7 +99,7 @@ Route::middleware([UserMiddleware::class])->group(function(){
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
 Route::post('add_appointment', [UserController::class, 'add_appointment'])->name('add_appointment');
-Route::get('delete_appointment/{id}', [UserController::class, 'delete_appointment'])->name('delete_appointment');
+Route::get('delete_appointments/{id}', [UserController::class, 'delete_appointments'])->name('delete_appointments');
 Route::get('edit_appointment/{id}', [UserController::class, 'edit_appointment'])->name('edit_appointment');
 Route::post('update_appointment/{id}', [UserController::class, 'update_appointment'])->name('update_appointment');
 Route::get('health_card', [UserController::class, 'health_card'])->name('health_card');
@@ -122,4 +131,16 @@ Route::post('update_doctor/{id}', [AdminController::class, 'update_doctor'])->na
 Route::get('delete_doctor/{id}', [AdminController::class, 'delete_doctor'])->name('delete_doctor');
 Route::get('contact_information', [AdminController::class, 'contact_information'])->name('contact_information');
 Route::get('delete_info/{id}', [AdminController::class, 'delete_info'])->name('delete_info');
+Route::get('years', [AdminController::class, 'years'])->name('years');
+Route::post('create_years', [AdminController::class, 'create_years'])->name('create_years');
+Route::get('delete_years/{id}', [AdminController::class, 'delete_years'])->name('delete_years');
+Route::get('award', [AdminController::class, 'award'])->name('award');
+Route::post('create_award', [AdminController::class, 'create_award'])->name('create_award');
+Route::get('delete_award/{id}', [AdminController::class, 'delete_award'])->name('delete_award');
+Route::get('department', [AdminController::class, 'department'])->name('department');
+Route::post('create_department', [AdminController::class, 'create_department'])->name('create_department');
+Route::get('delete_department/{id}', [AdminController::class, 'delete_department'])->name('delete_department');
+Route::get('served', [AdminController::class, 'served'])->name('served');
+Route::post('create_served', [AdminController::class, 'create_served'])->name('create_served');
+Route::get('delete_served/{id}', [AdminController::class, 'delete_served'])->name('delete_served');
 });

@@ -1342,7 +1342,12 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
+                    @if ($served == null)
                     <h3 id="patients-count">0</h3>
+                    @else
+                    <h3 id="patients-count">{{$served->served}}</h3>
+                    @endif
+
                     <p>Patients Served</p>
                 </div>
                 <div class="stat-item">
@@ -1350,11 +1355,20 @@
                     <p>Expert Doctors</p>
                 </div>
                 <div class="stat-item">
+                    @if ($years == null)
                     <h3 id="experience-count">0</h3>
+                    @else
+                    <h3 id="experience-count">{{$years->years}}</h3>
+
+                    @endif
                     <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
+                    @if ($award == null)
                     <h3 id="awards-count">0</h3>
+                    @else
+                    <h3 id="awards-count">{{$award->award}}</h3>
+                    @endif
                     <p>Awards Won</p>
                 </div>
             </div>
@@ -1441,69 +1455,6 @@
         </div>
     </footer>
 
-
-
-    <!-- Patient Card Modal -->
-    <div class="modal" id="cardModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Your Digital Health Card</h3>
-                <button class="close" onclick="closeModal('cardModal')">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="patient-card" id="patientCard">
-                    <div class="card-header">
-                        <div>
-                            <h3>Domi Clinic</h3>
-                            <p style="opacity: 0.8; margin: 0;">Digital Health Card</p>
-                        </div>
-                        <div style="text-align: right;">
-                            <i class="fas fa-heartbeat" style="font-size: 2rem;"></i>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Patient ID</div>
-                                <div class="info-value" id="cardPatientId">--</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Full Name</div>
-                                <div class="info-value" id="cardFullName">--</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Date of Birth</div>
-                                <div class="info-value" id="cardDOB">--</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="info-item">
-                                <div class="info-label">Blood Group</div>
-                                <div class="info-value" id="cardBloodGroup">--</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Phone</div>
-                                <div class="info-value" id="cardPhone">--</div>
-                            </div>
-                            <div class="info-item">
-                                <div class="info-label">Registration Date</div>
-                                <div class="info-value" id="cardRegDate">--</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: 2rem;" class="no-print">
-                    <button class="btn btn-primary" onclick="printCard()" style="margin-right: 1rem;">
-                        <i class="fas fa-print"></i> Print Card
-                    </button>
-                    <button class="btn btn-accent" onclick="downloadCard()">
-                        <i class="fas fa-download"></i> Download PDF
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Global variables
         let currentUser = null;
@@ -1577,7 +1528,7 @@
         function initializeCounters() {
             const counters = [{
                     id: 'patients-count',
-                    target: 15000,
+                    target: {{$served->served}},
                     suffix: '+'
                 },
                 {
@@ -1587,12 +1538,12 @@
                 },
                 {
                     id: 'experience-count',
-                    target: 25,
+                    target: {{$years->years}},
                     suffix: '+'
                 },
                 {
                     id: 'awards-count',
-                    target: 30,
+                    target: {{$award->award}},
                     suffix: '+'
                 }
             ];
