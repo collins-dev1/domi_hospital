@@ -84,7 +84,11 @@ public function health_card()
             'success'
         )->persistent();
 
-        return redirect()->back();
+        return redirect()->route('payment_option');
+    }
+
+    public function payment_option(){
+        return view('user.payment_method');
     }
 
     public function delete_appointments($id)

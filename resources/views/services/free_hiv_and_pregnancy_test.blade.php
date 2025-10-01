@@ -1061,13 +1061,13 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Free HIV & Pregnancy Testing</h1>
+            <h1>Free HIV & Pregnancy Testing and Cervical Screening Test</h1>
             <p>Our clinic offers confidential, reliable, and free HIV and pregnancy tests to promote early detection,
                 safe care, and informed health decisions.</p>
             <div class="breadcrumb">
                 <a href="{{ url('/') }}">Home</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Free HIV & Pregnancy Testing</span>
+                <span>Free HIV & Pregnancy Testing and Cervical Screening Test</span>
             </div>
         </div>
     </section>
@@ -1077,7 +1077,7 @@
         <div class="container">
             <div class="service-detail-content">
                 <div class="service-detail-text fade-in">
-                    <h3>Free HIV & Pregnancy Testing</h3>
+                    <h3>Free HIV & Pregnancy Testing and Cervical Screening Test</h3>
                     <p>At our clinic, we understand that timely testing is the first step to healthy living and informed
                         decisions. That’s why we provide Free HIV and Pregnancy Testing services that are confidential,
                         reliable, and accessible to everyone.</p>
@@ -1086,7 +1086,7 @@
                         Appointment</a>
                 </div>
                 <div class="service-detail-image fade-in">
-                    <img src="https://i.pinimg.com/1200x/63/38/89/6338895e7488fc3ba474db9ae75190d4.jpg"
+                    <img src="https://i.pinimg.com/736x/e9/84/16/e984168cb8da87b2d50ca8d588e6f5ed.jpg"
                         alt="General Medicine">
                 </div>
             </div>
@@ -1296,17 +1296,18 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
+                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
-                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
                     <a href="{{route('ultrasound')}}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
-                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('immunization') }}">Immunization</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
                     <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
-                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('consultations') }}">Consultations</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>

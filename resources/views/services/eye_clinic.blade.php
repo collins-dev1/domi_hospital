@@ -1090,7 +1090,7 @@
                         Appointment</a>
                 </div>
                 <div class="service-detail-image fade-in">
-                    <img src="https://i.pinimg.com/736x/29/e4/81/29e4816ba406b89fcabd5f70653fc5e4.jpg"
+                    <img src="https://i.pinimg.com/736x/8b/ca/72/8bca7200d4e4ae8013837b80c650e3ea.jpg"
                         alt="General Medicine">
                 </div>
             </div>
@@ -1317,17 +1317,18 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
+                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
-                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
                     <a href="{{route('ultrasound')}}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
-                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('immunization') }}">Immunization</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
                     <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
-                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('consultations') }}">Consultations</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>

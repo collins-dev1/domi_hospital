@@ -22,7 +22,9 @@
                         <i class="fas fa-heartbeat"></i>Get Health Card
                     </button>
                 @elseif ($card->status == 0)
-                    <h5>Make payment and wait for Approval</h5>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-heartbeat"></i>Make Payment
+                    </button>
                 @elseif ($card->status == 1)
                     <h5>Already have a card</h5>
                 @else

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods - Domi Clinic</title>
+    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #3182ce;
+            --accent-color: #06923E;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 60px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Payment Methods Section */
+        .payment-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .payment-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+
+        .payment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .payment-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--accent-color), #00b894);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+
+        .payment-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .payment-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-details {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .payment-details p {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .payment-details strong {
+            color: var(--primary-color);
+        }
+
+        /* WhatsApp Chat Button */
+        .whatsapp-section {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .whatsapp-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .whatsapp-card {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .whatsapp-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-card p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-btn {
+            background: var(--white);
+            color: #25D366;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Help Section */
+        .help-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .help-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .help-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #a0aec0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            padding-top: 1rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                padding-inline: 1rem !important;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-card {
+                padding: 2rem;
+            }
+
+            .whatsapp-icon {
+                font-size: 3.5rem;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="{{ url('/') }}" style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
+                    <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70" height="70">
+                    <div class="logo-text">
+                        <span>DOMI CLINIC</span>
+                        <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
+                    </div>
+                    <style>
+                        .logo-text span {
+                            font-weight: bold;
+                            color: #06923E;
+                        }
+                        .logo-text p {
+                            margin: 0;
+                            color: #06923E;
+                        }
+                    </style>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ route('services') }}">Services</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('contact_us') }}">Contact</a></li>
+                <li><a href="{{ route('doctors') }}">Doctors</a></li>
+                <li><a href="{{ route('payment_methods') }}" class="active">Payment</a></li>
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}" class="btn" style="background-color: #06923E; color:#fff;">Register</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Payment Methods</h1>
+            <p>Multiple convenient payment options for your healthcare services. Choose what works best for you.</p>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Pay</h2>
+                <p>We accept various payment methods to make your healthcare experience seamless and convenient</p>
+            </div>
+
+            <div class="payment-grid">
+                <!-- Cash Payment -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Cash Payment</h3>
+                    <p>Pay directly at our hospital reception or cashier's desk</p>
+                    <div class="payment-details">
+                        <p><strong>Where:</strong> Hospital Reception</p>
+                        <p><strong>When:</strong> During consultation or before discharge</p>
+                        <p><strong>Note:</strong> Cash payments accepted 24/7</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Instant confirmation</p>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Bank Transfer</h3>
+                    <p>Transfer directly to our hospital bank account</p>
+                    <div class="payment-details">
+                        <p><strong>Bank:</strong> [Your Bank Name]</p>
+                        <p><strong>Account Name:</strong> Domi Clinic</p>
+                        <p><strong>Account Number:</strong> [Account Number]</p>
+                        <p><strong>Note:</strong> Send proof to WhatsApp after payment</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Secure & tracked</p>
+                </div>
+
+                <!-- Mobile Money -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Money</h3>
+                    <p>Pay using your mobile money account</p>
+                    <div class="payment-details">
+                        <p><strong>Supported:</strong> All major mobile money services</p>
+                        <p><strong>Number:</strong> +2347062491804</p>
+                        <p><strong>Name:</strong> Domi Clinic</p>
+                        <p><strong>Note:</strong> Confirm payment via WhatsApp</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Fast & convenient</p>
+                </div>
+
+                <!-- POS Payment -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Card Payment (POS)</h3>
+                    <p>Pay with your debit or credit card at our facility</p>
+                    <div class="payment-details">
+                        <p><strong>Cards:</strong> Visa, Mastercard, Verve</p>
+                        <p><strong>Where:</strong> Reception & Billing Counter</p>
+                        <p><strong>Available:</strong> 24/7</p>
+                        <p><strong>Note:</strong> Instant receipt provided</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Secure transactions</p>
+                </div>
+
+                <!-- Online Payment -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Online Payment</h3>
+                    <p>Pay through our secure online payment portal</p>
+                    <div class="payment-details">
+                        <p><strong>Methods:</strong> Paystack, Flutterwave</p>
+                        <p><strong>Access:</strong> Patient dashboard</p>
+                        <p><strong>Available:</strong> 24/7</p>
+                        <p><strong>Note:</strong> Automatic confirmation</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Pay from anywhere</p>
+                </div>
+
+                <!-- Insurance -->
+                <div class="payment-card fade-in">
+                    <div class="payment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Health Insurance</h3>
+                    <p>We accept various health insurance providers</p>
+                    <div class="payment-details">
+                        <p><strong>Accepted:</strong> NHIS, HMOs, Private Insurance</p>
+                        <p><strong>Process:</strong> Present insurance card</p>
+                        <p><strong>Note:</strong> Subject to policy coverage</p>
+                        <p><strong>Contact:</strong> Verify coverage first</p>
+                    </div>
+                    <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Cashless treatment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Chat Section -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-container">
+                <div class="whatsapp-card fade-in">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    <h2>Need Payment Assistance?</h2>
+                    <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our team is ready to help you!</p>
+                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat with Us on WhatsApp
+                    </a>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Available: 24/7 • Response time: Within minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Payment Support</h2>
+                <p>We're here to make your payment experience smooth and hassle-free</p>
+            </div>
+            <div class="help-grid">
+                <div class="help-card fade-in">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Get Invoice</h3>
+                    <p>Request a detailed invoice for your treatment via WhatsApp or at our billing counter</p>
+                </div>
+                <div class="help-card fade-in">
+                    <i class="fas fa-receipt"></i>
+                    <h3>Payment Receipt</h3>
+                    <p>Receive instant payment confirmation and official receipt for all transactions</p>
+                </div>
+                <div class="help-card fade-in">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Payment Plans</h3>
+                    <p>Flexible payment plans available for long-term treatments. Contact us for details</p>
+                </div>
+                <div class="help-card fade-in">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our billing support team is available round-the-clock to assist you with any payment concerns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20assistance" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <a href="{{ url('/') }}" style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
+                            <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70" height="70">
+                            <div class="logo-text">
+                                <span>DOMI CLINIC</span>
+                                <p style="font-size:0.5rem">....Bringing health to your doorsteps</p>
+                            </div>
+                        </a>
+                    </div>
+                    <p>Providing quality healthcare services with compassion and excellence. Your health and well-being are our top priorities.</p>
+                    <div style="margin-top: 1rem;">
+                        <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-twitter" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-instagram" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="{{ url('/') }}">Home</a>
+                    <a href="{{ route('services') }}">Services</a>
+                    <a href="{{ route('about') }}">About Us</a>
+                    <a href="{{ route('contact_us') }}">Contact</a>
+                    <a href="{{ route('doctors') }}">Doctors</a>
+                    <a href="{{ route('payment_methods') }}">Payment Methods</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Payment Options</h3>
+                    <a href="#">Cash Payment</a>
+                    <a href="#">Bank Transfer</a>
+                    <a href="#">Mobile Money</a>
+                    <a href="#">Card Payment</a>
+                    <a href="#">Online Payment</a>
+                    <a href="#">Health Insurance</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
+                        <p><i class="fas fa-map-marker-alt"></i> 1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop, Oyi 435115, Anambra</p>
+                    </a>
+                    <a href="tel:+2347062491804" target="_blank">
+                        <p><i class="fas fa-phone"></i> +2347062491804</p>
+                    </a>
+                    <a href="https://wa.me/2347062491804" target="_blank">
+                        <p><i class="fab fa-whatsapp"></i> WhatsApp Support</p>
+                    </a>
+                    <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

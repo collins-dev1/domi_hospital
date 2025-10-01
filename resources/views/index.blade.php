@@ -1232,6 +1232,14 @@
                     state-of-the-art equipment.</p>
             </div>
             <div class="services-grid">
+                <a href="{{ route('antenatal_clinic') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-baby"></i>
+                        <h3>Antenatal Clinic</h3>
+                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
+                            throughout pregnancy.</p>
+                    </div>
+                </a>
                 <a href="{{ route('pediatrics') }}">
                     <div class="service-card fade-in">
                         <i class="fas fa-child"></i>
@@ -1247,15 +1255,6 @@
                         <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
                             60 or 65 years and above.
                             Doctors who specialize in this field are called Geriatricians.</p>
-                    </div>
-                </a>
-                <a href="{{ route('eye_clinic') }}">
-                    <div class="service-card fade-in">
-                        <i class="fas fa-eye"></i>
-                        <h3>Eye Clinic</h3>
-                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
                     </div>
                 </a>
                 <a href="{{ route('lab') }}">
@@ -1293,18 +1292,18 @@
                             preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
                     </div>
                 </a>
-                <a href="{{ route('antenatal_clinic') }}">
+                <a href="{{ route('drug_dispensary') }}">
                     <div class="service-card fade-in">
-                        <i class="fas fa-baby"></i>
-                        <h3>Antenatal Clinic</h3>
-                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
+                        <i class="fas fa-pills"></i>
+                        <h3>Drug dispensary</h3>
+                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
+                            as prescribed by our doctors.</p>
                     </div>
                 </a>
                 <a href="{{ route('free_hiv_and_pregnancy_test') }}">
                     <div class="service-card fade-in">
                         <i class="fas fa-vial"></i>
-                        <h3>Free Hiv and Pregnancy Test</h3>
+                        <h3>Free Hiv and Pregnancy Test and Cervical Screening Test</h3>
                         <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
                             support the health and well-being of our community.</p>
                     </div>
@@ -1317,20 +1316,21 @@
                             it — day or night.</p>
                     </div>
                 </a>
-                <a href="{{ route('drug_dispensary') }}">
-                    <div class="service-card fade-in">
-                        <i class="fas fa-pills"></i>
-                        <h3>Drug dispensary</h3>
-                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
-                    </div>
-                </a>
                 <a href="{{ route('consultations') }}">
                     <div class="service-card fade-in">
                         <i class="fas fa-user-md"></i>
                         <h3>Consultations</h3>
                         <p>Our Consultation services provide patients with direct access to highly qualified doctors and
                             specialists who are committed to delivering personalized healthcare solutions.</p>
+                    </div>
+                </a>
+                <a href="{{ route('eye_clinic') }}">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-eye"></i>
+                        <h3>Eye Clinic</h3>
+                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
+                            care for the eyes and vision.
+                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
                     </div>
                 </a>
             </div>
@@ -1422,17 +1422,18 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
+                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
-                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
                     <a href="{{route('ultrasound')}}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
-                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('immunization') }}">Immunization</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
                     <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
-                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('consultations') }}">Consultations</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>

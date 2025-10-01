@@ -107,6 +107,7 @@ Route::post('create_health_card', [UserController::class, 'create_health_card'])
 Route::get('edit_card/{id}', [UserController::class, 'edit_card'])->name('edit_card');
 Route::post('update_card/{id}', [UserController::class, 'update_card'])->name('update_card');
 Route::get('delete_cards/{id}', [UserController::class, 'delete_cards'])->name('delete_cards');
+Route::get('payment_option', [UserController::class, 'payment_option'])->name('payment_option');
 });
 
 // Admin Middleware Group

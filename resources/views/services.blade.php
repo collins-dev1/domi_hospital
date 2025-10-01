@@ -1083,6 +1083,25 @@
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-header">
+                        <i class="fas fa-baby"></i>
+                        <h3>Antenatal Clinic</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
+                            throughout pregnancy.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of
+                                both mother and child.</li>
+                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe
+                                practices during pregnancy.</li>
+                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
+                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
+                        </ul>
+                        <a href="{{route('antenatal_clinic')}}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-header">
                         <i class="fas fa-child"></i>
                         <h3>Pediatrics</h3>
                     </div>
@@ -1121,28 +1140,6 @@
                         <a href="{{route('geriatrics')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-eye"></i>
-                        <h3>Eye Clinic</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
-                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and
-                                surgeries.</li>
-                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
-                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
-                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
-                        </ul>
-                        <a href="{{route('eye_clinic')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-vials"></i>
@@ -1159,7 +1156,6 @@
                         <a href="{{route('lab')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-vials"></i>
@@ -1177,7 +1173,6 @@
                         <a href="{{route('ultrasound')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-tint"></i>
@@ -1200,7 +1195,6 @@
                         <a href="{{route('blood_banking')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-syringe"></i>
@@ -1220,31 +1214,33 @@
                         <a href="{{route('immunization')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
-                        <i class="fas fa-baby"></i>
-                        <h3>Antenatal Clinic</h3>
+                        <i class="fas fa-pills"></i>
+                        <h3>Drug dispensary</h3>
                     </div>
                     <div class="service-content">
-                        <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
+                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
+                            as prescribed by our doctors.</p>
                         <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Regular check-ups to monitor the health and development of
-                                both mother and child.</li>
-                            <li><i class="fas fa-check"></i> Education on proper nutrition, exercise, and safe
-                                practices during pregnancy.</li>
-                            <li><i class="fas fa-check"></i> Early detection and management of complications.</li>
-                            <li><i class="fas fa-check"></i> Emotional and medical support for mothers-to-be.</li>
+                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and
+                                specialized medicines.</li>
+                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and
+                                usage.</li>
+                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug
+                                interactions.</li>
+                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to
+                                everyone.</li>
+                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are
+                                authentic and approved.</li>
                         </ul>
-                        <a href="{{route('antenatal_clinic')}}" class="btn btn-primary">Learn More</a>
+                        <a href="{{route('drug_dispensary')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-vial"></i>
-                        <h3>Free Hiv and Pregnancy Test</h3>
+                        <h3>Free Hiv and Pregnancy Test and Cervical Screening Test</h3>
                     </div>
                     <div class="service-content">
                         <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
@@ -1269,7 +1265,6 @@
                         <a href="{{route('free_hiv_and_pregnancy_test')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-ambulance"></i>
@@ -1292,31 +1287,6 @@
                         <a href="{{route('24_hours_emergency_clinic')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <i class="fas fa-pills"></i>
-                        <h3>Drug dispensary</h3>
-                    </div>
-                    <div class="service-content">
-                        <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Well-stocked pharmacy with a wide range of essential and
-                                specialized medicines.</li>
-                            <li><i class="fas fa-check"></i> Qualified pharmacists to guide you on correct dosage and
-                                usage.</li>
-                            <li><i class="fas fa-check"></i> Patient counseling on possible side effects and drug
-                                interactions.</li>
-                            <li><i class="fas fa-check"></i> Affordable pricing to make essential drugs accessible to
-                                everyone.</li>
-                            <li><i class="fas fa-check"></i> Strict quality control to ensure all medicines are
-                                authentic and approved.</li>
-                        </ul>
-                        <a href="{{route('drug_dispensary')}}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <i class="fas fa-user-md"></i>
@@ -1339,6 +1309,28 @@
                             <li>
                         </ul>
                         <a href="{{route('consultations')}}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <i class="fas fa-eye"></i>
+                        <h3>Eye Clinic</h3>
+                    </div>
+                    <div class="service-content">
+                        <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
+                            care for the eyes and vision.
+                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Comprehensive eye examinations.</li>
+                            <li><i class="fas fa-check"></i> State-of-the-art technology for vision testing and
+                                surgeries.</li>
+                            <li><i class="fas fa-check"></i> Specialized services for children and adults.</li>
+                            <li><i class="fas fa-check"></i> Prevention and management of chronic eye diseases.</li>
+                            <li><i class="fas fa-check"></i> A team of skilled ophthalmologists and optometrists.</li>
+                        </ul>
+                        <a href="{{route('eye_clinic')}}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1456,17 +1448,18 @@
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
+                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
-                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
                     <a href="{{route('ultrasound')}}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
-                    <a href="{{ route('immunization') }}">Immunization and Antenatal Clinic</a>
+                    <a href="{{ route('immunization') }}">Immunization</a>
+                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('free_hiv_and_pregnancy_test') }}">Free Hiv and Pregnancy Test</a>
                     <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
-                    <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
                     <a href="{{ route('consultations') }}">Consultations</a>
+                    <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
