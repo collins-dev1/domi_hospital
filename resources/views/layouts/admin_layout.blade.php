@@ -698,7 +698,7 @@
                                 </div>
                                 <a class="dropdown-item" href="{{ route('admin_profile') }}"><i
                                         class="fas fa-user mr-2"></i>Account</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="{{route('edit_profile')}}"><i class="fas fa-cog mr-2"></i>Setting</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i

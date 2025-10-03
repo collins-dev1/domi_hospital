@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\years_of_experience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -483,5 +484,62 @@ class AdminController extends Controller
         )->persistent();
 
         return redirect()->back();
+    }
+
+    public function edit_profile(){
+        return view('admin.edit_profile');
+    }
+
+    public function update_profile(Request $request, $id){
+        $profile = User::find($id);
+        $profile->name = $request->name;
+        $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        $profile->save();
+        Alert::html(
+            '<h3 style="color:black;">Profile Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully updated your profile.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->route('admin_profile');
+    }
+
+    public function change_password(){
+        return view('admin.update_password');
+    }
+
+    // Update the password
+    public function update_password(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        // Check current password
+        if (!Hash::check($request->current_password, $user->password)) {
+            Alert::html(
+            '<h3 style="color:black;">The current password is incorrect</h3>',
+            '<p style="color:black;">You have current write an incorrect password!!!.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
+        }
+
+        // Update password
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        Alert::html(
+            '<h3 style="color:black;">Password Changed Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully updated your password!!!.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->route('admin_profile');
     }
 }

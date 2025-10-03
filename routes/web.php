@@ -148,4 +148,8 @@ Route::get('delete_served/{id}', [AdminController::class, 'delete_served'])->nam
 Route::get('admin_profile', [AdminController::class, 'admin_profile'])->name('admin_profile');
 Route::post('update_pic/{id}', [AdminController::class, 'update_pic'])->name('update_pic');
 Route::post('delete_pics', [AdminController::class, 'delete_pics'])->name('delete_pics');
+Route::get('edit_profile', [AdminController::class, 'edit_profile'])->name('edit_profile');
+Route::post('update_profile/{id}', [AdminController::class, 'update_profile'])->name('update_profile');
+Route::get('change_password', [AdminController::class, 'change_password'])->name('change_password');
+Route::post('update_password', [AdminController::class, 'update_password'])->name('update_password');
 });

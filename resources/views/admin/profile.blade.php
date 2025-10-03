@@ -55,6 +55,11 @@
                         <label for="">Phone Number</label>
                         <input type="tel" value="{{ auth()->user()->phone }}" class="form-control" readonly>
                     </div>
+                    <div class="mt-3">
+                        <a href="{{route('edit_profile')}}">
+                            <button class="btn btn-success">Edit Profile</button>
+                        </a>
+                    </div>
                 @endauth
             </div>
 
@@ -79,7 +84,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
             </div>
