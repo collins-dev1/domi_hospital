@@ -7,6 +7,11 @@
     <title>Patient Dashboard - Domi Clinic</title>
     <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <style>
         * {
             margin: 0;
@@ -100,6 +105,13 @@
             align-items: center;
             justify-content: center;
             color: var(--white);
+        }
+
+        .user-avatar img {
+            width: 40px !important;
+            height: 40px !important;
+            object-fit: cover;
+            border-radius: 50%;
         }
 
         .dropdown {
@@ -1287,18 +1299,26 @@
                 <div class="dropdown">
                     <div class="user-info">
                         <div class="user-avatar">
-                            <i class="fas fa-user"></i>
+
+                            @if (auth()->user()->profile_pic != null)
+                                <div>
+                                    <img src="{{ asset('uploads/profile_pics/' . auth()->user()->profile_pic) }}"
+                                        alt="">
+                                </div>
+                            @else
+                                <i class="fas fa-user"></i>
+                            @endif
                         </div>
                         @auth
-                        <span id="userName">{{auth()->user()->name}}</span>
+                            <span id="userName">{{ explode(' ', auth()->user()->name)[0] }}</span>
                         @endauth
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-content">
-                        <a href="{{route('user_profile')}}" class="dropdown-item">
+                        <a href="{{ route('user_profile') }}" class="dropdown-item">
                             <i class="fas fa-user"></i> Profile
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="{{ route('edit_user_profile') }}" class="dropdown-item">
                             <i class="fas fa-cog"></i> Settings
                         </a>
                         <a href="{{ route('logout') }}"
@@ -1334,7 +1354,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('health_card')}}" class="sidebar-link">
+                    <a href="{{ route('health_card') }}" class="sidebar-link">
                         <i class="fas fa-id-card"></i>
                         <span>Health Card</span>
                     </a>
@@ -1596,6 +1616,9 @@
                 document.querySelector('.sidebar').style.display = 'block';
             }
         });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
 </body>
 

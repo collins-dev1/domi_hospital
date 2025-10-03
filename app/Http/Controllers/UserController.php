@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\appointment;
 use App\Models\doctor;
 use App\Models\health_card;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
@@ -179,5 +182,99 @@ public function health_card()
 
     $card = $cards->first();
         return view('user.profile', compact('user', 'card', 'cards'));
+    }
+
+    public function edit_user_profile(){
+        return view('user.edit_user');
+    }
+
+    public function update_user_profile(Request $request,$id){
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->dob = $request->dob;
+        $user->save();
+        Alert::html(
+            '<h3 style="color:black;">Profile Updated Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully updated your profile.</p>',
+            'success'
+        )->persistent();
+        return redirect()->route('user_profile');
+    }
+
+    public function user_password(){
+        return view('user.user_password');
+    }
+
+    public function update_user_password(Request $request){
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        // Check current password
+        if (!Hash::check($request->current_password, $user->password)) {
+            Alert::html(
+            '<h3 style="color:black;">The current password is incorrect</h3>',
+            '<p style="color:black;">You have current write an incorrect password!!!.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
+        }
+
+        // Update password
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        Alert::html(
+            '<h3 style="color:black;">Password Changed Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully updated your password!!!.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->route('user_profile');
+    }
+
+    public function update_user_pics(Request $request, $id){
+        $profile = User::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads/profile_pics'), $filename);
+
+            // Use the correct column name
+            $profile->profile_pic = $filename;
+        }
+
+        $profile->save();
+
+        Alert::html(
+            '<h3 style="color:black;">Profile Picture Uploaded Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully uploaded your profile picture.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
+    }
+
+    public function delete_user_pics(){
+        $profile = Auth::user();
+        if ($profile->profile_pic) {
+            Storage::delete('public/uploads/profile_pics/' . $profile->profile_pic); // Adjust the path as necessary
+            $profile->profile_pic = null; // Remove the reference in the database
+            $profile->save(); // Save the changes to the database
+        }
+        Alert::html(
+            '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully deleted your profile picture.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
     }
 }

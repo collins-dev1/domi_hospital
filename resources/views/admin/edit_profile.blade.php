@@ -1,14 +1,14 @@
 @extends('layouts.admin_layout')
 
 @section('content')
-@include('sweetalert::alert')
-<div>
+    @include('sweetalert::alert')
+    <div>
         <h1 class="text-dark fw-bold mb-2">Settings</h1>
         <h5 class="text-dark">Account Settings</h5>
     </div>
     @auth
         <div>
-            <form action="{{route('update_profile', auth()->user()->id)}}" method="POST">
+            <form action="{{ route('update_profile', auth()->user()->id) }}" method="POST">
                 @csrf
                 <div class="mt-4">
                     <label for="">Update Name(If Neccessary)</label>
@@ -29,7 +29,7 @@
                 </div>
             </form>
             <div class="mt-4">
-                <a href="{{route('change_password')}}">
+                <a href="{{ route('change_password') }}">
                     <button class="btn btn-danger">Change and Update Password</button>
                 </a>
             </div>

@@ -109,6 +109,12 @@ Route::post('update_card/{id}', [UserController::class, 'update_card'])->name('u
 Route::get('delete_cards/{id}', [UserController::class, 'delete_cards'])->name('delete_cards');
 Route::get('payment_option', [UserController::class, 'payment_option'])->name('payment_option');
 Route::get('user_profile', [UserController::class, 'user_profile'])->name('user_profile');
+Route::get('edit_user_profile', [UserController::class, 'edit_user_profile'])->name('edit_user_profile');
+Route::post('update_user_profile/{id}', [UserController::class, 'update_user_profile'])->name('update_user_profile');
+Route::get('user_password', [UserController::class, 'user_password'])->name('user_password');
+Route::post('update_user_password', [UserController::class, 'update_user_password'])->name('update_user_password');
+Route::post('update_user_pics/{id}', [UserController::class, 'update_user_pics'])->name('update_user_pics');
+Route::post('delete_user_pics', [UserController::class, 'delete_user_pics'])->name('delete_user_pics');
 });
 
 // Admin Middleware Group

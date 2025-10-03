@@ -3,42 +3,92 @@
 @section('content')
     @auth
         <div class="profile-container">
-        <div class="profile-header">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="profile-body">
-            <h2>{{auth()->user()->name}}</h2>
-            <p class="role">Domi Clinic</p>
+            <div class="profile-header">
 
-            <div class="info-card">
-                <h3>Personal Information</h3>
-                <p><strong>Phone:</strong> {{auth()->user()->phone}}</p>
-                <p><strong>Email:</strong> {{auth()->user()->email}}</p>
-                <p><strong>Gender:</strong> {{auth()->user()->gender}}</p>
-                <p><strong>Martial Status:</strong> {{auth()->user()->martial_status}}</p>
-                <p><strong>Date of Birth:</strong> {{auth()->user()->dob}}</p>
+                 @if (auth()->user()->profile_pic != null)
+                        <div>
+                            <img
+                                src="{{ asset('uploads/profile_pics/' .auth()->user()->profile_pic) }}" alt="">
+                        </div>
+                    @else
+                        <i class="fas fa-user"></i>
+                    @endif
+            </div>
+            <div class="d-flex flex-row gap-3 mt-5 justify-content-center align-items-center" title="Update Profile Picture">
+
+                <button type="button" class="btn" style="background-color: transparent" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    <i class="ri-image-edit-fill fs-4 text-dark"></i>
+                </button>
+
+                <form action="{{ route('delete_user_pics') }}" method="POST"
+                    onclick="return confirm('Are you sure want to delete your Profile Picture')">
+                    @csrf
+                    <button type="submit" class="btn" style="background-color: transparent">
+                        <i class="ri-delete-bin-5-fill fs-4 text-dark" title="Delete Profile Picture"></i>
+
+                    </button>
+                </form>
             </div>
 
-            <div class="info-card">
-                <h3>Professional Details</h3>
-                @if ($card)
-                <p><strong>Blood Group:</strong> {{$card->blood_group}}</p>
-                <p><strong>GenoType:</strong> {{$card->genotype}}</p>
-                @endif
-                <p><strong>License No.:</strong> MED00{{auth()->user()->id}}</p>
-            </div>
+            <div class="profile-body">
+                <h2>{{ auth()->user()->name }}</h2>
+                <p class="role">Domi Clinic</p>
 
-            <div class="profile-actions">
-                <button class="btn-primary">Edit Profile</button>
-                <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
+                <div class="info-card">
+                    <h3>Personal Information</h3>
+                    <p><strong>Phone:</strong> {{ auth()->user()->phone }}</p>
+                    <p><strong>Email:</strong> {{ auth()->user()->email }}</p>
+                    <p><strong>Gender:</strong> {{ auth()->user()->gender }}</p>
+                    <p><strong>Martial Status:</strong> {{ auth()->user()->martial_status }}</p>
+                    <p><strong>Date of Birth:</strong> {{ auth()->user()->dob }}</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Professional Details</h3>
+                    @if ($card)
+                        <p><strong>Blood Group:</strong> {{ $card->blood_group }}</p>
+                        <p><strong>GenoType:</strong> {{ $card->genotype }}</p>
+                    @endif
+                    <p><strong>License No.:</strong> MED00{{ auth()->user()->id }}</p>
+                </div>
+
+                <div class="profile-actions">
+                    <a href="{{ route('edit_user_profile') }}">
+                        <button class="btn-primary">Edit Profile</button>
+                    </a>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                     <button class="btn-secondary">Log Out</button>
+                        <button class="btn-secondary">Log Out</button>
 
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5" id="staticBackdropLabel">Update your Profile Picture</h5>
+                    <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">
+
+                    </button>
+                </div>
+                <form action="{{route('update_user_pics', auth()->user()->id)}}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -77,8 +127,25 @@
             font-size: 2rem;
         }
 
+        .profile-header img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            position: absolute;
+            bottom: -55px;
+            left: 50%;
+            transform: translateX(-50%);
+            object-fit: cover;
+            background: #eee;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
         .profile-body {
-            padding: 70px 25px 25px;
+            padding: 15px 25px 25px;
             text-align: center;
         }
 
