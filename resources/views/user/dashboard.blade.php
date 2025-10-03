@@ -16,7 +16,7 @@
                 <div class="stat-label">My Appointments</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value">2</div>
+                <div class="stat-value">{{$all_doctors}}</div>
                 <div class="stat-label">Active Doctors</div>
             </div>
             {{-- <div class="stat-card">

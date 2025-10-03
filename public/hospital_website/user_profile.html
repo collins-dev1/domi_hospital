@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    :root {
+      --primary-color: #1e90ff;
+      --secondary-color: #f4f6fb;
+      --text-color: #333;
+      --light-text: #666;
+      --border-radius: 12px;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .profile-container {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      width: 420px;
+      overflow: hidden;
+    }
+
+    .profile-header {
+      background: var(--primary-color);
+      height: 140px;
+      position: relative;
+    }
+
+    .profile-header img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      position: absolute;
+      bottom: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .profile-body {
+      padding: 70px 25px 25px;
+      text-align: center;
+    }
+
+    .profile-body h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: var(--text-color);
+    }
+
+    .profile-body p.role {
+      color: var(--light-text);
+      margin: 6px 0 20px;
+      font-size: 0.95rem;
+    }
+
+    .info-card {
+      background: var(--secondary-color);
+      border-radius: var(--border-radius);
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: var(--text-color);
+    }
+
+    .info-card p {
+      margin: 3px 0;
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+
+    .profile-actions {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .profile-actions button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #0066cc;
+    }
+
+    .btn-secondary {
+      background: #f1f1f1;
+      color: var(--text-color);
+    }
+
+    .btn-secondary:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="https://via.placeholder.com/110" alt="User Avatar">
+    </div>
+    <div class="profile-body">
+      <h2>Dr. John Smith</h2>
+      <p class="role">Cardiologist | Domi Clinic</p>
+
+      <div class="info-card">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> +1 234 567 890</p>
+        <p><strong>Email:</strong> john.smith@email.com</p>
+        <p><strong>Address:</strong> 123 Main St, City, Country</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Professional Details</h3>
+        <p><strong>Specialization:</strong> Cardiology</p>
+        <p><strong>Experience:</strong> 12 years</p>
+        <p><strong>License No.:</strong> MED123456</p>
+      </div>
+
+      <div class="profile-actions">
+        <button class="btn-primary">Edit Profile</button>
+        <button class="btn-secondary">Log Out</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

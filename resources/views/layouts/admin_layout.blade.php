@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('admin_dashboard/assets/vendor/charts/c3charts/c3.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_dashboard/assets/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
     <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Admin Dashboard - Domi Clinic</title>
     <style>
         :root {
@@ -601,8 +602,8 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation" style="background-color:#2d3748;">
-                    <span class="navbar-toggler-icon"></span>
+                    aria-label="Toggle navigation" style="background-color:#fff; color:#000">
+                    <i class="ri-align-left"></i>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
@@ -678,19 +679,25 @@
                         </li> --}}
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="assets/images/avatar-1.jpg" alt=""
-                                    class="user-avatar-md rounded-circle"></a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @if (auth()->user()->profile_pic != null)
+                                    <img src="{{ asset('uploads/profile_pics/' .auth()->user()->profile_pic) }}" alt=""
+                                        class="user-avatar-md rounded-circle">
+                                @else
+                                    <i class="fa fa-user text-dark"></i>
+                                @endif
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
                                 aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     @auth
-                                       <h5 class="mb-0 text-white nav-user-name">{{auth()->user()->name}}</h5>
+                                        <h5 class="mb-0 text-white nav-user-name">{{ auth()->user()->name }}</h5>
                                     @endauth
 
                                     <span class="status"></span><span class="ml-2">Available</span>
                                 </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="{{ route('admin_profile') }}"><i
+                                        class="fas fa-user mr-2"></i>Account</a>
                                 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -715,7 +722,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light mt-3">
-                    <a class="d-xl-none d-lg-none" href="{{route('dashboards')}}">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="{{ route('dashboards') }}">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -726,7 +733,8 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="{{route('dashboards')}}" ><i class="fa fa-fw fa-home"></i>Dashboard <span
+                                <a class="nav-link active" href="{{ route('dashboards') }}"><i
+                                        class="fa fa-fw fa-home"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
 
                             </li>
@@ -737,54 +745,62 @@
                                 <div id="submenu-1" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('patients')}}">Manage Users</a>
+                                            <a class="nav-link" href="{{ route('patients') }}">Manage Users</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-2" aria-controls="submenu-9"><i class="fa fa-fw fa-book"></i>Appointment</a>
+                                    data-target="#submenu-2" aria-controls="submenu-9"><i
+                                        class="fa fa-fw fa-book"></i>Appointment</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('manage_appointments')}}">Management Appointment</a>
+                                            <a class="nav-link" href="{{ route('manage_appointments') }}">Management
+                                                Appointment</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-9"><i class="fas fa-id-card"></i>Health Cards</a>
+                                    data-target="#submenu-3" aria-controls="submenu-9"><i
+                                        class="fas fa-id-card"></i>Health Cards</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('health_cards')}}">Managing Health Cards</a>
+                                            <a class="nav-link" href="{{ route('health_cards') }}">Managing Health
+                                                Cards</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-4" aria-controls="submenu-9"><i class="fas fa-user-md"></i>Doctor</a>
+                                    data-target="#submenu-4" aria-controls="submenu-9"><i
+                                        class="fas fa-user-md"></i>Doctor</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('add_doctor')}}">Add Doctor</a>
+                                            <a class="nav-link" href="{{ route('add_doctor') }}">Add Doctor</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('manage_doctors')}}">Manage Doctor</a>
+                                            <a class="nav-link" href="{{ route('manage_doctors') }}">Manage
+                                                Doctor</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-5" aria-controls="submenu-9"><i class="fa fa-fw fa-book"></i>Contact Information</a>
+                                    data-target="#submenu-5" aria-controls="submenu-9"><i
+                                        class="fa fa-fw fa-book"></i>Contact Information</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('contact_information')}}">Manage Contact Us Information</a>
+                                            <a class="nav-link" href="{{ route('contact_information') }}">Manage
+                                                Contact Us Information</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -792,20 +808,25 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-6" aria-controls="submenu-9"><i class="fas fa-notes-medical"></i>Hospital Highlights</a>
+                                    data-target="#submenu-6" aria-controls="submenu-9"><i
+                                        class="fas fa-notes-medical"></i>Hospital Highlights</a>
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('years')}}">Update and Manage Hospital Years of Experience</a>
+                                            <a class="nav-link" href="{{ route('years') }}">Update and Manage
+                                                Hospital Years of Experience</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('award')}}">Update and Manage Hospital Award</a>
+                                            <a class="nav-link" href="{{ route('award') }}">Update and Manage
+                                                Hospital Award</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('department')}}">Update and Manage Specialized Department</a>
+                                            <a class="nav-link" href="{{ route('department') }}">Update and Manage
+                                                Specialized Department</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('served')}}">Update and Manage Patient Served</a>
+                                            <a class="nav-link" href="{{ route('served') }}">Update and Manage
+                                                Patient Served</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -872,6 +893,9 @@
     <script src="{{ asset('admin_dashboard/assets/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
     <script src="{{ asset('admin_dashboard/assets/vendor/charts/c3charts/C3chartjs.js') }}"></script>
     <script src="{{ asset('admin_dashboard/assets/libs/js/dashboard-ecommerce.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

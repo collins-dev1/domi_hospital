@@ -22,9 +22,11 @@
                         <i class="fas fa-heartbeat"></i>Get Health Card
                     </button>
                 @elseif ($card->status == 0)
-                    <button class="btn btn-primary">
+                   <a href="{{route('payment_option')}}">
+                     <button class="btn btn-primary">
                         <i class="fas fa-heartbeat"></i>Make Payment
                     </button>
+                   </a>
                 @elseif ($card->status == 1)
                     <h5>Already have a card</h5>
                 @else
@@ -84,7 +86,7 @@
         @elseif ($card->status == 0)
             {{-- Card exists but pending --}}
             <div class="alert alert-info" role="alert" style="margin-top: 2rem;">
-                Your health card is currently pending approval. Please wait for an administrator to review and approve your
+                Your health card is currently pending approval. Make Payment by Chatting us and Please wait for an administrator to review and approve your
                 card.
             </div>
         @elseif ($card->status == 1)

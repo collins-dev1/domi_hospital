@@ -1295,7 +1295,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="{{route('user_profile')}}" class="dropdown-item">
                             <i class="fas fa-user"></i> Profile
                         </a>
                         <a href="#" class="dropdown-item">

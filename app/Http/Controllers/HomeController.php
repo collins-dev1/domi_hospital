@@ -55,8 +55,9 @@ class HomeController extends Controller
             }
 
             $card = $cards->first();
+            $all_doctors = doctor::count();
 
-            return view('user.dashboard', compact('appointments', 'countappointments', 'card', 'user'));
+            return view('user.dashboard', compact('appointments', 'countappointments', 'card', 'user', 'all_doctors'));
         } elseif ($userType == 1 && $ban_status == 0) {
             $users = User::count();
             $countappointment = appointment::count();

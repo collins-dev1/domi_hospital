@@ -6,8 +6,26 @@
         <div class="container">
             <div class="section-header" style="display: flex; flex-direction:column; margin-top:-3rem;">
                 <h2>How to Pay</h2>
-                <p>We accept various payment methods to make your healthcare experience seamless and convenient</p>
+                <p>We accept various payment methods to make your healthcare experience seamless and convenient and chat us on whatsapp</p>
             </div>
+
+            <!-- WhatsApp Chat Section -->
+    <section class="whatsapp-section">
+        <div class="container">
+            <div class="whatsapp-container">
+                <div class="whatsapp-card fade-in">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    <h2>Need Payment Assistance?</h2>
+                    <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our team is ready to help you!</p>
+                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat us
+                    </a>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Available: 24/7 • Response time: Within minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
             <div class="payment-grid">
                 <!-- Cash Payment -->
@@ -60,23 +78,7 @@
         </div>
     </section>
 
-    <!-- WhatsApp Chat Section -->
-    <section class="whatsapp-section">
-        <div class="container">
-            <div class="whatsapp-container">
-                <div class="whatsapp-card fade-in">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i>
-                    <h2>Need Payment Assistance?</h2>
-                    <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our team is ready to help you!</p>
-                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Chat with Us on WhatsApp
-                    </a>
-                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Available: 24/7 • Response time: Within minutes</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <style>
 
@@ -235,6 +237,7 @@
         .whatsapp-section {
             background: var(--white);
             padding: 4rem 0;
+            margin-bottom: 6rem;
         }
 
         .whatsapp-container {

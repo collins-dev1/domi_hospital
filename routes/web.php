@@ -108,6 +108,7 @@ Route::get('edit_card/{id}', [UserController::class, 'edit_card'])->name('edit_c
 Route::post('update_card/{id}', [UserController::class, 'update_card'])->name('update_card');
 Route::get('delete_cards/{id}', [UserController::class, 'delete_cards'])->name('delete_cards');
 Route::get('payment_option', [UserController::class, 'payment_option'])->name('payment_option');
+Route::get('user_profile', [UserController::class, 'user_profile'])->name('user_profile');
 });
 
 // Admin Middleware Group
@@ -144,4 +145,7 @@ Route::get('delete_department/{id}', [AdminController::class, 'delete_department
 Route::get('served', [AdminController::class, 'served'])->name('served');
 Route::post('create_served', [AdminController::class, 'create_served'])->name('create_served');
 Route::get('delete_served/{id}', [AdminController::class, 'delete_served'])->name('delete_served');
+Route::get('admin_profile', [AdminController::class, 'admin_profile'])->name('admin_profile');
+Route::post('update_pic/{id}', [AdminController::class, 'update_pic'])->name('update_pic');
+Route::post('delete_pics', [AdminController::class, 'delete_pics'])->name('delete_pics');
 });

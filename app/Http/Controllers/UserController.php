@@ -165,4 +165,19 @@ public function health_card()
 
         return redirect()->back();
     }
+
+    public function user_profile(){
+        $user = Auth::user();
+
+    if ($user->usertype === '1') {
+        // Admin can see all cards
+        $cards = health_card::with('user')->get();
+    } else {
+        // Normal user sees only their card
+        $cards = health_card::where('user_id', $user->id)->get();
+    }
+
+    $card = $cards->first();
+        return view('user.profile', compact('user', 'card', 'cards'));
+    }
 }

@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\years_of_experience;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
@@ -190,23 +191,29 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully added a new doctor to the system.</p>',
             'success'
         )->persistent();
+
         return redirect()->route('manage_doctors');
     }
 
     // Manage Doctors
-    public function manage_doctors(){
+    public function manage_doctors()
+    {
         $doctors = doctor::all();
+
         return view('admin.manage_doctors', compact('doctors'));
     }
 
     // Edit Doctors
-    public function edit_doctors($id){
+    public function edit_doctors($id)
+    {
         $doctor = doctor::find($id);
+
         return view('admin.edit_doctors', compact('doctor'));
     }
 
     // Update Doctors
-    public function update_doctor(Request $request, $id){
+    public function update_doctor(Request $request, $id)
+    {
         $doctor = doctor::find($id);
         $doctor->name = $request->name;
         $doctor->phone = $request->phone;
@@ -229,11 +236,13 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully edited a new doctor to the system.</p>',
             'success'
         )->persistent();
+
         return redirect()->route('manage_doctors');
     }
 
     // Delete Doctor
-    public function delete_doctor($id){
+    public function delete_doctor($id)
+    {
         $doctor = doctor::find($id);
         $doctor->delete();
         Alert::html(
@@ -241,18 +250,22 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully deleted a new doctor to the system.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
     // Contact Information
-    public function contact_information(){
+    public function contact_information()
+    {
         $infos = contact_info::all();
+
         return view('admin.contactus_info', compact('infos'));
     }
 
     // create information
-    public function create_info(Request $request){
-        $info = new contact_info();
+    public function create_info(Request $request)
+    {
+        $info = new contact_info;
         $info->first_name = $request->first_name;
         $info->last_name = $request->last_name;
         $info->email = $request->email;
@@ -267,11 +280,13 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully sent your information to the adminstrator wait for their response.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
     // Delete information
-    public function delete_info($id){
+    public function delete_info($id)
+    {
         $info = contact_info::find($id);
         $info->delete();
         Alert::html(
@@ -279,16 +294,20 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully deleted this information.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
     // Hospital Years of Experience
-    public function years(){
+    public function years()
+    {
         $years = years_of_experience::first();
+
         return view('admin.years_of_experience', compact('years'));
     }
 
-    public function create_years(Request $request){
+    public function create_years(Request $request)
+    {
         $years = years_of_experience::firstOrNew();
         $years->years = $request->years;
         $years->save();
@@ -297,10 +316,12 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Updated your Hospital Years of Expereince.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-    public function delete_years($id){
+    public function delete_years($id)
+    {
         $years = years_of_experience::find($id);
         $years->delete();
         Alert::html(
@@ -308,16 +329,20 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Deleted your Hospital Years of Expereince.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
     // Hospital Award
-    public function award(){
+    public function award()
+    {
         $award = award::first();
+
         return view('admin.award', compact('award'));
     }
 
-    public function create_award(Request $request){
+    public function create_award(Request $request)
+    {
         $award = award::firstOrNew();
         $award->award = $request->award;
         $award->save();
@@ -326,10 +351,12 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Updated your Hospital Award.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-    public function delete_award($id){
+    public function delete_award($id)
+    {
         $award = award::find($id);
         $award->delete();
         Alert::html(
@@ -337,16 +364,20 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Deleted your Hospital Award.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
     // Department
-    public function department(){
+    public function department()
+    {
         $department = departments::first();
+
         return view('admin.department', compact('department'));
     }
 
-    public function create_department(Request $request){
+    public function create_department(Request $request)
+    {
         $department = departments::firstOrNew();
         $department->department = $request->department;
         $department->save();
@@ -355,10 +386,12 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Updated your Specialized Departments.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-    public function delete_department($id){
+    public function delete_department($id)
+    {
         $department = departments::find($id);
         $department->delete();
         Alert::html(
@@ -366,16 +399,20 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Deleted your Hospital department.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-     // served
-    public function served(){
+    // served
+    public function served()
+    {
         $served = patient_served::first();
+
         return view('admin.served', compact('served'));
     }
 
-    public function create_served(Request $request){
+    public function create_served(Request $request)
+    {
         $served = patient_served::firstOrNew();
         $served->served = $request->served;
         $served->save();
@@ -384,10 +421,12 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Updated your Patients Served.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
-    public function delete_served($id){
+    public function delete_served($id)
+    {
         $served = patient_served::find($id);
         $served->delete();
         Alert::html(
@@ -395,9 +434,54 @@ class AdminController extends Controller
             '<p style="color:black;">You have successfully Deleted your Hospital Patients Served.</p>',
             'success'
         )->persistent();
+
         return redirect()->back();
     }
 
+    public function admin_profile()
+    {
+        $profile = Auth::user();
 
+        return view('admin.profile', compact('profile'));
+    }
 
+    public function update_pic(Request $request, $id)
+    {
+        $profile = User::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads/profile_pics'), $filename);
+
+            // Use the correct column name
+            $profile->profile_pic = $filename;
+        }
+
+        $profile->save();
+
+        Alert::html(
+            '<h3 style="color:black;">Profile Picture Uploaded Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully uploaded your profile picture.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
+    }
+
+    public function delete_pics(){
+        $profile = Auth::user();
+        if ($profile->profile_pic) {
+            Storage::delete('public/uploads/profile_pics/' . $profile->profile_pic); // Adjust the path as necessary
+            $profile->profile_pic = null; // Remove the reference in the database
+            $profile->save(); // Save the changes to the database
+        }
+        Alert::html(
+            '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully deleted your profile picture.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
+    }
 }
