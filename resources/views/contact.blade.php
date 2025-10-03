@@ -6,6 +6,19 @@
     <title>Contact Us - Domi Clinic</title>
     <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+
     <style>
         * {
             margin: 0;
@@ -1088,7 +1101,7 @@
                     <i class="fas fa-phone-alt"></i>
                     <div class="emergency-text">
                         <h3>Emergency Hotline</h3>
-                        <p>911 / +234 (0) 911 000 000</p>
+                        <p>+2347062491804</p>
                     </div>
                 </div>
                 <div class="emergency-item">
@@ -1140,9 +1153,9 @@
                         <i class="fas fa-envelope"></i>
                         <div class="info-content">
                             <h3>Email Addresses</h3>
-                            <p>General: info@medicarehospital.com<br>
-                               Appointments: appointments@medicarehospital.com<br>
-                               Emergency: emergency@medicarehospital.com</p>
+                            <p>General: info@domiclinic.net<br>
+                               Appointments: info@domiclinic.net<br>
+                               Emergency: info@domiclinic.net</p>
                         </div>
                     </div>
 
@@ -1150,7 +1163,7 @@
                         <i class="fas fa-globe"></i>
                         <div class="info-content">
                             <h3>Website & Social</h3>
-                            <p>www.medicarehospital.com<br>
+                            <p>www.domiclinic.net<br>
                                Follow us on social media for updates<br>
                                Patient Portal Available</p>
                         </div>
@@ -1300,7 +1313,7 @@
                             throughout pregnancy.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1310,7 +1323,7 @@
                             adolescents — from birth up to around 18 years old (sometimes 21).</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                            <strong>Email:</strong> neurology@medicarehospital.com</p>
+                            <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1321,7 +1334,7 @@
                             Doctors who specialize in this field are called Geriatricians.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> neurology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1331,7 +1344,7 @@
                             to help diagnose, monitor, and prevent diseases</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> orthopedics@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                  <div class="department-card fade-in">
@@ -1341,7 +1354,7 @@
                             tissues inside the body — no radiation involved.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1353,7 +1366,7 @@
                             disorders.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1363,7 +1376,7 @@
                             preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1373,7 +1386,7 @@
                             as prescribed by our doctors.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1383,7 +1396,7 @@
                             support the health and well-being of our community.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1393,7 +1406,7 @@
                             it — day or night.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
 
@@ -1404,7 +1417,7 @@
                             specialists who are committed to delivering personalized healthcare solutions.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> radiology@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
@@ -1415,7 +1428,7 @@
                             It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> pediatrics@medicarehospital.com</p>
+                           <strong>Email:</strong> info@domiclinic.net</p>
                     </div>
                 </div>
 
@@ -1505,8 +1518,8 @@
                     <a href="tel:+2347062491804" target="_blank">
                         <p><i class="fas fa-phone"></i> +2347062491804</p>
                     </a>
-                    <a href="mailto:" target="_blank">
-                        <p><i class="fas fa-envelope"></i> info@medicarehospital.com</p>
+                    <a href="mailto:info@domiclinic.net" target="_blank">
+                        <p><i class="fas fa-envelope"></i> info@domiclinic.net</p>
                     </a>
                     <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
                 </div>

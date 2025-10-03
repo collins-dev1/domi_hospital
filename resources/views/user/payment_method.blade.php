@@ -10,14 +10,15 @@
             </div>
 
             <!-- WhatsApp Chat Section -->
-    <section class="whatsapp-section">
+   @auth
+        <section class="whatsapp-section">
         <div class="container">
             <div class="whatsapp-container">
                 <div class="whatsapp-card fade-in">
                     <i class="fab fa-whatsapp whatsapp-icon"></i>
                     <h2>Need Payment Assistance?</h2>
                     <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our team is ready to help you!</p>
-                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment" target="_blank" class="whatsapp-btn">
+                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment!!!%20my%20registration%20name%20is%20{{auth()->user()->name}}%20and%20registration%20email%20address%20is%20{{auth()->user()->email}}%20Thanks!!!" target="_blank" class="whatsapp-btn">
                         <i class="fab fa-whatsapp"></i>
                         Chat us
                     </a>
@@ -26,6 +27,7 @@
             </div>
         </div>
     </section>
+   @endauth
 
             <div class="payment-grid">
                 <!-- Cash Payment -->
