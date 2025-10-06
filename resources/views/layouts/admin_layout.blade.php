@@ -681,7 +681,7 @@
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if (auth()->user()->profile_pic != null)
-                                    <img src="{{ asset('uploads/profile_pics/' .auth()->user()->profile_pic) }}" alt=""
+                                    <img src="{{ asset('storage/profile_pics/' . auth()->user()->profile_pic) }}" alt=""
                                         class="user-avatar-md rounded-circle">
                                 @else
                                     <i class="fa fa-user text-dark"></i>

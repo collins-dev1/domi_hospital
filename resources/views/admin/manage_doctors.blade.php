@@ -30,7 +30,7 @@
                                 @if ($doctor->image == null)
                                     <i class="fa fa-fw fa-user-circle"></i>
                                 @else
-                                    <img src="{{ asset('uploads/doctors/' . $doctor->image) }}" alt=""
+                                    <img src="{{ asset('storage/doctors/' . $doctor->image) }}" alt="Doctor Image"
                                         style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
                                 @endif
                             </td>

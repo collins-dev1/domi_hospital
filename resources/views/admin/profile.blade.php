@@ -14,7 +14,7 @@
                     @if (auth()->user()->profile_pic != null)
                         <div>
                             <img style="border-radius: 50%; object-fit:cover; width: 120px; height:120px;"
-                                src="{{ asset('uploads/profile_pics/' .auth()->user()->profile_pic) }}" alt="">
+                                src="{{ asset('storage/profile_pics/' . auth()->user()->profile_pic) }}" alt="">
                         </div>
                     @else
                         <div

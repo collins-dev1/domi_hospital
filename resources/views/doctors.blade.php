@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Doctors - Domi Clinic</title>
-    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
+        window.smartsupp || (function(d) {
+            var s, c, o = smartsupp = function() {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 
     <style>
         * {
@@ -213,10 +221,21 @@ window.smartsupp||(function(d) {
             position: absolute;
         }
 
-        .loading-message:nth-child(1) { animation-delay: 0s; }
-        .loading-message:nth-child(2) { animation-delay: 3s; }
-        .loading-message:nth-child(3) { animation-delay: 6s; }
-        .loading-message:nth-child(4) { animation-delay: 9s; }
+        .loading-message:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .loading-message:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .loading-message:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .loading-message:nth-child(4) {
+            animation-delay: 9s;
+        }
 
         .floating-icons {
             position: absolute;
@@ -275,24 +294,32 @@ window.smartsupp||(function(d) {
 
         /* Preloader Animations */
         @keyframes logoFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-10px);
             }
         }
 
         @keyframes heartbeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             25% {
                 transform: scale(1.1);
             }
+
             50% {
                 transform: scale(1);
             }
+
             75% {
                 transform: scale(1.05);
             }
@@ -302,16 +329,20 @@ window.smartsupp||(function(d) {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
             }
+
             50% {
                 opacity: 0.7;
                 transform: translate(-50%, -50%) scale(1.1);
@@ -319,9 +350,12 @@ window.smartsupp||(function(d) {
         }
 
         @keyframes textFade {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.9;
             }
+
             50% {
                 opacity: 0.6;
             }
@@ -332,10 +366,12 @@ window.smartsupp||(function(d) {
                 width: 0%;
                 transform: translateX(-100%);
             }
+
             50% {
                 width: 80%;
                 transform: translateX(0%);
             }
+
             100% {
                 width: 100%;
                 transform: translateX(20%);
@@ -343,38 +379,50 @@ window.smartsupp||(function(d) {
         }
 
         @keyframes messageRotate {
-            0%, 20% {
+
+            0%,
+            20% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            25%, 75% {
+
+            25%,
+            75% {
                 opacity: 1;
                 transform: translateY(0px);
             }
-            80%, 100% {
+
+            80%,
+            100% {
                 opacity: 0;
                 transform: translateY(-20px);
             }
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.1;
             }
+
             25% {
                 transform: translateY(-20px) rotate(90deg);
                 opacity: 0.2;
             }
+
             50% {
                 transform: translateY(-30px) rotate(180deg);
                 opacity: 0.15;
             }
+
             75% {
                 transform: translateY(-10px) rotate(270deg);
                 opacity: 0.1;
             }
         }
+
         /* ======= END PRELOADER STYLES ======= */
 
         /* Header & Navigation */
@@ -972,7 +1020,7 @@ window.smartsupp||(function(d) {
                 display: block;
             }
 
-            nav{
+            nav {
                 padding-inline: 1rem !important;
             }
 
@@ -1036,6 +1084,7 @@ window.smartsupp||(function(d) {
         }
     </style>
 </head>
+
 <body>
     <div class="preloader" id="preloader">
         <!-- Floating Medical Icons Background -->
@@ -1191,7 +1240,7 @@ window.smartsupp||(function(d) {
         }
     </script>
     <!-- Header -->
-     <header class="header">
+    <header class="header">
         <nav class="nav container">
             <div class="logo">
                 <a href="{{ url('/') }}"
@@ -1207,6 +1256,7 @@ window.smartsupp||(function(d) {
                             font-weight: bold;
                             color: #06923E;
                         }
+
                         .logo-text p {
                             margin: 0;
                             color: #06923E;
@@ -1221,7 +1271,8 @@ window.smartsupp||(function(d) {
                 <li><a href="{{ route('contact_us') }}">Contact</a></li>
                 <li><a href="{{ route('doctors') }}">Doctors</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}" class="btn" style="background-color: #06923E; color:#fff;">Register</a></li>
+                <li><a href="{{ route('register') }}" class="btn"
+                        style="background-color: #06923E; color:#fff;">Register</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -1233,7 +1284,8 @@ window.smartsupp||(function(d) {
     <section class="page-header">
         <div class="container">
             <h1>Our Medical Experts</h1>
-            <p>Meet our team of highly qualified doctors and healthcare professionals dedicated to providing exceptional medical care with compassion and expertise.</p>
+            <p>Meet our team of highly qualified doctors and healthcare professionals dedicated to providing exceptional
+                medical care with compassion and expertise.</p>
         </div>
     </section>
 
@@ -1243,17 +1295,17 @@ window.smartsupp||(function(d) {
             <div class="stats-grid">
                 <div class="stat-card fade-in">
                     <i class="fas fa-user-md"></i>
-                    <h3 id="total-doctors">{{$countdoctor}}</h3>
+                    <h3 id="total-doctors">{{ $countdoctor }}</h3>
                     <p>Expert Doctors</p>
                 </div>
                 <div class="stat-card fade-in">
                     <i class="fas fa-award"></i>
-                    <h3>{{$years->years}}+</h3>
+                    <h3>{{ $years->years }}+</h3>
                     <p>Years Combined Experience</p>
                 </div>
                 <div class="stat-card fade-in">
                     <i class="fas fa-hospital"></i>
-                    <h3>{{$department->department}}</h3>
+                    <h3>{{ $department->department }}</h3>
                     <p>Specialized Departments</p>
                 </div>
             </div>
@@ -1290,35 +1342,36 @@ window.smartsupp||(function(d) {
             <div class="doctors-grid" id="doctorsGrid">
                 <!-- Doctor Card 1 -->
                 @foreach ($doctors as $doctor)
-                <div class="doctor-card fade-in" data-specialty="cardiology">
-                    <div class="doctor-image">
-                        @if ($doctor->image == null)
-                        <i class="fas fa-user-md"></i>
-                        @else
-                        <div style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
-                            <img src="{{ asset('uploads/doctors/' . $doctor->image) }}" alt="" style="width: 100%; height:100%; object-fit:cover; border-radius: 50%;">
+                    <div class="doctor-card fade-in" data-specialty="cardiology">
+                        <div class="doctor-image">
+                            @if ($doctor->image == null)
+                                <i class="fas fa-user-md"></i>
+                            @else
+                                <div style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                                    <img src="{{ asset('storage/doctors/' . $doctor->image) }}" alt="Doctor Image"
+                                    style="width: 100%; height:100%; object-fit:cover; border-radius: 50%;">
+                                </div>
+                            @endif
+                            <div class="availability-badge">Available</div>
                         </div>
-                        @endif
-                        <div class="availability-badge">Available</div>
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. {{$doctor->name}}</h3>
-                        <div class="doctor-specialty">{{$doctor->position}}</div>
-                        <div class="doctor-credentials">
-                            <div class="credential-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>{{$doctor->university}}</span>
+                        <div class="doctor-info">
+                            <h3>Dr. {{ $doctor->name }}</h3>
+                            <div class="doctor-specialty">{{ $doctor->position }}</div>
+                            <div class="doctor-credentials">
+                                <div class="credential-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>{{ $doctor->university }}</span>
+                                </div>
+                                <div class="credential-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>{{ $doctor->years_of_experience }}+ Years Experience</span>
+                                </div>
                             </div>
-                            <div class="credential-item">
-                                <i class="fas fa-clock"></i>
-                                <span>{{$doctor->years_of_experience}}+ Years Experience</span>
-                            </div>
-                        </div>
-                        {{-- <div class="doctor-actions">
+                            {{-- <div class="doctor-actions">
                             <button class="btn btn-accent">Book Appointment</button>
                         </div> --}}
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -1369,11 +1422,11 @@ window.smartsupp||(function(d) {
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
+                    <a href="{{ route('antenatal_clinic') }}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
-                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('ultrasound') }}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
                     <a href="{{ route('immunization') }}">Immunization</a>
                     <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
@@ -1398,11 +1451,12 @@ window.smartsupp||(function(d) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by
+                    <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>
-     <script>
+    <script>
         // Global variables
         let currentUser = null;
         const API_BASE_URL = '/api'; // Change this to your Laravel API base URL
@@ -1473,11 +1527,26 @@ window.smartsupp||(function(d) {
 
         // Counter Animation
         function initializeCounters() {
-            const counters = [
-                { id: 'patients-count', target: 15000, suffix: '+' },
-                { id: 'doctors-count', target: 50, suffix: '+' },
-                { id: 'experience-count', target: 25, suffix: '+' },
-                { id: 'awards-count', target: 30, suffix: '+' }
+            const counters = [{
+                    id: 'patients-count',
+                    target: 15000,
+                    suffix: '+'
+                },
+                {
+                    id: 'doctors-count',
+                    target: 50,
+                    suffix: '+'
+                },
+                {
+                    id: 'experience-count',
+                    target: 25,
+                    suffix: '+'
+                },
+                {
+                    id: 'awards-count',
+                    target: 30,
+                    suffix: '+'
+                }
             ];
 
             const statsSection = document.querySelector('.stats');
@@ -1859,7 +1928,10 @@ window.smartsupp||(function(d) {
                 };
             }
 
-            return { success: false, message: 'Unknown endpoint' };
+            return {
+                success: false,
+                message: 'Unknown endpoint'
+            };
         }
 
         // Check authentication status
@@ -1907,7 +1979,7 @@ window.smartsupp||(function(d) {
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {

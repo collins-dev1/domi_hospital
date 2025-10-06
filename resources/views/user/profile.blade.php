@@ -8,7 +8,7 @@
                  @if (auth()->user()->profile_pic != null)
                         <div>
                             <img
-                                src="{{ asset('uploads/profile_pics/' .auth()->user()->profile_pic) }}" alt="">
+                                src="{{ asset('storage/profile_pics/' . auth()->user()->profile_pic) }}" alt="">
                         </div>
                     @else
                         <i class="fas fa-user"></i>
