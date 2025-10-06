@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -243,13 +244,22 @@ public function health_card()
         $profile = User::findOrFail($id);
 
         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time().'_'.$file->getClientOriginalName();
-            $file->move(public_path('uploads/profile_pics'), $filename);
+        $image = $request->file('image');
 
-            // Use the correct column name
-            $profile->profile_pic = $filename;
+        // Generate a unique filename
+        $filename = Str::uuid() . '.' . $image->getClientOriginalExtension();
+
+        // Store the file in storage/app/public/profile_pics
+        $path = $image->storeAs('profile_pics', $filename, 'public');
+
+        // Optionally delete old image if it exists
+        if ($profile->profile_pic && Storage::disk('public')->exists('profile_pics/' . $profile->profile_pic)) {
+            Storage::disk('public')->delete('profile_pics/' . $profile->profile_pic);
         }
+
+        // Save the filename in DB (not full path)
+        $profile->profile_pic = $filename;
+    }
 
         $profile->save();
 
@@ -262,19 +272,27 @@ public function health_card()
         return redirect()->back();
     }
 
-    public function delete_user_pics(){
-        $profile = Auth::user();
-        if ($profile->profile_pic) {
-            Storage::delete('public/uploads/profile_pics/' . $profile->profile_pic); // Adjust the path as necessary
-            $profile->profile_pic = null; // Remove the reference in the database
-            $profile->save(); // Save the changes to the database
-        }
-        Alert::html(
-            '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
-            '<p style="color:black;">You have successfully deleted your profile picture.</p>',
-            'success'
-        )->persistent();
+    public function delete_user_pics()
+{
+    $profile = Auth::user();
 
-        return redirect()->back();
+    if ($profile->profile_pic) {
+        // Delete from the public disk (storage/app/public/profile_pics)
+        if (Storage::disk('public')->exists('profile_pics/' . $profile->profile_pic)) {
+            Storage::disk('public')->delete('profile_pics/' . $profile->profile_pic);
+        }
+
+        // Remove the reference in the database
+        $profile->profile_pic = null;
+        $profile->save();
     }
+
+    Alert::html(
+        '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
+        '<p style="color:black;">You have successfully deleted your profile picture.</p>',
+        'success'
+    )->persistent();
+
+    return redirect()->back();
+}
 }
