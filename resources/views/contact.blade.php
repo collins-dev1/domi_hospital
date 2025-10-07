@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Domi Clinic</title>
-    <link rel="icon" href="{{asset('hospital_website/img/domi.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
+        window.smartsupp || (function(d) {
+            var s, c, o = smartsupp = function() {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 
     <style>
         * {
@@ -213,10 +221,21 @@ window.smartsupp||(function(d) {
             position: absolute;
         }
 
-        .loading-message:nth-child(1) { animation-delay: 0s; }
-        .loading-message:nth-child(2) { animation-delay: 3s; }
-        .loading-message:nth-child(3) { animation-delay: 6s; }
-        .loading-message:nth-child(4) { animation-delay: 9s; }
+        .loading-message:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .loading-message:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .loading-message:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .loading-message:nth-child(4) {
+            animation-delay: 9s;
+        }
 
         .floating-icons {
             position: absolute;
@@ -275,24 +294,32 @@ window.smartsupp||(function(d) {
 
         /* Preloader Animations */
         @keyframes logoFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-10px);
             }
         }
 
         @keyframes heartbeat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             25% {
                 transform: scale(1.1);
             }
+
             50% {
                 transform: scale(1);
             }
+
             75% {
                 transform: scale(1.05);
             }
@@ -302,16 +329,20 @@ window.smartsupp||(function(d) {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
             }
+
             50% {
                 opacity: 0.7;
                 transform: translate(-50%, -50%) scale(1.1);
@@ -319,9 +350,12 @@ window.smartsupp||(function(d) {
         }
 
         @keyframes textFade {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.9;
             }
+
             50% {
                 opacity: 0.6;
             }
@@ -332,10 +366,12 @@ window.smartsupp||(function(d) {
                 width: 0%;
                 transform: translateX(-100%);
             }
+
             50% {
                 width: 80%;
                 transform: translateX(0%);
             }
+
             100% {
                 width: 100%;
                 transform: translateX(20%);
@@ -343,38 +379,50 @@ window.smartsupp||(function(d) {
         }
 
         @keyframes messageRotate {
-            0%, 20% {
+
+            0%,
+            20% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            25%, 75% {
+
+            25%,
+            75% {
                 opacity: 1;
                 transform: translateY(0px);
             }
-            80%, 100% {
+
+            80%,
+            100% {
                 opacity: 0;
                 transform: translateY(-20px);
             }
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px) rotate(0deg);
                 opacity: 0.1;
             }
+
             25% {
                 transform: translateY(-20px) rotate(90deg);
                 opacity: 0.2;
             }
+
             50% {
                 transform: translateY(-30px) rotate(180deg);
                 opacity: 0.15;
             }
+
             75% {
                 transform: translateY(-10px) rotate(270deg);
                 opacity: 0.1;
             }
         }
+
         /* ======= END PRELOADER STYLES ======= */
 
         /* Header & Navigation */
@@ -823,8 +871,13 @@ window.smartsupp||(function(d) {
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Responsive Design */
@@ -833,7 +886,7 @@ window.smartsupp||(function(d) {
                 display: block;
             }
 
-            nav{
+            nav {
                 padding-inline: 1rem !important;
             }
 
@@ -892,6 +945,7 @@ window.smartsupp||(function(d) {
         }
     </style>
 </head>
+
 <body>
     <div class="preloader" id="preloader">
         <!-- Floating Medical Icons Background -->
@@ -1047,7 +1101,7 @@ window.smartsupp||(function(d) {
         }
     </script>
     <!-- Header -->
-     <header class="header">
+    <header class="header">
         <nav class="nav container">
             <div class="logo">
                 <a href="{{ url('/') }}"
@@ -1063,6 +1117,7 @@ window.smartsupp||(function(d) {
                             font-weight: bold;
                             color: #06923E;
                         }
+
                         .logo-text p {
                             margin: 0;
                             color: #06923E;
@@ -1077,7 +1132,8 @@ window.smartsupp||(function(d) {
                 <li><a href="{{ route('contact_us') }}">Contact</a></li>
                 <li><a href="{{ route('doctors') }}">Doctors</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}" class="btn" style="background-color: #06923E; color:#fff;">Register</a></li>
+                <li><a href="{{ route('register') }}" class="btn"
+                        style="background-color: #06923E; color:#fff;">Register</a></li>
             </ul>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 <i class="fas fa-bars"></i>
@@ -1089,7 +1145,8 @@ window.smartsupp||(function(d) {
     <section class="page-header">
         <div class="container">
             <h1>Contact Us</h1>
-            <p>Get in touch with our healthcare team. We're here to help you with your medical needs and answer any questions you may have.</p>
+            <p>Get in touch with our healthcare team. We're here to help you with your medical needs and answer any
+                questions you may have.</p>
         </div>
     </section>
 
@@ -1135,7 +1192,7 @@ window.smartsupp||(function(d) {
                         <div class="info-content">
                             <h3>Hospital Address</h3>
                             <p>1 Obika Street, 3-3 Nkwelle Ezunaka,<br>By Uju Bus-Stop,
-                            Oyi 435115, Anambra<br>Nigeria</p>
+                                Oyi 435115, Anambra<br>Nigeria</p>
                         </div>
                     </div>
 
@@ -1144,8 +1201,8 @@ window.smartsupp||(function(d) {
                         <div class="info-content">
                             <h3>Phone Numbers</h3>
                             <p>Main Line: +2347062491804<br>
-                               Emergency: +2347062491804<br>
-                               Appointments: +2347062491804</p>
+                                Emergency: +2347062491804<br>
+                                Appointments: +2347062491804</p>
                         </div>
                     </div>
 
@@ -1154,8 +1211,8 @@ window.smartsupp||(function(d) {
                         <div class="info-content">
                             <h3>Email Addresses</h3>
                             <p>General: info@domiclinic.net<br>
-                               Appointments: info@domiclinic.net<br>
-                               Emergency: info@domiclinic.net</p>
+                                Appointments: info@domiclinic.net<br>
+                                Emergency: info@domiclinic.net</p>
                         </div>
                     </div>
 
@@ -1164,8 +1221,8 @@ window.smartsupp||(function(d) {
                         <div class="info-content">
                             <h3>Website & Social</h3>
                             <p>www.domiclinic.net<br>
-                               Follow us on social media for updates<br>
-                               Patient Portal Available</p>
+                                Follow us on social media for updates<br>
+                                Patient Portal Available</p>
                         </div>
                     </div>
                 </div>
@@ -1173,7 +1230,7 @@ window.smartsupp||(function(d) {
                 <!-- Contact Form -->
                 <div class="contact-form fade-in">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" method="POST" action="{{route('create_info')}}">
+                    <form id="contactForm" method="POST" action="{{ route('create_info') }}">
                         @csrf
                         <div class="form-row">
                             <div class="form-group">
@@ -1241,7 +1298,8 @@ window.smartsupp||(function(d) {
                                 <option value="Low - General inquiry">Low - General inquiry</option>
                                 <option value="Normal - Standard response">Normal - Standard response</option>
                                 <option value="High - Urgent matter">High - Urgent matter</option>
-                                <option value="Emergency - Immediate attention">Emergency - Immediate attention</option>
+                                <option value="Emergency - Immediate attention">Emergency - Immediate attention
+                                </option>
                             </select>
                         </div>
 
@@ -1270,29 +1328,31 @@ window.smartsupp||(function(d) {
                     <i class="fas fa-clock"></i>
                     <h3>General Services</h3>
                     <p><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM<br>
-                       <strong>Saturday:</strong> 9:00 AM - 4:00 PM<br>
-                       <strong>Sunday:</strong> 10:00 AM - 2:00 PM</p>
+                        <strong>Saturday:</strong> 9:00 AM - 4:00 PM<br>
+                        <strong>Sunday:</strong> 10:00 AM - 2:00 PM
+                    </p>
                 </div>
                 <div class="hours-card fade-in">
                     <i class="fas fa-ambulance"></i>
                     <h3>Emergency Services</h3>
                     <p><strong>24/7 Availability</strong><br>
-                       Round-the-clock emergency care<br>
-                       Always ready to help</p>
+                        Round-the-clock emergency care<br>
+                        Always ready to help</p>
                 </div>
                 <div class="hours-card fade-in">
                     <i class="fas fa-user-md"></i>
                     <h3>Specialist Consultations</h3>
                     <p><strong>By Appointment Only</strong><br>
-                       Monday - Saturday<br>
-                       Call to schedule</p>
+                        Monday - Saturday<br>
+                        Call to schedule</p>
                 </div>
                 <div class="hours-card fade-in">
                     <i class="fas fa-flask"></i>
                     <h3>Laboratory</h3>
                     <p><strong>Monday - Saturday:</strong> 7:00 AM - 7:00 PM<br>
-                       <strong>Sunday:</strong> 8:00 AM - 4:00 PM<br>
-                       Urgent tests 24/7</p>
+                        <strong>Sunday:</strong> 8:00 AM - 4:00 PM<br>
+                        Urgent tests 24/7
+                    </p>
                 </div>
             </div>
         </div>
@@ -1310,103 +1370,113 @@ window.smartsupp||(function(d) {
                     <i class="fas fa-baby"></i>
                     <h3>Antenatal Clinic</h3>
                     <p>The Antenatal Clinic is dedicated to the health of expectant mothers and their babies
-                            throughout pregnancy.</p>
+                        throughout pregnancy.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-child"></i>
                     <h3>Pediatrics</h3>
                     <p>Pediatrics is the branch of medicine that focuses on the healthcare of infants, children, and
-                            adolescents — from birth up to around 18 years old (sometimes 21).</p>
+                        adolescents — from birth up to around 18 years old (sometimes 21).</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                            <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-blind"></i>
                     <h3>Geriatrics</h3>
                     <p>Geriatrics is the branch of medicine that focuses on the healthcare of older adults — usually
-                            60 or 65 years and above.
-                            Doctors who specialize in this field are called Geriatricians.</p>
+                        60 or 65 years and above.
+                        Doctors who specialize in this field are called Geriatricians.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-vials"></i>
                     <h3>Laboratory Services</h3>
                     <p>A hospital laboratory is where doctors order tests on blood, urine, stool, or tissue samples
-                            to help diagnose, monitor, and prevent diseases</p>
+                        to help diagnose, monitor, and prevent diseases</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
-                 <div class="department-card fade-in">
+                <div class="department-card fade-in">
                     <i class="fas fa-vials"></i>
                     <h3>Ultrasound</h3>
                     <p>Ultrasound (sonography) uses high-frequency sound waves to produce images of organs and
-                            tissues inside the body — no radiation involved.</p>
+                        tissues inside the body — no radiation involved.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-tint"></i>
                     <h3>Blood Banking and Donation</h3>
                     <p>At Domi Clinic, our Blood Bank and Donation Unit plays a vital role in saving lives. We
-                            provide a safe and reliable source of blood for patients who require transfusions during
-                            surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
-                            disorders.</p>
+                        provide a safe and reliable source of blood for patients who require transfusions during
+                        surgeries, emergencies, or treatment of conditions such as anemia, cancer, and blood
+                        disorders.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-syringe"></i>
                     <h3>Immunization</h3>
                     <p>Our Immunization Unit provides essential vaccines to protect children and adults from
-                            preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
+                        preventable diseases such as polio, measles, tetanus, hepatitis, and more.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-pills"></i>
                     <h3>Drug dispensary</h3>
                     <p>Our Drug Dispensary ensures patients have access to safe, genuine, and effective medications
-                            as prescribed by our doctors.</p>
+                        as prescribed by our doctors.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-vial"></i>
                     <h3>Free Hiv and Pregnancy Test and Cervical Screening Test</h3>
                     <p>Our hospital offers free, confidential, and reliable HIV and pregnancy testing services to
-                            support the health and well-being of our community.</p>
+                        support the health and well-being of our community.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-ambulance"></i>
                     <h3>24 Hours Emergency Clinic</h3>
                     <p>Our 24 Hours Emergency Clinic is always open to provide urgent medical care whenever you need
-                            it — day or night.</p>
+                        it — day or night.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
 
@@ -1414,21 +1484,23 @@ window.smartsupp||(function(d) {
                     <i class="fas fa-user-md"></i>
                     <h3>Consultations</h3>
                     <p>Our Consultation services provide patients with direct access to highly qualified doctors and
-                            specialists who are committed to delivering personalized healthcare solutions.</p>
+                        specialists who are committed to delivering personalized healthcare solutions.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
                 <div class="department-card fade-in">
                     <i class="fas fa-eye"></i>
                     <h3>Eye Clinic</h3>
                     <p>An Eye Clinic is a specialized department in a hospital or standalone center that provides
-                            care for the eyes and vision.
-                            It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
+                        care for the eyes and vision.
+                        It deals with the prevention, diagnosis, and treatment of eye conditions.</p>
                     <div class="department-contact">
                         <p><strong>Phone:</strong> +2347062491804<br>
-                           <strong>Email:</strong> info@domiclinic.net</p>
+                            <strong>Email:</strong> info@domiclinic.net
+                        </p>
                     </div>
                 </div>
 
@@ -1444,7 +1516,10 @@ window.smartsupp||(function(d) {
                 <p>Located in the heart of Medical City with easy access and ample parking</p>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.083670737352!2d6.8087056702529125!3d6.1910841481744425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104393b4b324dfeb%3A0x69438240c2554168!2sDomi%20Clinic!5e0!3m2!1sen!2sng!4v1758493225882!5m2!1sen!2sng" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.083670737352!2d6.8087056702529125!3d6.1910841481744425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104393b4b324dfeb%3A0x69438240c2554168!2sDomi%20Clinic!5e0!3m2!1sen!2sng!4v1758493225882!5m2!1sen!2sng"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -1496,11 +1571,11 @@ window.smartsupp||(function(d) {
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
+                    <a href="{{ route('antenatal_clinic') }}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
-                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('ultrasound') }}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
                     <a href="{{ route('immunization') }}">Immunization</a>
                     <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
@@ -1525,58 +1600,21 @@ window.smartsupp||(function(d) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by
+                    <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>
-<script>
+   <script>
         // Global variables
         let currentUser = null;
         const API_BASE_URL = '/api'; // Change this to your Laravel API base URL
-
-        // DOM Content Loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize animations
-            initializeAnimations();
-            // Initialize statistics counter
-            initializeCounters();
-            // Set minimum date for appointments
-            setMinimumDate();
-            // Check if user is logged in
-            checkAuthStatus();
-        });
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
-
-        // Modal Functions
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
         // Animation Functions
         function initializeAnimations() {
             const observerOptions = {
@@ -1600,11 +1638,26 @@ window.smartsupp||(function(d) {
 
         // Counter Animation
         function initializeCounters() {
-            const counters = [
-                { id: 'patients-count', target: 15000, suffix: '+' },
-                { id: 'doctors-count', target: 50, suffix: '+' },
-                { id: 'experience-count', target: 25, suffix: '+' },
-                { id: 'awards-count', target: 30, suffix: '+' }
+            const counters = [{
+                    id: 'patients-count',
+                    target: 15000,
+                    suffix: '+'
+                },
+                {
+                    id: 'doctors-count',
+                    target: 50,
+                    suffix: '+'
+                },
+                {
+                    id: 'experience-count',
+                    target: 25,
+                    suffix: '+'
+                },
+                {
+                    id: 'awards-count',
+                    target: 30,
+                    suffix: '+'
+                }
             ];
 
             const statsSection = document.querySelector('.stats');
@@ -1642,352 +1695,6 @@ window.smartsupp||(function(d) {
             }, 40);
         }
 
-        // Set minimum date for appointment booking
-        function setMinimumDate() {
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-
-            const appointmentDate = document.getElementById('appointmentDate');
-            if (appointmentDate) {
-                appointmentDate.min = tomorrow.toISOString().split('T')[0];
-            }
-        }
-
-        // Form Validation
-        function validateForm(formId) {
-            const form = document.getElementById(formId);
-            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-            let isValid = true;
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#e53e3e';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = '#e2e8f0';
-                }
-            });
-
-            // Password confirmation check for registration
-            if (formId === 'registrationForm') {
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-
-                if (password !== confirmPassword) {
-                    document.getElementById('confirmPassword').style.borderColor = '#e53e3e';
-                    showNotification('Passwords do not match!', 'error');
-                    isValid = false;
-                }
-            }
-
-            return isValid;
-        }
-
-        // Login Form Handler
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('loginForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/auth/login', data);
-
-                if (response.success) {
-                    currentUser = response.user;
-                    localStorage.setItem('authToken', response.token);
-                    localStorage.setItem('currentUser', JSON.stringify(response.user));
-
-                    showNotification('Login successful!', 'success');
-                    closeModal('loginModal');
-                    updateAuthUI();
-                } else {
-                    showNotification(response.message || 'Login failed!', 'error');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                showNotification('Login failed. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Registration Form Handler
-        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('registrationForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/auth/register', data);
-
-                if (response.success) {
-                    currentUser = response.user;
-                    localStorage.setItem('authToken', response.token);
-                    localStorage.setItem('currentUser', JSON.stringify(response.user));
-
-                    showNotification('Registration successful!', 'success');
-                    closeModal('registerModal');
-                    updateAuthUI();
-
-                    // Show patient card
-                    showPatientCard(response.user);
-                } else {
-                    showNotification(response.message || 'Registration failed!', 'error');
-                }
-            } catch (error) {
-                console.error('Registration error:', error);
-                showNotification('Registration failed. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Appointment Form Handler
-        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('appointmentForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/appointments', data);
-
-                if (response.success) {
-                    showNotification('Appointment booked successfully!', 'success');
-                    closeModal('appointmentModal');
-                    this.reset();
-                } else {
-                    showNotification(response.message || 'Failed to book appointment!', 'error');
-                }
-            } catch (error) {
-                console.error('Appointment booking error:', error);
-                showNotification('Failed to book appointment. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Show Patient Card
-        function showPatientCard(userData) {
-            // Generate patient ID
-            const patientId = 'MED' + Date.now().toString().slice(-6);
-
-            // Populate card data
-            document.getElementById('cardPatientId').textContent = patientId;
-            document.getElementById('cardFullName').textContent = `${userData.firstName} ${userData.lastName}`;
-            document.getElementById('cardDOB').textContent = formatDate(userData.dateOfBirth);
-            document.getElementById('cardBloodGroup').textContent = userData.bloodGroup || 'Not specified';
-            document.getElementById('cardPhone').textContent = userData.phone;
-            document.getElementById('cardRegDate').textContent = formatDate(new Date().toISOString().split('T')[0]);
-
-            // Show card modal
-            openModal('cardModal');
-        }
-
-        // Print Card Function
-        function printCard() {
-            window.print();
-        }
-
-        // Download Card as PDF (simplified version)
-        function downloadCard() {
-            // This would typically use a library like jsPDF
-            showNotification('PDF download feature will be implemented with jsPDF library', 'info');
-        }
-
-        // Utility Functions
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: '2-digit'
-            });
-        }
-
-        // Notification System
-        function showNotification(message, type = 'info') {
-            // Remove existing notifications
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#e53e3e' : '#3182ce'};
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                z-index: 3000;
-                max-width: 400px;
-                animation: slideIn 0.3s ease-out;
-            `;
-            notification.textContent = message;
-
-            // Add to body
-            document.body.appendChild(notification);
-
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.animation = 'slideOut 0.3s ease-in';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 300);
-                }
-            }, 5000);
-        }
-
-        // Add CSS for notifications
-        const notificationStyles = document.createElement('style');
-        notificationStyles.textContent = `
-            @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-
-            @keyframes slideOut {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(notificationStyles);
-
-        // Simulate API calls (replace with actual Laravel API calls)
-        async function simulateApiCall(endpoint, data) {
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-            // Mock responses
-            if (endpoint === '/auth/register') {
-                return {
-                    success: true,
-                    message: 'Registration successful',
-                    user: {
-                        id: Date.now(),
-                        firstName: data.firstName,
-                        lastName: data.lastName,
-                        email: data.email,
-                        phone: data.phone,
-                        dateOfBirth: data.dateOfBirth,
-                        bloodGroup: data.bloodGroup,
-                        address: data.address,
-                        gender: data.gender
-                    },
-                    token: 'mock-jwt-token-' + Date.now()
-                };
-            }
-
-            if (endpoint === '/auth/login') {
-                return {
-                    success: true,
-                    message: 'Login successful',
-                    user: {
-                        id: 1,
-                        firstName: 'John',
-                        lastName: 'Doe',
-                        email: data.loginEmail,
-                        phone: '+234 123 456 7890',
-                        dateOfBirth: '1990-01-01',
-                        bloodGroup: 'O+',
-                        address: '123 Main Street'
-                    },
-                    token: 'mock-jwt-token-login'
-                };
-            }
-
-            if (endpoint === '/appointments') {
-                return {
-                    success: true,
-                    message: 'Appointment booked successfully',
-                    appointment: {
-                        id: Date.now(),
-                        ...data,
-                        status: 'confirmed'
-                    }
-                };
-            }
-
-            return { success: false, message: 'Unknown endpoint' };
-        }
 
         // Check authentication status
         function checkAuthStatus() {
@@ -1999,91 +1706,7 @@ window.smartsupp||(function(d) {
                 updateAuthUI();
             }
         }
-
-        // Update authentication UI
-        function updateAuthUI() {
-            const navLinks = document.querySelector('.nav-links');
-
-            if (currentUser) {
-                // Replace login/register with user menu
-                const loginLink = navLinks.querySelector('a[onclick*="loginModal"]');
-                const registerBtn = navLinks.querySelector('a[onclick*="registerModal"]');
-
-                if (loginLink) loginLink.style.display = 'none';
-                if (registerBtn) registerBtn.style.display = 'none';
-
-                // Add user menu (simplified)
-                const userMenu = document.createElement('li');
-                userMenu.innerHTML = `
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span>Welcome, ${currentUser.firstName}!</span>
-                        <a href="#" onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1rem;">Logout</a>
-                    </div>
-                `;
-                navLinks.appendChild(userMenu);
-            }
-        }
-
-        // Logout function
-        function logout() {
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('currentUser');
-            currentUser = null;
-            location.reload();
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form input focus effects
-        document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-                this.style.borderColor = 'var(--primary-color)';
-            });
-
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-                if (!this.value) {
-                    this.style.borderColor = '#e2e8f0';
-                }
-            });
-        });
-
-        // Real-time form validation
-        document.getElementById('confirmPassword')?.addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-
-            if (confirmPassword && password !== confirmPassword) {
-                this.style.borderColor = '#e53e3e';
-            } else {
-                this.style.borderColor = '#e2e8f0';
-            }
-        });
-
-        // Add loading states to buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.type === 'submit') {
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                }
-            });
-        });
     </script>
 </body>
+
 </html>

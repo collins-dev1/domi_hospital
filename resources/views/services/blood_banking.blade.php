@@ -8,17 +8,24 @@
     <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
+        window.smartsupp || (function(d) {
+            var s, c, o = smartsupp = function() {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 
     <style>
         * {
@@ -1092,18 +1099,29 @@ window.smartsupp||(function(d) {
             <div class="service-detail-content">
                 <div class="service-detail-text fade-in">
                     <h3>Blood Banking and Donation</h3>
-                    <p>Blood banking and donation are essential services that ensure hospitals and clinics have a safe
-                        and sufficient supply of blood and blood products for patients in need. Whether it is for
-                        emergency surgery, accident victims, patients with chronic conditions, or mothers during
-                        childbirth, donated blood often makes the difference between life and death.</p>
-                    <p>Blood Banking and Donation form the backbone of emergency and routine healthcare. By choosing to
-                        donate blood, you become a lifesaver and a vital part of a system that sustains countless
-                        patients daily.</p>
+                    <p>Saves Lives in Emergencies: Blood transfusions are essential in managing victims of accidents,
+                        trauma, and other emergencies where blood loss occurs.
+                        Supports</p>
+                    <p>Supports Medical Treatments: Blood is indispensable for complex surgical procedures, including
+                        cardiovascular and orthopedic surgeries.
+                        Manages</p>
+                    <p>Manages Chronic Conditions: Donated blood and its components are crucial for patients with
+                        inherited blood disorders, anemia, certain cancers, and other chronic conditions that affect the
+                        blood.
+                    </p>
+                    <p>Production of Blood Products: Plasma, a part of blood, can be processed into vital medicines like
+                        immunoglobulins and coagulation factors that treat various serious diseases.
+                    </p>
+                    <p>Foundation for a Safe Blood Supply: Regular, voluntary, and non-remunerated blood donation is the
+                        foundation for a safe and reliable blood supply, ensuring that blood is available when needed.
+                    </p>
+                    <p>Improves Quality of Life: For patients with chronic conditions, timely access to safe blood can
+                        dramatically improve their quality of life and life expectancy.</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
                 <div class="service-detail-image fade-in">
-                    <img src="https://i.pinimg.com/736x/8f/f8/30/8ff8306a6c77255225cd5ad55f67b287.jpg"
+                    <img src="https://i.pinimg.com/1200x/bb/5e/df/bb5edfc3f96f2bc50fcb8adc0fdad1ac.jpg"
                         alt="General Medicine">
                 </div>
             </div>
@@ -1187,7 +1205,8 @@ window.smartsupp||(function(d) {
                 <h3>Who Can Donate?</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Generally healthy adults (age and weight requirements vary by region).
+                        <li><i class="fas fa-check"></i> Generally healthy adults (age and weight requirements vary by
+                            region).
                         <li>
                         <li><i class="fas fa-check"></i> Free from infections or chronic illnesses that affect safety.
                         <li>
@@ -1204,11 +1223,12 @@ window.smartsupp||(function(d) {
                     <ul>
                         <li><i class="fas fa-check"></i> Saves lives and supports community health.
                         <li>
-                        <li><i class="fas fa-check"></i> Provides donors with a free mini health checkup (blood pressure, hemoglobin, etc.).
+                        <li><i class="fas fa-check"></i> Provides donors with a free mini health checkup (blood
+                            pressure, hemoglobin, etc.).
                         <li>
                         <li><i class="fas fa-check"></i> Encourages healthy blood circulation and renewal.
                         <li>
-                            <li><i class="fas fa-check"></i> A sense of contribution and humanitarian service.
+                        <li><i class="fas fa-check"></i> A sense of contribution and humanitarian service.
                         <li>
                     </ul>
                 </div>
@@ -1224,7 +1244,7 @@ window.smartsupp||(function(d) {
                         <li>
                         <li><i class="fas fa-check"></i> 24/7 availability of blood for emergencies.
                         <li>
-                            <li><i class="fas fa-check"></i> Awareness programs to encourage voluntary donation.
+                        <li><i class="fas fa-check"></i> Awareness programs to encourage voluntary donation.
                         <li>
 
                     </ul>
@@ -1345,11 +1365,11 @@ window.smartsupp||(function(d) {
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
+                    <a href="{{ route('antenatal_clinic') }}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
-                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('ultrasound') }}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
                     <a href="{{ route('immunization') }}">Immunization</a>
                     <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
@@ -1374,7 +1394,8 @@ window.smartsupp||(function(d) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by
+                    <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
             </div>
         </div>
     </footer>
@@ -1383,49 +1404,11 @@ window.smartsupp||(function(d) {
         let currentUser = null;
         const API_BASE_URL = '/api'; // Change this to your Laravel API base URL
 
-        // DOM Content Loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize animations
-            initializeAnimations();
-            // Initialize statistics counter
-            initializeCounters();
-            // Set minimum date for appointments
-            setMinimumDate();
-            // Check if user is logged in
-            checkAuthStatus();
-        });
-
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
-
-        // Modal Functions
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
         // Animation Functions
         function initializeAnimations() {
             const observerOptions = {
@@ -1506,355 +1489,6 @@ window.smartsupp||(function(d) {
             }, 40);
         }
 
-        // Set minimum date for appointment booking
-        function setMinimumDate() {
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-
-            const appointmentDate = document.getElementById('appointmentDate');
-            if (appointmentDate) {
-                appointmentDate.min = tomorrow.toISOString().split('T')[0];
-            }
-        }
-
-        // Form Validation
-        function validateForm(formId) {
-            const form = document.getElementById(formId);
-            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-            let isValid = true;
-
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#e53e3e';
-                    isValid = false;
-                } else {
-                    input.style.borderColor = '#e2e8f0';
-                }
-            });
-
-            // Password confirmation check for registration
-            if (formId === 'registrationForm') {
-                const password = document.getElementById('password').value;
-                const confirmPassword = document.getElementById('confirmPassword').value;
-
-                if (password !== confirmPassword) {
-                    document.getElementById('confirmPassword').style.borderColor = '#e53e3e';
-                    showNotification('Passwords do not match!', 'error');
-                    isValid = false;
-                }
-            }
-
-            return isValid;
-        }
-
-        // Login Form Handler
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('loginForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/auth/login', data);
-
-                if (response.success) {
-                    currentUser = response.user;
-                    localStorage.setItem('authToken', response.token);
-                    localStorage.setItem('currentUser', JSON.stringify(response.user));
-
-                    showNotification('Login successful!', 'success');
-                    closeModal('loginModal');
-                    updateAuthUI();
-                } else {
-                    showNotification(response.message || 'Login failed!', 'error');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                showNotification('Login failed. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Registration Form Handler
-        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('registrationForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/auth/register', data);
-
-                if (response.success) {
-                    currentUser = response.user;
-                    localStorage.setItem('authToken', response.token);
-                    localStorage.setItem('currentUser', JSON.stringify(response.user));
-
-                    showNotification('Registration successful!', 'success');
-                    closeModal('registerModal');
-                    updateAuthUI();
-
-                    // Show patient card
-                    showPatientCard(response.user);
-                } else {
-                    showNotification(response.message || 'Registration failed!', 'error');
-                }
-            } catch (error) {
-                console.error('Registration error:', error);
-                showNotification('Registration failed. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Appointment Form Handler
-        document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            if (!validateForm('appointmentForm')) {
-                showNotification('Please fill all required fields!', 'error');
-                return;
-            }
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            // Show loading state
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            submitBtn.disabled = true;
-
-            try {
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-
-                // Simulate API call (replace with actual Laravel API endpoint)
-                const response = await simulateApiCall('/appointments', data);
-
-                if (response.success) {
-                    showNotification('Appointment booked successfully!', 'success');
-                    closeModal('appointmentModal');
-                    this.reset();
-                } else {
-                    showNotification(response.message || 'Failed to book appointment!', 'error');
-                }
-            } catch (error) {
-                console.error('Appointment booking error:', error);
-                showNotification('Failed to book appointment. Please try again.', 'error');
-            } finally {
-                // Hide loading state
-                btnText.style.display = 'inline';
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-
-        // Show Patient Card
-        function showPatientCard(userData) {
-            // Generate patient ID
-            const patientId = 'MED' + Date.now().toString().slice(-6);
-
-            // Populate card data
-            document.getElementById('cardPatientId').textContent = patientId;
-            document.getElementById('cardFullName').textContent = `${userData.firstName} ${userData.lastName}`;
-            document.getElementById('cardDOB').textContent = formatDate(userData.dateOfBirth);
-            document.getElementById('cardBloodGroup').textContent = userData.bloodGroup || 'Not specified';
-            document.getElementById('cardPhone').textContent = userData.phone;
-            document.getElementById('cardRegDate').textContent = formatDate(new Date().toISOString().split('T')[0]);
-
-            // Show card modal
-            openModal('cardModal');
-        }
-
-        // Print Card Function
-        function printCard() {
-            window.print();
-        }
-
-        // Download Card as PDF (simplified version)
-        function downloadCard() {
-            // This would typically use a library like jsPDF
-            showNotification('PDF download feature will be implemented with jsPDF library', 'info');
-        }
-
-        // Utility Functions
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: '2-digit'
-            });
-        }
-
-        // Notification System
-        function showNotification(message, type = 'info') {
-            // Remove existing notifications
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#e53e3e' : '#3182ce'};
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                z-index: 3000;
-                max-width: 400px;
-                animation: slideIn 0.3s ease-out;
-            `;
-            notification.textContent = message;
-
-            // Add to body
-            document.body.appendChild(notification);
-
-            // Auto remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.animation = 'slideOut 0.3s ease-in';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 300);
-                }
-            }, 5000);
-        }
-
-        // Add CSS for notifications
-        const notificationStyles = document.createElement('style');
-        notificationStyles.textContent = `
-            @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-
-            @keyframes slideOut {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(notificationStyles);
-
-        // Simulate API calls (replace with actual Laravel API calls)
-        async function simulateApiCall(endpoint, data) {
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 1000));
-
-            // Mock responses
-            if (endpoint === '/auth/register') {
-                return {
-                    success: true,
-                    message: 'Registration successful',
-                    user: {
-                        id: Date.now(),
-                        firstName: data.firstName,
-                        lastName: data.lastName,
-                        email: data.email,
-                        phone: data.phone,
-                        dateOfBirth: data.dateOfBirth,
-                        bloodGroup: data.bloodGroup,
-                        address: data.address,
-                        gender: data.gender
-                    },
-                    token: 'mock-jwt-token-' + Date.now()
-                };
-            }
-
-            if (endpoint === '/auth/login') {
-                return {
-                    success: true,
-                    message: 'Login successful',
-                    user: {
-                        id: 1,
-                        firstName: 'John',
-                        lastName: 'Doe',
-                        email: data.loginEmail,
-                        phone: '+234 123 456 7890',
-                        dateOfBirth: '1990-01-01',
-                        bloodGroup: 'O+',
-                        address: '123 Main Street'
-                    },
-                    token: 'mock-jwt-token-login'
-                };
-            }
-
-            if (endpoint === '/appointments') {
-                return {
-                    success: true,
-                    message: 'Appointment booked successfully',
-                    appointment: {
-                        id: Date.now(),
-                        ...data,
-                        status: 'confirmed'
-                    }
-                };
-            }
-
-            return {
-                success: false,
-                message: 'Unknown endpoint'
-            };
-        }
 
         // Check authentication status
         function checkAuthStatus() {
@@ -1866,91 +1500,6 @@ window.smartsupp||(function(d) {
                 updateAuthUI();
             }
         }
-
-        // Update authentication UI
-        function updateAuthUI() {
-            const navLinks = document.querySelector('.nav-links');
-
-            if (currentUser) {
-                // Replace login/register with user menu
-                const loginLink = navLinks.querySelector('a[onclick*="loginModal"]');
-                const registerBtn = navLinks.querySelector('a[onclick*="registerModal"]');
-
-                if (loginLink) loginLink.style.display = 'none';
-                if (registerBtn) registerBtn.style.display = 'none';
-
-                // Add user menu (simplified)
-                const userMenu = document.createElement('li');
-                userMenu.innerHTML = `
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span>Welcome, ${currentUser.firstName}!</span>
-                        <a href="#" onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1rem;">Logout</a>
-                    </div>
-                `;
-                navLinks.appendChild(userMenu);
-            }
-        }
-
-        // Logout function
-        function logout() {
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('currentUser');
-            currentUser = null;
-            location.reload();
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form input focus effects
-        document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'scale(1.02)';
-                this.style.borderColor = 'var(--primary-color)';
-            });
-
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'scale(1)';
-                if (!this.value) {
-                    this.style.borderColor = '#e2e8f0';
-                }
-            });
-        });
-
-        // Real-time form validation
-        document.getElementById('confirmPassword')?.addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-
-            if (confirmPassword && password !== confirmPassword) {
-                this.style.borderColor = '#e53e3e';
-            } else {
-                this.style.borderColor = '#e2e8f0';
-            }
-        });
-
-        // Add loading states to buttons
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.type === 'submit') {
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                }
-            });
-        });
     </script>
 </body>
 
