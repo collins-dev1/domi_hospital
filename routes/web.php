@@ -92,10 +92,11 @@ Route::get('/consultations', function(){
 Auth::routes();
 Route::post('create_info', [AdminController::class, 'create_info'])->name('create_info');
 
-Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
+
 
 // User Middleware Group
 Route::middleware([UserMiddleware::class])->group(function(){
+Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
 Route::post('add_appointment', [UserController::class, 'add_appointment'])->name('add_appointment');
