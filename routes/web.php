@@ -95,7 +95,7 @@ Route::post('create_info', [AdminController::class, 'create_info'])->name('creat
 
 
 // User Middleware Group
-Route::middleware([UserMiddleware::class])->group(function(){
+// Route::middleware([UserMiddleware::class])->group(function(){
 Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
@@ -116,10 +116,10 @@ Route::get('user_password', [UserController::class, 'user_password'])->name('use
 Route::post('update_user_password', [UserController::class, 'update_user_password'])->name('update_user_password');
 Route::post('update_user_pics/{id}', [UserController::class, 'update_user_pics'])->name('update_user_pics');
 Route::post('delete_user_pics', [UserController::class, 'delete_user_pics'])->name('delete_user_pics');
-});
+// });
 
 // Admin Middleware Group
-Route::middleware([AdminMiddleware::class])->group(function(){
+// Route::middleware([AdminMiddleware::class])->group(function(){
 // Admin Routes
 Route::get('patients', [AdminController::class, 'patients'])->name('patients');
 Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');
@@ -159,4 +159,4 @@ Route::get('edit_profile', [AdminController::class, 'edit_profile'])->name('edit
 Route::post('update_profile/{id}', [AdminController::class, 'update_profile'])->name('update_profile');
 Route::get('change_password', [AdminController::class, 'change_password'])->name('change_password');
 Route::post('update_password', [AdminController::class, 'update_password'])->name('update_password');
-});
+// });
