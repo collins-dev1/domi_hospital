@@ -6,22 +6,29 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminMiddleware
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-         // Check if user is authenticated and is an admin
+        // Allow access only for logged-in admins
         if (Auth::check() && Auth::user()->usertype == 1) {
             return $next($request);
         }
-        else{
+
+        // If the user is logged in but not admin
+        if (Auth::check()) {
+            Auth::logout();
+            Alert::error('Access Denied', 'You are not authorized to access the admin dashboard.');
             return redirect()->route('login');
         }
+
+        // If user is not logged in at all
+        Alert::error('Login Required', 'Please log in to access this page.');
+        return redirect()->route('login');
     }
 }

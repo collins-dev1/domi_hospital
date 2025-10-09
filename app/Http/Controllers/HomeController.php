@@ -12,6 +12,8 @@ use App\Models\patient_served;
 use App\Models\User;
 use App\Models\years_of_experience;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class HomeController extends Controller
 {
@@ -76,7 +78,9 @@ class HomeController extends Controller
 
             return view('admin.dashboard', compact('users', 'countappointment', 'pendingappointment', 'approvedappointment', 'cancelappointment', 'healthcard', 'pendingcard', 'approvedcard', 'alldoctor', 'contactinfo', 'years', 'award', 'served', 'department'));
         } else {
-            return view('auth.login');
-        }
+    Auth::logout();
+    Alert::error('Access Denied', 'Your account is banned or unauthorized.');
+    return redirect()->route('login');
+}
     }
 }

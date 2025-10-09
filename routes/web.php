@@ -122,7 +122,6 @@ Route::post('delete_user_pics', [UserController::class, 'delete_user_pics'])->na
 
 // Admin Middleware Group
 Route::middleware([AdminMiddleware::class])->group(function(){
-Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
 // Admin Routes
 Route::get('patients', [AdminController::class, 'patients'])->name('patients');
 Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');

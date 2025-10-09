@@ -670,6 +670,7 @@ window.smartsupp||(function(d) {
             <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
         </div>
     </div>
+    @include('sweetalert::alert')
 </body>
 
 </html>
