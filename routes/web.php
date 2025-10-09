@@ -94,11 +94,12 @@ Route::post('create_info', [AdminController::class, 'create_info'])->name('creat
 
 
 Route::get('/home', function () {
-    return redirect('/dashboards');
+    return redirect('/dashboard');
 });
 // User Middleware Group
 Route::middleware([UserMiddleware::class])->group(function(){
-Route::get('/dashboards', [App\Http\Controllers\HomeController::class, 'redirect'])->name('dashboards');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'redirect'])->name('user.dashboard');
+
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
 Route::post('add_appointment', [UserController::class, 'add_appointment'])->name('add_appointment');
@@ -122,6 +123,7 @@ Route::post('delete_user_pics', [UserController::class, 'delete_user_pics'])->na
 
 // Admin Middleware Group
 Route::middleware([AdminMiddleware::class])->group(function(){
+    Route::get('/admin/dashboard', [App\Http\Controllers\HomeController::class, 'redirect'])->name('admin.dashboard');
 // Admin Routes
 Route::get('patients', [AdminController::class, 'patients'])->name('patients');
 Route::get('ban/{id}', [AdminController::class, 'ban'])->name('ban');
