@@ -1144,7 +1144,7 @@ window.smartsupp||(function(d) {
             <!-- Hospital Logo -->
             <div class="logo-container">
                 <div class="logo">
-                    <a href="{{ url('/') }}"
+                    <a href="{{ route('user.dashboard') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none; justify-content: center;">
                         <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50px"
                             height="50px">
@@ -1285,7 +1285,7 @@ window.smartsupp||(function(d) {
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <a href="{{ route('dashboards') }}"
+                <a href="{{ route('dashboard') }}"
                     style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
                     <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="50"
                         height="50">
@@ -1354,7 +1354,7 @@ window.smartsupp||(function(d) {
         <aside class="sidebar">
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <a href="{{ route('dashboards') }}" class="sidebar-link active">
+                    <a href="{{ route('dashboard') }}" class="sidebar-link active">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>

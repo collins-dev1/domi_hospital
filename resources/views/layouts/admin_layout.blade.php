@@ -430,7 +430,7 @@
             <!-- Hospital Logo -->
             <div class="logo-container">
                 <div class="logo">
-                    <a href="{{ url('/') }}"
+                    <a href="{{ route('admin.dashboard') }}"
                         style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none;">
                         <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                             height="70">
@@ -576,9 +576,9 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('admin.dashboard')}}">
                     <div class="logo">
-                        <a href=""
+                        <a href="{{route('admin.dashboard')}}"
                             style="display: flex; flex-direction: row; align-items: center; gap: 0.3rem; text-decoration: none; margin-top:-1rem;">
                             <img src="{{ asset('hospital_website/img/domilogo.png') }}" alt="" width="70"
                                 height="70">
@@ -722,7 +722,7 @@
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light mt-3">
-                    <a class="d-xl-none d-lg-none" href="{{ route('dashboards') }}">Dashboard</a>
+                    <a class="d-xl-none d-lg-none" href="{{ route('admin.dashboard') }}">Dashboard</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -733,7 +733,7 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="{{ route('dashboards') }}"><i
+                                <a class="nav-link active" href="{{ route('admin.dashboard') }}"><i
                                         class="fa fa-fw fa-home"></i>Dashboard <span
                                         class="badge badge-success">6</span></a>
 
