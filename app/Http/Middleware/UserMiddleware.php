@@ -16,7 +16,7 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->usertype === 0) {
+        if (Auth::check() && Auth::user()->usertype == 0) {
             return $next($request);
         }
         else{
