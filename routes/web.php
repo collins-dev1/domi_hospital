@@ -92,10 +92,15 @@ Route::get('/consultations', function(){
 Auth::routes();
 Route::post('create_info', [AdminController::class, 'create_info'])->name('create_info');
 
-
+// Redirect old /home and /dashboard to user dashboard
 Route::get('/home', function () {
-    return redirect('/dashboard');
+    return redirect()->route('user.dashboard');
 });
+
+Route::get('/dashboard', function () {
+    return redirect()->route('user.dashboard');
+})->name('dashboard');
+
 // User Middleware Group
 Route::middleware([UserMiddleware::class])->group(function(){
 Route::get('user/dashboard', [App\Http\Controllers\HomeController::class, 'redirect'])->name('user.dashboard');
