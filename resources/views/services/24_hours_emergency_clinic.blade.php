@@ -1277,11 +1277,16 @@ window.smartsupp||(function(d) {
                     </div>
                     <p>Providing quality healthcare services with compassion and excellence. Your health and well-being
                         are our top priorities.</p>
-                    <div style="margin-top: 1rem;">
-                        <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
-                        <i class="fab fa-twitter" style="margin-right: 1rem; font-size: 1.2rem;"></i>
-                        <i class="fab fa-instagram" style="margin-right: 1rem; font-size: 1.2rem;"></i>
-                        <i class="fab fa-linkedin" style="font-size: 1.2rem;"></i>
+                   <div style="margin-top: 1rem; display:flex">
+                        <a href="https://www.facebook.com/share/19kKHfobWy/" target="_blank">
+                            <i class="fab fa-facebook" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@domi.clinic.and.ma?_t=ZS-90Ngmpktiu0&_r=1" target="_blank">
+                            <i class="fab fa-tiktok" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ikefunaprincess?igsh=MWI3bDhhbXR2b2lhbg==" target="_blank">
+                            <i class="fab fa-instagram" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-section">
