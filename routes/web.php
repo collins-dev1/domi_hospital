@@ -98,7 +98,7 @@ Route::get('/home', function () {
 });
 // User Middleware Group
 Route::middleware([UserMiddleware::class])->group(function(){
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'redirect'])->name('user.dashboard');
+Route::get('user/dashboard', [App\Http\Controllers\HomeController::class, 'redirect'])->name('user.dashboard');
 
 // User Routes
 Route::get('appointments', [UserController::class, 'appointments'])->name('appointments');
