@@ -1104,7 +1104,7 @@ window.smartsupp||(function(d) {
                         Appointment</a>
                 </div>
                 <div class="service-detail-image fade-in">
-                    <img src="{{asset('hospital_website/img/anten.jpeg')}}"
+                    <img src="https://i.postimg.cc/85zTqPZ4/Whats-App-Image-2025-10-11-at-12-06-32.jpg"
                         alt="General Medicine">
                 </div>
             </div>
