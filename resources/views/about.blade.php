@@ -1233,7 +1233,7 @@
                         services designed to meet the diverse health needs of our community.</p>
                 </div>
                 <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    <img src="https://lh3.googleusercontent.com/gg/AAHar4f3vbrXMyNkLRzqdLmRIpy0NMwQr0x8AgJs0BWVe42xY_IrFnAXlK2EcEsOlGsURFNG8gfeL83iAWwioL6hkL2kUU9Ae8p0v5598HL02GIZGzds6qL74nM0XFoMag_NpzJQ6GCX9MkLwQ-kYWPHb6H58E_3Knm1Yb6v9dJeKBB7S5Vkic6y=s1024-rj"
                         alt="Hospital Interior">
                 </div>
             </div>
