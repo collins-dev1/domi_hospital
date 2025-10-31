@@ -1,33 +1,37 @@
 @extends('layouts.user_layout')
 
 @section('content')
-<!-- Payment Methods Section -->
+    <!-- Payment Methods Section -->
     <section class="payment-section">
         <div class="container">
             <div class="section-header" style="display: flex; flex-direction:column; margin-top:-3rem;">
                 <h2>How to Pay</h2>
-                <p>We accept various payment methods to make your healthcare experience seamless and convenient and chat us on whatsapp</p>
+                <p>We accept various payment methods to make your healthcare experience seamless and convenient and chat us
+                    on whatsapp</p>
             </div>
 
             <!-- WhatsApp Chat Section -->
-   @auth
-        <section class="whatsapp-section">
-        <div class="container">
-            <div class="whatsapp-container">
-                <div class="whatsapp-card fade-in">
-                    <i class="fab fa-whatsapp whatsapp-icon"></i>
-                    <h2>Need Payment Assistance?</h2>
-                    <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our team is ready to help you!</p>
-                    <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment!!!%20my%20registration%20name%20is%20{{auth()->user()->name}}%20and%20registration%20email%20address%20is%20{{auth()->user()->email}}%20Thanks!!!" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Chat us
-                    </a>
-                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Available: 24/7 • Response time: Within minutes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-   @endauth
+            @auth
+                <section class="whatsapp-section">
+                    <div class="container">
+                        <div class="whatsapp-container">
+                            <div class="whatsapp-card fade-in">
+                                <i class="fab fa-whatsapp whatsapp-icon"></i>
+                                <h2>Need Payment Assistance?</h2>
+                                <p>Chat with us on WhatsApp for payment support, confirmation, or any billing inquiries. Our
+                                    team is ready to help you!</p>
+                                <a href="https://wa.me/2347062491804?text=Hello%20Domi%20Clinic,%20I%20need%20help%20with%20payment!!!%20my%20registration%20name%20is%20{{ auth()->user()->name }}%20and%20registration%20email%20address%20is%20{{ auth()->user()->email }}%20Thanks!!!"
+                                    target="_blank" class="whatsapp-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat us
+                                </a>
+                                <p style="margin-top: 1.5rem; font-size: 0.95rem;">Available: 24/7 • Response time: Within
+                                    minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            @endauth
 
             <div class="payment-grid">
                 <!-- Cash Payment -->
@@ -53,9 +57,9 @@
                     <h3>Bank Transfer</h3>
                     <p>Transfer directly to our hospital bank account</p>
                     <div class="payment-details">
-                        <p><strong>Bank:</strong> [Your Bank Name]</p>
-                        <p><strong>Account Name:</strong> Domi Clinic</p>
-                        <p><strong>Account Number:</strong> [Account Number]</p>
+                        <p><strong>Bank:</strong> UBA</p>
+                        <p><strong>Account Name:</strong> Domi Diagnostic Clinic Hospital</p>
+                        <p><strong>Account Number:</strong> 1022779819</p>
                         <p><strong>Note:</strong> Send proof to WhatsApp after payment</p>
                     </div>
                     <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Secure & tracked</p>
@@ -83,7 +87,6 @@
 
 
     <style>
-
         .btn {
             padding: 0.75rem 1.5rem;
             border: none;
@@ -428,7 +431,7 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {

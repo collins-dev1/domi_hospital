@@ -15,8 +15,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -181,24 +181,24 @@ class AdminController extends Controller
         $doctor->description = $request->description;
 
         if ($request->hasFile('image')) {
-    $file = $request->file('image');
+            $file = $request->file('image');
 
-    // Generate a unique filename
-    $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+            // Generate a unique filename
+            $filename = Str::uuid().'.'.$file->getClientOriginalExtension();
 
-    // Store the image in storage/app/public/doctors
-    $path = $file->storeAs('doctors', $filename, 'public');
+            // Store the image in storage/app/public/doctors
+            $path = $file->storeAs('doctors', $filename, 'public');
 
-    // Optionally delete the old image if it exists
-    if ($doctor->image && Storage::disk('public')->exists('doctors/' . $doctor->image)) {
-        Storage::disk('public')->delete('doctors/' . $doctor->image);
-    }
+            // Optionally delete the old image if it exists
+            if ($doctor->image && Storage::disk('public')->exists('doctors/'.$doctor->image)) {
+                Storage::disk('public')->delete('doctors/'.$doctor->image);
+            }
 
-    // Save the filename in the database
-    $doctor->image = $filename;
-}
+            // Save the filename in the database
+            $doctor->image = $filename;
+        }
 
-$doctor->save();
+        $doctor->save();
         Alert::html(
             '<h3 style="color:black;">Doctor Added Successfully!</h3>',
             '<p style="color:black;">You have successfully added a new doctor to the system.</p>',
@@ -236,25 +236,25 @@ $doctor->save();
         $doctor->years_of_experience = $request->years_of_experience;
         $doctor->description = $request->description;
 
-       if ($request->hasFile('image')) {
-    $file = $request->file('image');
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
 
-    // Generate a unique filename
-    $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
+            // Generate a unique filename
+            $filename = Str::uuid().'.'.$file->getClientOriginalExtension();
 
-    // Store the image in storage/app/public/doctors
-    $path = $file->storeAs('doctors', $filename, 'public');
+            // Store the image in storage/app/public/doctors
+            $path = $file->storeAs('doctors', $filename, 'public');
 
-    // Optionally delete the old image if it exists
-    if ($doctor->image && Storage::disk('public')->exists('doctors/' . $doctor->image)) {
-        Storage::disk('public')->delete('doctors/' . $doctor->image);
-    }
+            // Optionally delete the old image if it exists
+            if ($doctor->image && Storage::disk('public')->exists('doctors/'.$doctor->image)) {
+                Storage::disk('public')->delete('doctors/'.$doctor->image);
+            }
 
-    // Save the filename in the database
-    $doctor->image = $filename;
-}
+            // Save the filename in the database
+            $doctor->image = $filename;
+        }
 
-$doctor->save();
+        $doctor->save();
         Alert::html(
             '<h3 style="color:black;">Doctor Edited Successfully!</h3>',
             '<p style="color:black;">You have successfully edited a new doctor to the system.</p>',
@@ -474,22 +474,22 @@ $doctor->save();
         $profile = User::findOrFail($id);
 
         if ($request->hasFile('image')) {
-        $image = $request->file('image');
+            $image = $request->file('image');
 
-        // Generate a unique filename
-        $filename = Str::uuid() . '.' . $image->getClientOriginalExtension();
+            // Generate a unique filename
+            $filename = Str::uuid().'.'.$image->getClientOriginalExtension();
 
-        // Store the file in storage/app/public/profile_pics
-        $path = $image->storeAs('profile_pics', $filename, 'public');
+            // Store the file in storage/app/public/profile_pics
+            $path = $image->storeAs('profile_pics', $filename, 'public');
 
-        // Optionally delete old image if it exists
-        if ($profile->profile_pic && Storage::disk('public')->exists('profile_pics/' . $profile->profile_pic)) {
-            Storage::disk('public')->delete('profile_pics/' . $profile->profile_pic);
+            // Optionally delete old image if it exists
+            if ($profile->profile_pic && Storage::disk('public')->exists('profile_pics/'.$profile->profile_pic)) {
+                Storage::disk('public')->delete('profile_pics/'.$profile->profile_pic);
+            }
+
+            // Save the filename in DB (not full path)
+            $profile->profile_pic = $filename;
         }
-
-        // Save the filename in DB (not full path)
-        $profile->profile_pic = $filename;
-    }
 
         $profile->save();
 
@@ -502,34 +502,37 @@ $doctor->save();
         return redirect()->back();
     }
 
-    public function delete_pics(){
+    public function delete_pics()
+    {
         $profile = Auth::user();
 
-    if ($profile->profile_pic) {
-        // Delete from the public disk (storage/app/public/profile_pics)
-        if (Storage::disk('public')->exists('profile_pics/' . $profile->profile_pic)) {
-            Storage::disk('public')->delete('profile_pics/' . $profile->profile_pic);
+        if ($profile->profile_pic) {
+            // Delete from the public disk (storage/app/public/profile_pics)
+            if (Storage::disk('public')->exists('profile_pics/'.$profile->profile_pic)) {
+                Storage::disk('public')->delete('profile_pics/'.$profile->profile_pic);
+            }
+
+            // Remove the reference in the database
+            $profile->profile_pic = null;
+            $profile->save();
         }
 
-        // Remove the reference in the database
-        $profile->profile_pic = null;
-        $profile->save();
+        Alert::html(
+            '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
+            '<p style="color:black;">You have successfully deleted your profile picture.</p>',
+            'success'
+        )->persistent();
+
+        return redirect()->back();
     }
 
-    Alert::html(
-        '<h3 style="color:black;">Profile Picture Deleted Successfully!!!</h3>',
-        '<p style="color:black;">You have successfully deleted your profile picture.</p>',
-        'success'
-    )->persistent();
-
-    return redirect()->back();
-    }
-
-    public function edit_profile(){
+    public function edit_profile()
+    {
         return view('admin.edit_profile');
     }
 
-    public function update_profile(Request $request, $id){
+    public function update_profile(Request $request, $id)
+    {
         $profile = User::find($id);
         $profile->name = $request->name;
         $profile->email = $request->email;
@@ -544,7 +547,8 @@ $doctor->save();
         return redirect()->route('admin_profile');
     }
 
-    public function change_password(){
+    public function change_password()
+    {
         return view('admin.update_password');
     }
 
@@ -559,14 +563,14 @@ $doctor->save();
         $user = Auth::user();
 
         // Check current password
-        if (!Hash::check($request->current_password, $user->password)) {
+        if (! Hash::check($request->current_password, $user->password)) {
             Alert::html(
-            '<h3 style="color:black;">The current password is incorrect</h3>',
-            '<p style="color:black;">You have current write an incorrect password!!!.</p>',
-            'success'
-        )->persistent();
+                '<h3 style="color:black;">The current password is incorrect</h3>',
+                '<p style="color:black;">You have current write an incorrect password!!!.</p>',
+                'success'
+            )->persistent();
 
-        return redirect()->back();
+            return redirect()->back();
         }
 
         // Update password
