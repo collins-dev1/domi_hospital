@@ -1097,7 +1097,7 @@ window.smartsupp||(function(d) {
                         diagnosis, growth monitoring, and overall development.</p>
                     <p>Our Pediatrics unit provides comprehensive medical care for infants, children, and teenagers —
                         from routine checkups and vaccinations to the treatment of common and complex childhood
-                        illnesses. We focus on your child’s growth, development, and overall well-being.</p>
+                        illnesses. We focus on your child’s growth, development, and overall well-being and we also refer to appriopriate facilities promptly.</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
