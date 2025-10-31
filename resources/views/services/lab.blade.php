@@ -1204,7 +1204,7 @@ window.smartsupp||(function(d) {
                 <h3>Why Patients Need the Lab</h3>
                 <div>
                     <ul>
-                        <li>Almost 70% of medical decisions depend on laboratory test results. Whether it is a simple
+                        <li>Over 90% of medical decisions depend on laboratory test results. Whether it is a simple
                             blood test, a pregnancy test, or advanced cancer screening, the lab ensures patients receive
                             the right care at the right time.
                         <li>
