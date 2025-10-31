@@ -1102,7 +1102,7 @@ window.smartsupp||(function(d) {
                         Appointment</a>
                 </div>
                 <div class="service-detail-image fade-in">
-                    <img src="https://i.pinimg.com/1200x/97/d5/3b/97d53be76c7f1d2c187df9dbc2185767.jpg"
+                    <img src="https://i.postimg.cc/85zTqPZ4/Whats-App-Image-2025-10-11-at-12-06-32.jpg"
                         alt="General Medicine">
                 </div>
             </div>
