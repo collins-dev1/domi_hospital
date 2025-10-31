@@ -77,6 +77,9 @@
                         <p><strong>Process:</strong> Present insurance card</p>
                         <p><strong>Note:</strong> Subject to policy coverage</p>
                         <p><strong>Contact:</strong> Verify coverage first</p>
+                         <p><strong>Bank:</strong> MoniePoint</p>
+                        <p><strong>Account Name:</strong> Domi Hospital</p>
+                        <p><strong>Account Number:</strong> 6711803474</p>
                     </div>
                     <p><i class="fas fa-check-circle" style="color: var(--accent-color);"></i> Cashless treatment</p>
                 </div>
