@@ -1113,7 +1113,8 @@
                             geriatricians
                             who take care of age from their homes and also in the hospital department and out patient
                             management, this organization also train health care assistants that are equipped with the
-                            knowledge of taking care of the aged even through our hospice services</li>
+                            knowledge of taking care of the aged even through our hospice services.</li>
+                            <br>
                         <li>Domi Insurance care -> this is a department where aged people are registered to be taken
                             care of at any time for easy access to prompt health care and long time management which
                             also includes ambulance services.</li>
