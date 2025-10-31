@@ -8,17 +8,24 @@
     <link rel="icon" href="{{ asset('hospital_website/img/domi.png') }}" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'd61fad37f6e5fbabde590e260f3e2018751b3066';
+        window.smartsupp || (function(d) {
+            var s, c, o = smartsupp = function() {
+                o._.push(arguments)
+            };
+            o._ = [];
+            s = d.getElementsByTagName('script')[0];
+            c = d.createElement('script');
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.async = true;
+            c.src = 'https://www.smartsuppchat.com/loader.js?';
+            s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
 
     <style>
         * {
@@ -1100,6 +1107,18 @@ window.smartsupp||(function(d) {
                         decline, and higher risks of complications. Geriatrics provides comprehensive and compassionate
                         care, ensuring that elderly individuals maintain dignity, independence, and comfort in their
                         later years.</p>
+                    <p>services we provide <br>
+                    <ul>
+                        <li>Domi heal soul organization (DHSO) -> where we take care of the aged people through our
+                            geriatricians
+                            who take care of age from their homes and also in the hospital department and out patient
+                            management, this organization also train health care assistants that are equipped with the
+                            knowledge of taking care of the aged even through our hospice services</li>
+                        <li>Domi Insurance care -> this is a department where aged people are registered to be taken
+                            care of at any time for easy access to prompt health care and long time management which
+                            also includes ambulance services.</li>
+                    </ul>
+                    </p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
@@ -1143,7 +1162,9 @@ window.smartsupp||(function(d) {
                 <h3>Cognitive Health</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Special attention to dementia, Alzheimer’s disease, and memory-related conditions.<li>
+                        <li><i class="fas fa-check"></i> Special attention to dementia, Alzheimer’s disease, and
+                            memory-related conditions.
+                        <li>
                     </ul>
                 </div>
             </div>
@@ -1152,7 +1173,8 @@ window.smartsupp||(function(d) {
                 <h3>Mobility & Fall Prevention</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Focus on physiotherapy, safe movement, and preventing fractures or accidents.</li>
+                        <li><i class="fas fa-check"></i> Focus on physiotherapy, safe movement, and preventing fractures
+                            or accidents.</li>
                     </ul>
                 </div>
             </div>
@@ -1161,7 +1183,8 @@ window.smartsupp||(function(d) {
                 <h3>Medication Management</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Ensuring safe use of multiple prescriptions and avoiding harmful drug interactions.</li>
+                        <li><i class="fas fa-check"></i> Ensuring safe use of multiple prescriptions and avoiding
+                            harmful drug interactions.</li>
                     </ul>
                 </div>
             </div>
@@ -1170,7 +1193,8 @@ window.smartsupp||(function(d) {
                 <h3>Emotional & Mental Health</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Addressing depression, anxiety, and loneliness that can affect elderly individuals.</li>
+                        <li><i class="fas fa-check"></i> Addressing depression, anxiety, and loneliness that can affect
+                            elderly individuals.</li>
                     </ul>
                 </div>
             </div>
@@ -1179,7 +1203,8 @@ window.smartsupp||(function(d) {
                 <h3>Palliative & End-of-Life Care</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Providing comfort and dignity during advanced stages of illness.</li>
+                        <li><i class="fas fa-check"></i> Providing comfort and dignity during advanced stages of
+                            illness.</li>
                     </ul>
                 </div>
             </div>
@@ -1188,7 +1213,8 @@ window.smartsupp||(function(d) {
                 <h3>Nutritional Guidance</h3>
                 <div>
                     <ul>
-                        <li><i class="fas fa-check"></i> Specialized diets to maintain strength, immunity, and overall health.</li>
+                        <li><i class="fas fa-check"></i> Specialized diets to maintain strength, immunity, and overall
+                            health.</li>
                     </ul>
                 </div>
             </div>
@@ -1200,7 +1226,8 @@ window.smartsupp||(function(d) {
                         <li><i class="fas fa-check"></i> Promotes healthy aging and longer life expectancy.</li>
                         <li><i class="fas fa-check"></i> Enhances independence and quality of life.</li>
                         <li><i class="fas fa-check"></i> Provides family support in caregiving.</li>
-                        <li><i class="fas fa-check"></i> Offers personalized healthcare tailored to each patient’s unique needs.</li>
+                        <li><i class="fas fa-check"></i> Offers personalized healthcare tailored to each patient’s
+                            unique needs.</li>
                     </ul>
                 </div>
             </div>
@@ -1211,7 +1238,8 @@ window.smartsupp||(function(d) {
                     <ul>
                         <li><i class="fas fa-check"></i> Geriatricians (doctors specialized in elderly care)</li>
                         <li><i class="fas fa-check"></i> Nurses and Caregivers trained in geriatric support</li>
-                        <li><i class="fas fa-check"></i> Physiotherapists, Nutritionists, and Psychologists for holistic well-being</li>
+                        <li><i class="fas fa-check"></i> Physiotherapists, Nutritionists, and Psychologists for
+                            holistic well-being</li>
                     </ul>
                 </div>
             </div>
@@ -1335,11 +1363,11 @@ window.smartsupp||(function(d) {
                 </div>
                 <<div class="footer-section">
                     <h3>Services</h3>
-                    <a href="{{route('antenatal_clinic')}}">Antenatal Clinic</a>
+                    <a href="{{ route('antenatal_clinic') }}">Antenatal Clinic</a>
                     <a href="{{ route('pediatrics') }}">Pediatric</a>
                     <a href="{{ route('geriatrics') }}">Geriatrics</a>
                     <a href="{{ route('lab') }}">Laboratory Services</a>
-                    <a href="{{route('ultrasound')}}">Ultrasound</a>
+                    <a href="{{ route('ultrasound') }}">Ultrasound</a>
                     <a href="{{ route('blood_banking') }}">Blood Banking and Donation</a>
                     <a href="{{ route('immunization') }}">Immunization</a>
                     <a href="{{ route('drug_dispensary') }}">Drug dispensary</a>
@@ -1347,25 +1375,26 @@ window.smartsupp||(function(d) {
                     <a href="{{ route('24_hours_emergency_clinic') }}">24 Hours Emergency Clinic</a>
                     <a href="{{ route('consultations') }}">Consultations</a>
                     <a href="{{ route('eye_clinic') }}">Eye Clinic</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
-                        <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop,
-                            Oyi 435115, Anambra</p>
-                    </a>
-                    <a href="tel:+2347062491804" target="_blank">
-                        <p><i class="fas fa-phone"></i> +2347062491804</p>
-                    </a>
-                    <a href="mailto:info@domiclinic.net" target="_blank">
-                        <p><i class="fas fa-envelope"></i> info@domiclinic.net</p>
-                    </a>
-                    <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <a href="https://maps.app.goo.gl/oy9c1B77GSjBtyfT7" target="_blank">
+                    <p><i class="fas fa-map-marker-alt"></i>1 Obika Street, 3-3 Nkwelle Ezunaka, By Uju Bus-Stop,
+                        Oyi 435115, Anambra</p>
+                </a>
+                <a href="tel:+2347062491804" target="_blank">
+                    <p><i class="fas fa-phone"></i> +2347062491804</p>
+                </a>
+                <a href="mailto:info@domiclinic.net" target="_blank">
+                    <p><i class="fas fa-envelope"></i> info@domiclinic.net</p>
+                </a>
+                <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Domi Clinic Hospital. All rights reserved. | Privacy Policy | Terms of Service | built by <a
+                    href="https://solotech-ai-ltd.com/" target="_blank">SoloTech.AI LTD.</a></p>
+        </div>
         </div>
     </footer>
     <script>
