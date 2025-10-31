@@ -1100,6 +1100,7 @@ window.smartsupp||(function(d) {
                         with confidence and peace of mind throughout their pregnancy journey. Our team of doctors,
                         midwives, and nurses are always available to guide, support, and prepare you for childbirth and
                         parenthood.</p>
+                        <p>Our Antenatal Days are every thursday of the week time 10am and we can pick a patient at there homes and also return them after delivery</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
