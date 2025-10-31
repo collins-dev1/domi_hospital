@@ -73,7 +73,7 @@
                     <h3>Health Insurance</h3>
                     <p>We accept various health insurance providers</p>
                     <div class="payment-details">
-                        <p><strong>Accepted:</strong> NHIS, HMOs, Private Insurance</p>
+                        <p><strong>Accepted:</strong> Domi Geriatrics Health Organization</p>
                         <p><strong>Process:</strong> Present insurance card</p>
                         <p><strong>Note:</strong> Subject to policy coverage</p>
                         <p><strong>Contact:</strong> Verify coverage first</p>
