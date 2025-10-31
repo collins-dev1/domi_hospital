@@ -1099,6 +1099,7 @@ window.smartsupp||(function(d) {
                     <p>Laboratory Department is essential for accurate diagnosis, monitoring, and prevention of
                         diseases. It ensures that patients receive personalized and effective treatment while supporting
                         doctors with reliable test results.</p>
+                        <p>Our Services we provide 24 hours and results are issued immediately</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
