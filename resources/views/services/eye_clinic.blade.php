@@ -1099,6 +1099,7 @@ window.smartsupp||(function(d) {
                     <p>Our Eye Clinic provides comprehensive vision care for all ages, from children to seniors. With
                         advanced diagnostic tools, skilled specialists, and a focus on preventive care, we ensure that
                         every patient receives personalized treatment to protect and restore their sight.</p>
+                        <p>24hrs and our eyes clinic days  (saturdays of every week).</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>

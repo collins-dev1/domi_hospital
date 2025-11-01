@@ -1099,6 +1099,8 @@ window.smartsupp||(function(d) {
                     <p>Immunization is a life-saving preventive healthcare service. By staying up to date with
                         vaccinations, you protect yourself, your family, and the entire community from preventable
                         diseases.</p>
+                        <p>Our immunization clinic days are basically on thursdays of every week.
+Time 10am.</p>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>

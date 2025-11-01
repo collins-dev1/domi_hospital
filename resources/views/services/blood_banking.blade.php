@@ -1117,6 +1117,12 @@
                     </p>
                     <p>Improves Quality of Life: For patients with chronic conditions, timely access to safe blood can
                         dramatically improve their quality of life and life expectancy.</p>
+                        <p>services we provide <br>
+                    <ul>
+                        <li>24hrs blood Banking Services.</li>
+                            <br>
+                        <li>U are a call away from Saving a life.</li>
+                    </ul>
                     <a href="{{ route('login') }}" class="btn btn-accent">Book
                         Appointment</a>
                 </div>
